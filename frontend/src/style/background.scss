@@ -27,6 +27,7 @@ h1 {
   animation-name: slideIn;
   animation-duration: 3s;
   animation-iteration-count: infinite;
+  z-index: -1;
 }
 
 .Tatooin img {
@@ -37,6 +38,7 @@ h1 {
   animation-name: slideIn;
   animation-duration: 3s;
   animation-iteration-count: infinite;
+  z-index: -1;
 }
 
 .YavinIV img {
@@ -48,6 +50,7 @@ h1 {
   animation-name: slideIn;
   animation-duration: 3s;
   animation-iteration-count: infinite;
+  z-index: -1;
 }
 
 .Mustafar img {
@@ -58,6 +61,7 @@ h1 {
   animation-name: slideIn;
   animation-duration: 3s;
   animation-iteration-count: infinite;
+  z-index: -1;
 }
 
 .Alderaan img {
@@ -68,6 +72,7 @@ h1 {
   animation-name: slideIn;
   animation-duration: 3s;
   animation-iteration-count: infinite;
+  z-index: -1;
 }
 
 .DeathStar img {
@@ -77,6 +82,7 @@ h1 {
   animation-name: slideIn;
   animation-duration: 2s;
   animation-iteration-count: infinite;
+  z-index: -1;
 }
 
 @keyframes slideIn {
