@@ -3,13 +3,14 @@ function PlaneteCard() {
     <>
       {/* YAVIN CARD */}
       <div className="card-Yavin">
-        <img src="src/public/images/planets/Yavin IV.png" alt="Yavin" />
-
+        <div className="planetImageDiv">
+          <img src="src/public/images/planets/Yavin IV.png" alt="Yavin" />
+        </div>
         <div className="Yavin-text">
           <h1>GALAXIE YAVIN IV </h1>
           <p>Population : 1000 </p>
-          <p>Terrain: Jungle, forêt</p>
-          <p>Climat: Tempéré, tropical </p>
+          <p>Terrain : Jungle, forêt</p>
+          <p>Climat : Tempéré, tropical </p>
 
           <button type="submit" className="button-Yavin">
             Y aller
@@ -19,13 +20,14 @@ function PlaneteCard() {
 
       {/* TATOOIN CARD */}
       <div className="card-Tatooine">
-        <img src="src/public/images/planets/Tatooine.png" alt="Tatooine" />
-
+        <div className="planetImageDiv">
+          <img src="src/public/images/planets/Tatooine.png" alt="Tatooine" />
+        </div>
         <div className="Tatooine-text">
           <h1>GALAXY TATOOINE </h1>
           <p>Population : 200000</p>
-          <p>Terrain: Désert </p>
-          <p>Climat: Aride </p>
+          <p>Terrain : Désert </p>
+          <p>Climat : Aride </p>
 
           <button type="submit" className="button-Tatooine">
             Y aller
@@ -35,13 +37,14 @@ function PlaneteCard() {
 
       {/* MUSTAFAR CARD */}
       <div className="card-Mustafar">
-        <img src="src/public/images/planets/Mustafar.png" alt="Mustafar" />
-
+        <div className="planetImageDiv">
+          <img src="src/public/images/planets/Mustafar.png" alt="Mustafar" />
+        </div>
         <div className="Mustafar-text">
           <h1>GALAXIE MUSTAFAR </h1>
           <p>Population : 20000</p>
-          <p>Terrain: Volcan, rivière de lave, montagne, cave</p>
-          <p>Climat: Chaud </p>
+          <p>Terrain : Volcan, rivière de lave, montagne, cave</p>
+          <p>Climat : Chaud </p>
 
           <button type="submit" className="button-Mustafar">
             Y aller
@@ -51,13 +54,14 @@ function PlaneteCard() {
 
       {/* DAGOBAH CARD */}
       <div className="card-Dagobah">
-        <img src="src/public/images/planets/Dagobah.png" alt="Dagobah" />
-
+        <div className="planetImageDiv">
+          <img src="src/public/images/planets/Dagobah.png" alt="Dagobah" />
+        </div>
         <div className="Dagobah-text">
           <h1>GALAXIE DAGOBAH</h1>
           <p>Population : Inconnue</p>
-          <p>Terrain: Marais, jungle</p>
-          <p>Climat: Humide</p>
+          <p>Terrain : Marais, jungle</p>
+          <p>Climat : Humide</p>
 
           <button type="submit" className="button-Dagobah">
             Y aller
@@ -67,13 +71,14 @@ function PlaneteCard() {
 
       {/* NABOO CARD */}
       <div className="card-Naboo">
-        <img src="src/public/images/planets/Naboo.png" alt="Naboo" />
-
+        <div className="planetImageDiv">
+          <img src="src/public/images/planets/Naboo.png" alt="Naboo" />
+        </div>
         <div className="Naboo-text">
           <h1>GALAXIE NABOO</h1>
           <p>Population : 4500000000</p>
-          <p>Terrain: Colline verdoyante, marais, forêt, montagne</p>
-          <p>Climat: tempéré</p>
+          <p>Terrain : Colline verdoyante, marais, forêt, montagne</p>
+          <p>Climat : tempéré</p>
 
           <button type="submit" className="button-Naboo">
             Y aller
@@ -83,13 +88,14 @@ function PlaneteCard() {
 
       {/* ALDERAAN CARD */}
       <div className="card-Alderaan">
-        <img src="src/public/images/planets/Alderaan.png" alt="Alderaan" />
-
+        <div className="planetImageDiv">
+          <img src="src/public/images/planets/Alderaan.png" alt="Alderaan" />
+        </div>
         <div className="Alderaan-text">
           <h1>GALAXIE ALDERAAN</h1>
           <p>Population : 2000000000</p>
-          <p>Terrain: Verdoyant, montagne</p>
-          <p>Climat: Tempéré</p>
+          <p>Terrain : Verdoyant, montagne</p>
+          <p>Climat : Tempéré</p>
 
           <button type="submit" className="button-Alderaan">
             Y aller
