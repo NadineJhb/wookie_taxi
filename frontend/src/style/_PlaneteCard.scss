@@ -1,42 +1,49 @@
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: black;
-  font-family: "Roboto", "sans-serif";
-}
-
-.card-Yavin {
+.card-Yavin,
+.card-Tatooine,
+.card-Mustafar,
+.card-Naboo,
+.card-Dagobah,
+.card-Alderaan {
   display: flex;
   width: 467px;
   height: 270px;
-  margin: 6% 0%;
-  position: absolute;
+  margin: 10px;
   background-color: rgba(25, 25, 25, 0.89);
   color: white;
-  padding: 2px;
+  padding: 10px;
   border: 2px solid rgba(255, 229, 0, 1);
   border-radius: 5px 0 5px 0;
 
   img {
     margin: 8% 3%;
     width: 25vh;
-    height: 25vh;
-  }
-
-  .button-Yavin {
-    background-color: rgba(255, 229, 0, 1);
-    box-shadow: rgba(0, 0, 0, 0.25);
-    font-size: 19px;
-    margin-top: 5%;
-    padding: 5%;
-    width: 220px;
-    height: 48px;
-    border-radius: 15px;
+    height: 23vh;
   }
 }
 
-.Yavin-text {
+.button-Yavin,
+.button-Tatooine,
+.button-Mustafar,
+.button-Naboo,
+.button-Dagobah,
+.button-Alderaan {
+  background-color: rgba(255, 229, 0, 1);
+  box-shadow: rgba(0, 0, 0, 0.25);
+  border-inline: none;
+
+  font-size: 19px;
+  margin-top: 6%;
+  width: 220px;
+  height: 48px;
+  border-radius: 15px;
+}
+
+.Yavin-text,
+.Tatooine-text,
+.Mustafar-text,
+.Naboo-text,
+.Dagobah-text,
+.Alderaan-text {
   margin-top: 5%;
 
   h1 {

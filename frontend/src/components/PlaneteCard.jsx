@@ -3,7 +3,7 @@ function PlaneteCard() {
     <>
       {/* YAVIN CARD */}
       <div className="card-Yavin">
-        <img src="src/public/images/planets/Yavin IV.png" alt="Yavin IV" />
+        <img src="src/public/images/planets/Yavin IV.png" alt="Yavin" />
 
         <div className="Yavin-text">
           <h1>GALAXIE YAVIN IV </h1>
@@ -18,16 +18,16 @@ function PlaneteCard() {
       </div>
 
       {/* TATOOIN CARD */}
-      <div className="card-tatooine">
-        <img src="src/public/images/planets/Tatooine.png" alt="tatooine" />
+      <div className="card-Tatooine">
+        <img src="src/public/images/planets/Tatooine.png" alt="Tatooine" />
 
-        <div className="tatooine-text">
+        <div className="Tatooine-text">
           <h1>GALAXY TATOOINE </h1>
           <p>Population : 200000</p>
           <p>Terrain: Désert </p>
           <p>Climat: Aride </p>
 
-          <button type="submit" className="button-tatooine">
+          <button type="submit" className="button-Tatooine">
             Y aller
           </button>
         </div>
@@ -59,7 +59,7 @@ function PlaneteCard() {
           <p>Terrain: Marais, jungle</p>
           <p>Climat: Humide</p>
 
-          <button type="submit" className="button-deathStar">
+          <button type="submit" className="button-Dagobah">
             Y aller
           </button>
         </div>
@@ -86,10 +86,10 @@ function PlaneteCard() {
         <img src="src/public/images/planets/Alderaan.png" alt="Alderaan" />
 
         <div className="Alderaan-text">
-          <h1>GALAXIE NABOO</h1>
-          <p>Population : 4500000000</p>
-          <p>Terrain: grassy hills, swamps, forests, mountains</p>
-          <p>Climate: temperate</p>
+          <h1>GALAXIE ALDERAAN</h1>
+          <p>Population : 2000000000</p>
+          <p>Terrain: Verdoyant, montagne</p>
+          <p>Climat: Tempéré</p>
 
           <button type="submit" className="button-Alderaan">
             Y aller
