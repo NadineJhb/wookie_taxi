@@ -1,0 +1,37 @@
+/*import Roboto Light 300, Regular 500 and  700bold */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap");
+
+:root {
+  /* Colors */
+  --primary-color: #ffde06;
+  --secondary-color: #ffffff;
+  ---tertiary-color: #000000;
+
+  --background-color: #3f3e39;
+
+  /* font-family */
+  --font: "Roboto", sans-serif;
+
+  /* font-weight */
+  --font-weight-text: 300;
+  --font-weight-text-bold: 500;
+  --font-weight-text-title: 700;
+
+  /* font-size */
+  --font-size-standard: 1.25rem; /* 20px */
+  --font-size-title: calc(var(--font-size-standard) * 2);
+
+  /* spacing */
+  --spacing: 0.5rem; /* 8px */
+  --spacing-x2: calc(var(--spacing) * 2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+}
