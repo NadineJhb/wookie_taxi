@@ -1,0 +1,10 @@
+.footer p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--secondary-color);
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  margin-left: 40vw;
+}
