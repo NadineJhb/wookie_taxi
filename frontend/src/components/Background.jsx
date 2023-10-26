@@ -10,16 +10,16 @@ function Background() {
         <img src="src/public/images/planets/Dagobah.png" alt="Dagobah" />
       </div>
 
-      <div className="DeathStar">
-        <img src="src/public/images/planets/DeathStar.png" alt="DeathStar" />
+      <div className="Naboo">
+        <img src="src/public/images/planets/Naboo.png" alt="Naboo" />
       </div>
 
       <div className="Mustafar">
         <img src="src/public/images/planets/Mustafar.png" alt="Mustafar" />
       </div>
 
-      <div className="Tatooin">
-        <img src="src/public/images/planets/Tatooin.png" alt="Tatooin" />
+      <div className="Tatooine">
+        <img src="src/public/images/planets/Tatooine.png" alt="Tatooine" />
       </div>
 
       <div className="YavinIV">
