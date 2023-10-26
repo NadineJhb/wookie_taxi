@@ -1,68 +1,62 @@
 .container {
-  margin: 300px 300px;
-  background-color: beige;
-  padding: 10px 10px;
+  background-color: #ffde06;
+  padding: calc(var(--spacing) * 1.4);
   display: flex;
-  border-radius: 10px;
+  border-radius: 20px;
   width: 700px;
   position: relative;
+  position: flex;
+}
+
+.map-icon {
+  margin-right: calc(var(--spacing) * 0.4);
+}
+
+.search-to,
+.search-number,
+.search-from {
+  padding: calc(var(--spacing) * 1) calc(var(--font-size-standard) * 2.4)
+    calc(var(--spacing) * 1.2) calc(var(--spacing) * 1.4);
+  font-size: calc(var(--font-size-standard) * 0.9);
+  background-color: #ffde06;
+  border: none;
 }
 
 .search-from {
-  padding: 12px 30px 12px 12px;
-  font-size: 16px;
-  background-color: beige;
-  border: none;
   border-right: 1px solid grey;
-  color: green;
+  color: #000000;
+  display: flex;
 }
 
-.two {
-  padding: 12px 12px;
-  width: 300px;
-  font-size: 16px;
-  background-color: beige;
-  border: none;
+.search-to {
+  width: 250px;
   border-right: 1px solid grey;
-  color: green;
   font-family: var(--font);
   outline: none;
 }
 
-.three {
-  padding: 12px 12px;
-  font-size: 16px;
-  background-color: beige;
-  border: none;
+.search-number {
   width: 100px;
   font-family: var(--font);
   outline: none;
 }
 
-.icon {
-  font-size: 28px;
+.search-icon {
+  font-size: calc(var(--font-size-standard) * 2);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 }
-
-.iconbtn {
+.search-btn {
   position: relative;
   position: absolute;
   height: 100%;
   width: 14%;
   top: 0;
   right: 0;
-  background-color: beige;
+  background-color: #ffde06;
   border: none;
   border-radius: 0px 10px 10px 0px;
-}
-
-.icondiv {
-  position: relative;
-}
-
-.iconbtn:hover {
-  background-color: blue;
 }

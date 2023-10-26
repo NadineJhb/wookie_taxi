@@ -7,15 +7,15 @@ function SearchBar() {
   return (
     <div className="container">
       <div className="search-from">
-        <BiSolidMap /> Départ : ENDOR
+        <BiSolidMap className="map-icon" /> Départ : ENDOR
       </div>
 
       <form action="">
-        <input type="text" placeholder="Destination" className="two" />
-        <input type="text" placeholder="1" className="three" />
-        <button type="submit" className="iconbtn">
-          <div className="icondiv">
-            <FiSearch className="icon" />
+        <input type="text" placeholder="Destination" className="search-to" />
+        <input type="text" placeholder="1" className="search-number" />
+        <button type="submit" className="search-btn">
+          <div>
+            <FiSearch className="search-icon" />
           </div>
         </button>
       </form>
