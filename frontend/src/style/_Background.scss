@@ -12,7 +12,8 @@ body {
 
 h1 {
   display: flex;
-  color: white;
+  color: var(--secondary-color);
+  font-family: var(--font);
   font-size: 2rem;
   padding: 0.5rem;
   margin-bottom: 1%;
