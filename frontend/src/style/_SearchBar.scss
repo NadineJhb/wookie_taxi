@@ -1,0 +1,68 @@
+.container {
+  margin: 300px 300px;
+  background-color: beige;
+  padding: 10px 10px;
+  display: flex;
+  border-radius: 10px;
+  width: 700px;
+  position: relative;
+}
+
+.search-from {
+  padding: 12px 30px 12px 12px;
+  font-size: 16px;
+  background-color: beige;
+  border: none;
+  border-right: 1px solid grey;
+  color: green;
+}
+
+.two {
+  padding: 12px 12px;
+  width: 300px;
+  font-size: 16px;
+  background-color: beige;
+  border: none;
+  border-right: 1px solid grey;
+  color: green;
+  font-family: var(--font);
+  outline: none;
+}
+
+.three {
+  padding: 12px 12px;
+  font-size: 16px;
+  background-color: beige;
+  border: none;
+  width: 100px;
+  font-family: var(--font);
+  outline: none;
+}
+
+.icon {
+  font-size: 28px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.iconbtn {
+  position: relative;
+  position: absolute;
+  height: 100%;
+  width: 14%;
+  top: 0;
+  right: 0;
+  background-color: beige;
+  border: none;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.icondiv {
+  position: relative;
+}
+
+.iconbtn:hover {
+  background-color: blue;
+}
