@@ -1,6 +1,7 @@
 import Background from "./components/Background";
 import Logo from "./components/Logo";
 import Footer from "./components/Footer";
+import PlaneteCard from "./components/PlaneteCard";
 import "./App.css";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Logo />
       <Background />
       <Footer />
+      <PlaneteCard />
     </div>
   );
 }
