@@ -11,10 +11,6 @@ function PlaneteCard() {
           <p>Population : 1000 </p>
           <p>Terrain : Jungle, forêt</p>
           <p>Climat : Tempéré, tropical </p>
-
-          <button type="submit" className="button-Yavin">
-            Y aller
-          </button>
         </div>
       </div>
 
@@ -28,10 +24,6 @@ function PlaneteCard() {
           <p>Population : 200000</p>
           <p>Terrain : Désert </p>
           <p>Climat : Aride </p>
-
-          <button type="submit" className="button-Tatooine">
-            Y aller
-          </button>
         </div>
       </div>
 
@@ -45,10 +37,6 @@ function PlaneteCard() {
           <p>Population : 20000</p>
           <p>Terrain : Volcan, rivière de lave, montagne, cave</p>
           <p>Climat : Chaud </p>
-
-          <button type="submit" className="button-Mustafar">
-            Y aller
-          </button>
         </div>
       </div>
 
@@ -62,10 +50,6 @@ function PlaneteCard() {
           <p>Population : Inconnue</p>
           <p>Terrain : Marais, jungle</p>
           <p>Climat : Humide</p>
-
-          <button type="submit" className="button-Dagobah">
-            Y aller
-          </button>
         </div>
       </div>
 
@@ -79,10 +63,6 @@ function PlaneteCard() {
           <p>Population : 4500000000</p>
           <p>Terrain : Colline verdoyante, marais, forêt, montagne</p>
           <p>Climat : tempéré</p>
-
-          <button type="submit" className="button-Naboo">
-            Y aller
-          </button>
         </div>
       </div>
 
@@ -96,10 +76,6 @@ function PlaneteCard() {
           <p>Population : 2000000000</p>
           <p>Terrain : Verdoyant, montagne</p>
           <p>Climat : Tempéré</p>
-
-          <button type="submit" className="button-Alderaan">
-            Y aller
-          </button>
         </div>
       </div>
     </>
