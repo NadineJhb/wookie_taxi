@@ -1,9 +1,15 @@
+import Background from "./components/Background";
+import Logo from "./components/Logo";
+import Footer from "./components/Footer";
 import PlaneteCard from "./components/PlaneteCard";
 import "./App.css";
 
 function App() {
   return (
-    <div>
+    <div className="globale">
+      <Logo />
+      <Background />
+      <Footer />
       <PlaneteCard />
     </div>
   );
