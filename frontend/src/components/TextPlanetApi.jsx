@@ -7,7 +7,7 @@ function TextPlanetApi() {
 
   useEffect(() => {
     axios
-      .get("https://swapi.dev/api/planets/?page=1")
+      .get("https://swapi.dev/api/planets/?page=2")
       .then((response) => setPlanets(response.data.results))
       .catch((err) => console.warn(err));
   }, []);
