@@ -1,32 +1,42 @@
-function Background() {
+import { useState } from "react";
+import PropTypes from "prop-types";
+import PlaneteCard from "./PlaneteCard";
+
+function Background({ planets }) {
+  const [planet, setPlanet] = useState(null);
+  const handleClick = (planetInfo) => {
+    setPlanet(planetInfo);
+  };
+
   return (
-    <>
+    <div className="background">
       <h1>LE COVOIT' DE LA GALAXIE !</h1>
-      <div className="Alderaan">
-        <img src="src/public/images/planets/Alderaan.png" alt="Alderaan" />
-      </div>
+      {/* <div className="Alderaan"> */}
 
-      <div className="Dagobah">
-        <img src="src/public/images/planets/Dagobah.png" alt="Dagobah" />
-      </div>
-
-      <div className="Naboo">
-        <img src="src/public/images/planets/Naboo.png" alt="Naboo" />
-      </div>
-
-      <div className="Mustafar">
-        <img src="src/public/images/planets/Mustafar.png" alt="Mustafar" />
-      </div>
-
-      <div className="Tatooine">
-        <img src="src/public/images/planets/Tatooine.png" alt="Tatooine" />
-      </div>
-
-      <div className="YavinIV">
-        <img src="src/public/images/planets/Yavin IV.png" alt="Yavin IV" />
-      </div>
-    </>
+      {planets.map((planetItem) => {
+        return (
+          <div className={`img-container background-${planetItem.name}`}>
+            <img
+              className="img-background-planet"
+              src={`src/public/images/planets/${planetItem.name}.png`}
+              onClick={() => handleClick(planetItem)}
+              alt={planetItem.name}
+              aria-hidden
+            />
+            {planet && planet.name === planetItem.name && (
+              <PlaneteCard planet={planet} />
+            )}
+          </div>
+        );
+      })}
+    </div>
   );
 }
 
+Background.propTypes = {
+  planets: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    map: PropTypes.string.isRequired,
+  }).isRequired,
+};
 export default Background;
