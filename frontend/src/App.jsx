@@ -2,8 +2,10 @@ import SearchBar from "./components/SearchBar";
 import Background from "./components/Background";
 import Logo from "./components/Logo";
 import Footer from "./components/Footer";
-import PlaneteCard from "./components/PlaneteCard";
 import "./App.css";
+
+/* import PlaneteCard from "./components/PlaneteCard"; */
+/* import Driver from "./components/Driver"; */
 
 function App() {
   return (
@@ -11,8 +13,9 @@ function App() {
       <Logo />
       <Background />
       <SearchBar />
+      {/* <Driver /> */}
       <Footer />
-      <PlaneteCard />
+      {/* <PlaneteCard /> */}
     </div>
   );
 }

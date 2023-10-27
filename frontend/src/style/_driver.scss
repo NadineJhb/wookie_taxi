@@ -1,0 +1,74 @@
+.card {
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: space-between;
+  width: 50vw;
+  border-radius: 10px;
+  color: var(--secondary-color);
+  padding: 25px;
+  gap: 15px;
+  font-family: var(--font);
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: calc(var(--font-size-standard) * 1.5);
+}
+
+p {
+  font-weight: 200;
+  padding: 4px 0;
+}
+
+.driverIdBlock {
+  display: flex;
+  gap: 15px;
+}
+
+.driverImgDiv {
+  width: 200px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 5px;
+  border: 1px solid var(--secondary-color);
+  display: flex;
+  justify-content: center;
+}
+
+.driverImg {
+  object-fit: cover;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: right;
+}
+
+button {
+  background-color: var(--primary-color);
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-family: var(--font);
+  font-weight: bold;
+  font-size: var(--font-size-standard);
+  border: none;
+}
+
+.isFavorite {
+  width: 40px;
+  height: 40px;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Emojione_1F49B.svg/640px-Emojione_1F49B.svg.png");
+  background-size: 100%;
+  align-self: flex-end;
+}
+
+.notFavorite {
+  width: 40px;
+  height: 40px;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4f/Ei-heart.svg");
+  background-size: 100%;
+  align-self: flex-end;
+}

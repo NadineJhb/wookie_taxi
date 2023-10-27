@@ -6,8 +6,7 @@
   --primary-color: #ffde06;
   --secondary-color: #ffffff;
   ---tertiary-color: #000000;
-
-  --background-color: #3f3e39;
+  --background-color: #3b3b38d7;
 
   /* font-family */
   --font: "Roboto", sans-serif;
@@ -34,4 +33,8 @@
 
 body {
   font-family: var(--font);
+}
+
+html {
+  overflow-y: scroll;
 }
