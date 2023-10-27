@@ -2,12 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Drivers from "./pages/Drivers";
 import App from "./App";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "/chauffeurs",
+    element: <Drivers />,
   },
 ]);
 
