@@ -1,2 +1,6 @@
 @import url("./styles/style.css");
+@import url("./style/_Background.scss");
 @import url("./style/_PlaneteCard.scss");
+@import url("./style/logo.scss");
+
+/* @import url(".style/logo.scss"); */

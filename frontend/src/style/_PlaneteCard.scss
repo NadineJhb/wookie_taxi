@@ -1,65 +1,61 @@
-.card-Yavin,
-.card-Tatooine,
-.card-Mustafar,
-.card-Naboo,
-.card-Dagobah,
-.card-Alderaan {
-  display: flex;
-  width: 467px;
-  height: 270px;
-  margin: 10px;
-  color: var(--secondary-color);
-  background-color: var(--background-color);
-  padding: 15px;
-  border: 2px solid var(--primary-color);
-  border-radius: 5px 0 5px 0;
-}
+.planet-card {
+  position: relative;
 
-.planetImageDiv {
-  width: 100vw;
-  height: 190px;
-  display: flex;
-  overflow: hidden;
-  justify-content: center;
-  margin-top: 2%;
+  .card {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    left: 0;
+    // width: 25vw;
+    height: 30vh;
+    color: var(--secondary-color);
+    background-color: var(--background-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 5px 0 5px 0;
 
-  img {
-    width: 100%;
-  }
-}
+    .planetImageDiv {
+      margin-top: 8%;
+      margin-left: 5%;
+      width: 150px;
+      height: 150px;
+      overflow: hidden;
 
-.button-Yavin,
-.button-Tatooine,
-.button-Mustafar,
-.button-Naboo,
-.button-Dagobah,
-.button-Alderaan {
-  background-color: var(--primary-color);
-  box-shadow: rgba(0, 0, 0, 0.25);
-  border-inline: none;
-  font-size: calc(var(--font-size-standard) * 1);
-  margin-top: 10%;
-  width: 220px;
-  height: 48px;
-  border-radius: 15px;
-  visibility: hidden;
-}
+      .img-planet {
+        width: 100%;
+      }
+    }
 
-.Yavin-text,
-.Tatooine-text,
-.Mustafar-text,
-.Naboo-text,
-.Dagobah-text,
-.Alderaan-text {
-  h1 {
-    font-size: calc(var(--font-size-standard) * 1.1);
-    margin-top: 6%;
-    margin-left: 3%;
-  }
+    .Yavin-text,
+    .Tatooine-text,
+    .Mustafar-text,
+    .Naboo-text,
+    .Dagobah-text,
+    .Alderaan-text {
+      padding: 5px;
+      h1 {
+        font-size: calc(var(--font-size-standard) * 0.7);
+        margin-top: 3%;
+      }
 
-  p {
-    font-size: calc(var(--font-size-standard) * 0.8);
-    margin-top: 8%;
-    margin-left: 3%;
+      p {
+        font-weight: var(--font-weight-text);
+        font-size: calc(var(--font-size-standard) * 0.6);
+        margin-top: 10%;
+        margin-left: 10%;
+      }
+
+      .button-card {
+        background-color: var(--primary-color);
+        box-shadow: rgba(0, 0, 0, 0.25);
+        border-inline: none;
+        font-size: calc(var(--font-size-standard) * 0.8);
+        margin-top: 6%;
+        margin-left: 3%;
+        width: 150px;
+        height: 40px;
+        border-radius: 15px;
+        // visibility: hidden;
+      }
+    }
   }
 }

@@ -1,0 +1,93 @@
+// * {
+//   box-sizing: border-box;
+//   margin: 0;
+//   padding: 0;
+//   overflow-x: hidden;
+//   overflow-y: hidden;
+// }
+
+body {
+  background-image: url("src/public/images/planets/fond1.jpg");
+}
+
+.background {
+  h1 {
+    display: flex;
+    color: var(--secondary-color);
+    font-family: var(--font);
+    font-size: 2rem;
+    padding: 0.5rem;
+    margin-bottom: 1%;
+    margin-left: 5%;
+  }
+
+  .img-container {
+    position: absolute;
+
+    .img-background-planet {
+      width: 100%;
+
+      animation-name: slideIn;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      z-index: -1;
+    }
+  }
+
+  .background-Dagobah {
+    width: 800px;
+    left: 75%;
+    top: 2%;
+
+    .img-background-planet {
+      width: 100%;
+
+      animation-name: slideIn;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      z-index: -1;
+    }
+  }
+
+  .background-Tatooine {
+    width: 200px;
+    left: 60%;
+    bottom: 15%;
+  }
+
+  .background-Yavin {
+    left: 35%;
+    bottom: 20%;
+    width: 18%;
+  }
+
+  .background-Mustafar {
+    left: 23%;
+    bottom: 10%;
+    width: 10%;
+  }
+
+  .background-Alderaan {
+    left: 65%;
+    bottom: 10%;
+    width: 5%;
+  }
+
+  .background-Naboo {
+    bottom: 15%;
+    left: 5%;
+    width: 15%;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

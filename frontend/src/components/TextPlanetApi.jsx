@@ -6,10 +6,26 @@ function TextPlanetApi() {
   const [selectedPlanet, setSelectedPlanet] = useState(null);
 
   useEffect(() => {
-    axios
-      .get("https://swapi.dev/api/planets/?page=2")
-      .then((response) => setPlanets(response.data.results))
-      .catch((err) => console.warn(err));
+    const fetchData = async (page = 1) => {
+      try {
+        const response = await axios.get(
+          `https://swapi.dev/api/planets/?page=${page}`
+        );
+        const newPlanets = response.data.results;
+
+        setPlanets((prevPlanets) => [...prevPlanets, ...newPlanets]);
+
+        if (response.data.next) {
+          // If there is a "next" page, fetch the next page of data
+          const nextPage = page + 1;
+          fetchData(nextPage);
+        }
+      } catch (err) {
+        console.warn(err);
+      }
+    };
+
+    fetchData(); // Start fetching data from page 1
   }, []);
 
   const fetchPlanetDetails = (planetUrl) => {
@@ -43,13 +59,14 @@ function TextPlanetApi() {
       {selectedPlanet && (
         <div className="card-Yavin IV">
           <img
-            src={`/images/planets/${selectedPlanet.name}.png`}
+            src={`frontend/src/public/images/planets${selectedPlanet.name}.png`}
             alt={selectedPlanet.name}
           />
           {/* Affichez les détails de la planète ici, par exemple : */}
           <p>Nom : {selectedPlanet.name}</p>
           <p>Climat : {selectedPlanet.climate}</p>
-          {/* Ajoutez d'autres informations que vous souhaitez afficher */}
+          {/* Parametre pour les données API a afficher */}
+          <p>Terrain : {selectedPlanet.terrain} </p>
         </div>
       )}
     </div>
