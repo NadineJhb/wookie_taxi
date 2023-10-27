@@ -1,6 +1,12 @@
 @import url("./styles/style.css");
 @import url("./style/_Background.scss");
+<<<<<<< HEAD
 @import url("./style/_PlaneteCard.scss");
 @import url("./style/logo.scss");
 
 /* @import url(".style/logo.scss"); */
+=======
+@import url("./style/_Footer.scss");
+@import url("./style/_PlaneteCard.scss");
+@import url("./style/logo.scss");
+>>>>>>> 6225646ad0e32c9fd4f3d1803433f9c1c0541827

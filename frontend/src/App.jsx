@@ -1,6 +1,14 @@
 import Background from "./components/Background";
 import Logo from "./components/Logo";
+<<<<<<< HEAD
 import "./App.css";
+=======
+import Footer from "./components/Footer";
+import "./App.css";
+
+/* import PlaneteCard from "./components/PlaneteCard"; */
+/* import Driver from "./components/Driver"; */
+>>>>>>> 6225646ad0e32c9fd4f3d1803433f9c1c0541827
 
 function App() {
   const planets = [
@@ -125,10 +133,19 @@ function App() {
   ];
 
   return (
+<<<<<<< HEAD
     <div className="App">
       {/* <TextPlanetApi /> */}
       <Logo />
       <Background planets={planets} />
+=======
+    <div className="globale">
+      <Logo />
+      <Background />
+      {/* <Driver /> */}
+      <Footer />
+      {/* <PlaneteCard /> */}
+>>>>>>> 6225646ad0e32c9fd4f3d1803433f9c1c0541827
     </div>
   );
 }

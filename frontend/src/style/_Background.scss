@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // * {
 //   box-sizing: border-box;
 //   margin: 0;
@@ -5,11 +6,21 @@
 //   overflow-x: hidden;
 //   overflow-y: hidden;
 // }
+=======
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+>>>>>>> 6225646ad0e32c9fd4f3d1803433f9c1c0541827
 
 body {
   background-image: url("src/public/images/planets/fond1.jpg");
 }
 
+<<<<<<< HEAD
 .background {
   h1 {
     display: flex;
@@ -78,6 +89,82 @@ body {
     left: 5%;
     width: 15%;
   }
+=======
+h1 {
+  display: flex;
+  color: var(--secondary-color);
+  font-family: var(--font);
+  font-size: 2rem;
+  padding: 0.5rem;
+  margin-bottom: 1%;
+  margin-left: 5%;
+}
+
+.Dagobah img {
+  position: absolute;
+  width: 40%;
+  right: -10%;
+  top: 20px;
+  animation-name: slideIn;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  z-index: -1;
+}
+
+.Tatooine img {
+  position: absolute;
+  left: 55%;
+  bottom: 30%;
+  width: 8%;
+  animation-name: slideIn;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  z-index: -1;
+}
+
+.YavinIV img {
+  position: absolute;
+  left: 35%;
+  bottom: 15%;
+  width: 18%;
+  transform: rotate(150deg);
+  animation-name: slideIn;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  z-index: -1;
+}
+
+.Mustafar img {
+  position: absolute;
+  left: 20%;
+  bottom: 8%;
+  width: 10%;
+  animation-name: slideIn;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  z-index: -1;
+}
+
+.Alderaan img {
+  position: absolute;
+  left: 65%;
+  bottom: 10%;
+  width: 10%;
+  animation-name: slideIn;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  z-index: -1;
+}
+
+.Naboo img {
+  position: absolute;
+  top: 50%;
+  width: 20%;
+  animation-name: slideIn;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  z-index: -1;
+>>>>>>> 6225646ad0e32c9fd4f3d1803433f9c1c0541827
 }
 
 @keyframes slideIn {
