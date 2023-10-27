@@ -1,6 +1,7 @@
 import Background from "./components/Background";
 import Logo from "./components/Logo";
 import Footer from "./components/Footer";
+import Filters from "./components/Filters";
 import "./App.css";
 
 /* import PlaneteCard from "./components/PlaneteCard"; */
@@ -12,6 +13,7 @@ function App() {
       <Logo />
       <Background />
       {/* <Driver /> */}
+      <Filters />
       <Footer />
       {/* <PlaneteCard /> */}
     </div>

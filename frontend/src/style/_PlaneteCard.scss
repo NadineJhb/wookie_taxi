@@ -28,6 +28,7 @@
 
 .container-cardNaboo {
   display: flex;
+
   margin-top: 12%;
   position: fixed;
 }
@@ -46,7 +47,6 @@
 .card-Dagobah,
 .card-Alderaan {
   display: flex;
-
   width: 25vw;
   height: 30vh;
   color: var(--secondary-color);
