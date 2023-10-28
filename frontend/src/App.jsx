@@ -1,3 +1,4 @@
+import SearchBar from "./components/SearchBar";
 import Background from "./components/Background";
 import Logo from "./components/Logo";
 import Footer from "./components/Footer";
@@ -11,6 +12,7 @@ function App() {
     <div className="globale">
       <Logo />
       <Background />
+      <SearchBar />
       {/* <Driver /> */}
       <Footer />
       {/* <PlaneteCard /> */}

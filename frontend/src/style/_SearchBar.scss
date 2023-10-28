@@ -1,0 +1,74 @@
+.container {
+  background-color: #ffde06;
+  padding: calc(var(--spacing) * 1.4);
+  display: flex;
+  border-radius: 20px;
+  width: 700px;
+  position: relative;
+  position: flex;
+}
+
+.map-icon {
+  margin-right: calc(var(--spacing) * 0.4);
+}
+
+.search-to,
+.search-from {
+  padding: calc(var(--spacing) * 1) calc(var(--font-size-standard) * 2.4)
+    calc(var(--spacing) * 1.2) calc(var(--spacing) * 1.4);
+  font-size: calc(var(--font-size-standard) * 0.9);
+  background-color: #ffde06;
+  border: none;
+}
+
+.search-from {
+  border-right: 1px solid grey;
+  color: #000000;
+  display: flex;
+}
+
+.search-to {
+  width: 250px;
+  border-right: 1px solid grey;
+  font-family: var(--font);
+  outline: none;
+}
+
+.test {
+  background-color: #ffde06;
+}
+
+.search-number {
+  width: 100px;
+  font-family: var(--font);
+  outline: none;
+  background-image: url(./src/public/images/search-number.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: calc(var(--font-size-standard) * 1.5);
+  font-size: calc(var(--font-size-standard) * 0.9);
+  background-color: #ffde06;
+  border: none;
+  line-height: calc(var(--spacing) * 5);
+  padding-left: calc(var(--spacing) * 6);
+}
+
+.search-icon {
+  font-size: calc(var(--font-size-standard) * 1.8);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.search-btn {
+  position: relative;
+  position: absolute;
+  height: 100%;
+  width: 14%;
+  top: 0;
+  right: 0;
+  background-color: #ffde06;
+  border: none;
+  border-radius: 0px 10px 10px 0px;
+}
