@@ -1,3 +1,4 @@
+import SearchBar from "./components/SearchBar";
 import Background from "./components/Background";
 import Logo from "./components/Logo";
 import "./App.css";
@@ -154,6 +155,7 @@ function App() {
       {/* <TextPlanetApi /> */}
       <Logo />
       <Background planets={planets} />
+      <SearchBar />
       <Footer />
       {/*  <Driver /> */}
     </div>
