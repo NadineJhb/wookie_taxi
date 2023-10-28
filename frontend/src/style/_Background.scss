@@ -11,54 +11,51 @@ body {
     margin-bottom: 1%;
     margin-left: 5%;
   }
+
   .img-container {
     position: absolute;
+
     .img-background-planet {
       width: 100%;
-
       animation-name: slideIn;
       animation-duration: 3s;
       animation-iteration-count: infinite;
       z-index: -1;
+    }
+
+    .img-background-planet:hover {
+      cursor: pointer;
     }
   }
   .background-Dagobah {
-    width: 100px;
-    left: 59%;
-    .img-background-planet {
-      border: 1px solid red;
-      width: 100%;
-
-      animation-name: slideIn;
-      animation-duration: 3s;
-      animation-iteration-count: infinite;
-      z-index: -1;
-    }
+    width: 800px;
+    left: 75%;
+    top: 0%;
   }
   .background-Tatooine {
-    width: 50px;
-    left: 55%;
-    bottom: 25%;
+    width: 150px;
+    left: 60%;
+    bottom: 30%;
   }
   .background-Yavin {
-    left: 35%;
-    bottom: 15%;
+    left: 40%;
+    bottom: 20%;
     width: 18%;
   }
   .background-Mustafar {
-    left: 20%;
-    bottom: 8%;
-    width: 20%;
+    left: 28%;
+    bottom: 10%;
+    width: 10%;
   }
   .background-Alderaan {
-    left: 65%;
-    bottom: 10%;
-    width: 5%;
+    left: 68%;
+    bottom: 12%;
+    width: 150px;
   }
   .background-Naboo {
-    top: 50%;
-    left: 10%;
-    width: 10%;
+    bottom: 15%;
+    left: 5%;
+    width: 15%;
   }
 }
 @keyframes slideIn {

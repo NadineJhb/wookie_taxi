@@ -1,8 +1,7 @@
 import Background from "./components/Background";
 import Logo from "./components/Logo";
 import "./App.css";
-import PlaneteCard from "./components/PlaneteCard";
-import Driver from "./components/Driver";
+// import Driver from "./components/Driver"; //
 import Footer from "./components/Footer";
 
 function App() {
@@ -125,6 +124,29 @@ function App() {
       edited: "2014-12-20T20:58:18.440000Z",
       url: "https://swapi.dev/api/planets/13/",
     },
+    {
+      name: "Alderaan",
+      rotation_period: "24",
+      orbital_period: "364",
+      diameter: "12500",
+      climate: "temperate",
+      gravity: "1 standard",
+      terrain: "grasslands, mountains",
+      surface_water: "40",
+      population: "2000000000",
+      residents: [
+        "https://swapi.dev/api/people/5/",
+        "https://swapi.dev/api/people/68/",
+        "https://swapi.dev/api/people/81/",
+      ],
+      films: [
+        "https://swapi.dev/api/films/1/",
+        "https://swapi.dev/api/films/6/",
+      ],
+      created: "2014-12-10T11:35:48.479000Z",
+      edited: "2014-12-20T20:58:18.420000Z",
+      url: "https://swapi.dev/api/planets/2/",
+    },
   ];
 
   return (
@@ -133,8 +155,7 @@ function App() {
       <Logo />
       <Background planets={planets} />
       <Footer />
-      <Driver />
-      <PlaneteCard />
+      {/*  <Driver /> */}
     </div>
   );
 }

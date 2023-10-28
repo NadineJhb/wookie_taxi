@@ -5,7 +5,11 @@ import PlaneteCard from "./PlaneteCard";
 function Background({ planets }) {
   const [planet, setPlanet] = useState(null);
   const handleClick = (planetInfo) => {
-    setPlanet(planetInfo);
+    if (planet && planet.name === planetInfo.name) {
+      setPlanet(null);
+    } else {
+      setPlanet(planetInfo);
+    }
   };
 
   return (
