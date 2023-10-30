@@ -2,9 +2,9 @@ import SearchBar from "./components/SearchBar";
 import Background from "./components/Background";
 import Logo from "./components/Logo";
 import "./App.css";
-import Filters from "./components/Filters";
 // import Driver from "./components/Driver"; //
 import Footer from "./components/Footer";
+import Filters from "./components/Filters";
 
 function App() {
   const planets = [
@@ -154,11 +154,11 @@ function App() {
   return (
     <div className="App">
       {/* <TextPlanetApi /> */}
-      <Filters />
       <Logo />
       <Background planets={planets} />
       <SearchBar />
       <Footer />
+      <Filters />
       {/*  <Driver /> */}
     </div>
   );
