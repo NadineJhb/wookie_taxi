@@ -19,7 +19,10 @@ function Background({ planets }) {
 
       {planets.map((planetItem) => {
         return (
-          <div className={`img-container background-${planetItem.name}`}>
+          <div
+            key={planetItem.name}
+            className={`img-container background-${planetItem.name}`}
+          >
             <img
               className="img-background-planet"
               src={`src/public/images/planets/${planetItem.name}.png`}

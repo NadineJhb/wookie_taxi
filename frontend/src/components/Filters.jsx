@@ -10,16 +10,21 @@ function Filters() {
           <p>Wookie</p>
           <p>Sith</p>
           <p>Unknowed</p>
-          <div className="container-starship">
-            <h2>Starship</h2>
-            <p>SnowSpeeder</p>
-            <p>Light Freighter</p>
-            <p>Assault Starfighter</p>
-            <p>Medium transport</p>
-            <div className="favorite">
-              <h2>Favorite</h2>
-            </div>
-          </div>
+        </div>
+        <div className="container-starship">
+          <h2>Starship</h2>
+          <p>SnowSpeeder</p>
+          <p>Light Freighter</p>
+          <p>Assault Starfighter</p>
+          <p>Medium transport</p>
+        </div>
+        <div className="favorite">
+          <img
+            src="src/public/images/filter/favorite.png"
+            alt=""
+            className="heart"
+          />
+          <h2>Favorite</h2>
         </div>
       </div>
     </div>
