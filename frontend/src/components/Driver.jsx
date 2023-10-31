@@ -11,7 +11,7 @@ export default function Driver() {
 
   return people.map((person) => {
     return (
-      <div className="card">
+      <div className="driver-card">
         <div className="driverIdBlock">
           <div className="driverImgDiv">
             <img
