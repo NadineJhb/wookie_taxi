@@ -1,11 +1,21 @@
-import React from "react";
+import { React, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 import { BiSolidMap } from "react-icons/bi";
 
 /* recuperer depart, destination passangers + search bar */
 function SearchBar() {
+  const [inputDestination, setInputDestination] = useState("");
+  const [inputPassenger, setInputPassenger] = useState("");
   const navigate = useNavigate();
+
+  const handleClickSearch = () => {
+    // console.log(`First page ------ passenger: ${inputPassenger} destination: ${inputDestination}`)
+    navigate("/driver", {
+      state: { destination: inputDestination, passenger: inputPassenger },
+    });
+  };
+
   return (
     <div className="title-searchbar-container">
       <h1>LE COVOIT' DE LA GALAXIE !</h1>
@@ -15,15 +25,29 @@ function SearchBar() {
         </div>
 
         <form action="">
-          <input type="text" placeholder="Destination" className="search-to" />
-          <input type="text" placeholder="1" className="search-number" />
-          <button
-            onClick={() => navigate("/driver")}
-            type="submit"
-            className="search-btn"
-          >
-            <FiSearch className="search-icon" />
-          </button>
+          <input
+            type="text"
+            placeholder="Destination"
+            className="search-to"
+            value={inputDestination}
+            onChange={(e) => setInputDestination(e.target.value)}
+          />
+          <input
+            type="number"
+            placeholder="1"
+            className="search-passenger"
+            value={inputPassenger}
+            onChange={(e) => setInputPassenger(e.target.value)}
+          />
+          <div>
+            <button
+              onClick={handleClickSearch}
+              type="submit"
+              className="search-btn"
+            >
+              <FiSearch className="search-icon" />
+            </button>
+          </div>
         </form>
       </div>
     </div>

@@ -1,8 +1,20 @@
 import "../style/_driver.scss";
-import axios from "axios";
-import { useState } from "react";
+// import axios from "axios";
+// import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function Driver() {
+  const location = useLocation();
+
+  return (
+    <div>
+      {/* console.log(`DriverPage🚗destination: ${location.state.destination} passenger: ${location.state.passenger}`) */}
+      <h1>{location.destination}</h1>
+    </div>
+  );
+}
+
+/* export default function Driver() {
   const [people, setPeople] = useState([]);
 
   axios.get("https://swapi.dev/api/people").then((res) => {
@@ -52,3 +64,4 @@ export default function Driver() {
     );
   });
 }
+*/
