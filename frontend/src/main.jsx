@@ -5,7 +5,7 @@ import "./style/index.scss";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
-import Driver from "./components/Driver";
+import Booking from "./components/Booking";
 
 const router = createBrowserRouter([
   {
@@ -13,8 +13,8 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/driver",
-    element: <Driver />,
+    path: "/booking",
+    element: <Booking />,
   },
 ]);
 
