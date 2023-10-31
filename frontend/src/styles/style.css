@@ -23,6 +23,9 @@
   /* spacing */
   --spacing: 0.5rem; /* 8px */
   --spacing-x2: calc(var(--spacing) * 2);
+
+  /* border-radius */
+  --search-border-radius: 1.25rem; /* 20px */
 }
 
 * {
