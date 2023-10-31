@@ -3,7 +3,7 @@ import "../style/_booking.scss";
 function Booking() {
   return (
     <>
-      <div className="background_booking">
+      <div className="booking-container">
         <h1>hello</h1>
       </div>
       <div>
