@@ -1,3 +1,13 @@
 .booking-container {
   background-color: aliceblue;
+
+  button {
+    background-color: var(--primary-color);
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-family: var(--font);
+    font-weight: bold;
+    font-size: var(--font-size-standard);
+    border: none;
+  }
 }

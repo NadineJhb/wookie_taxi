@@ -4,10 +4,24 @@ function Booking() {
   return (
     <>
       <div className="booking-container">
-        <h1>hello</h1>
+        <h2>Merci pour votre réservation !</h2>
+        <h3>Votre Wookie Taxi avec Dark Vador est confirmé.</h3>
       </div>
       <div>
-        <h2>coucou</h2>
+        <p>Planète : Endor</p>
+        <p>Planète : Tatooïne</p>
+        <img
+          src="./src/public/images/icons/stormtrooper_white.png"
+          alt="icon"
+        />
+        <p>2 passagers</p>
+        <img src="./src/public/images/icons/vehicle.png" alt="icon" />
+        <p>Véhicule : Snowspeeder</p>
+      </div>
+      <div>
+        <button type="button" className="return-home">
+          Réserver
+        </button>
       </div>
     </>
   );
