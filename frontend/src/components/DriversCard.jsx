@@ -7,13 +7,13 @@ function DriversCard() {
   const array = [
     "https://swapi.dev/api/people",
     "https://swapi.dev/api/people/?page=2",
-    //  "https://swapi.dev/api/people/?page=3",
-    //  "https://swapi.dev/api/people/?page=4",
-    //  "https://swapi.dev/api/people/?page=5",
-    //  "https://swapi.dev/api/people/?page=6",
-    //  "https://swapi.dev/api/people/?page=7",
-    //  "https://swapi.dev/api/people/?page=8",
-    //  "https://swapi.dev/api/people/?page=9",
+    // "https://swapi.dev/api/people/?page=3",
+    // "https://swapi.dev/api/people/?page=4",
+    // "https://swapi.dev/api/people/?page=5",
+    // "https://swapi.dev/api/people/?page=6",
+    // "https://swapi.dev/api/people/?page=7",
+    // "https://swapi.dev/api/people/?page=8",
+    // "https://swapi.dev/api/people/?page=9",
   ];
 
   useEffect(() => {
@@ -69,7 +69,7 @@ function DriversCard() {
       ) : (
         peoples.map((person) => {
           return (
-            <div className="card">
+            <div className="driver-card">
               <div className="driverIdBlock">
                 <div className="driverImgDiv">
                   <img
