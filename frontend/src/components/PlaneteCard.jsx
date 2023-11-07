@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 
-// eslint-disable-next-line react/prop-types
 function PlaneteCard({ planet, setInputDestination }) {
   const handleClick = (event) => {
     setInputDestination(event.target.value);
@@ -36,6 +35,7 @@ function PlaneteCard({ planet, setInputDestination }) {
 }
 
 PlaneteCard.propTypes = {
+  setInputDestination: PropTypes.func.isRequired,
   planet: PropTypes.shape({
     name: PropTypes.string.isRequired,
     climate: PropTypes.string.isRequired,

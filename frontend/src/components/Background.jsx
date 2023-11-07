@@ -2,7 +2,6 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import PlaneteCard from "./PlaneteCard";
 
-// eslint-disable-next-line react/prop-types
 function Background({ planets, setInputDestination }) {
   const [planet, setPlanet] = useState(null);
   const handleClick = (planetInfo) => {
@@ -42,6 +41,7 @@ function Background({ planets, setInputDestination }) {
 }
 
 Background.propTypes = {
+  setInputDestination: PropTypes.func.isRequired,
   planets: PropTypes.shape({
     name: PropTypes.string.isRequired,
     map: PropTypes.string.isRequired,
