@@ -2,6 +2,19 @@ import "../style/_driver.scss";
 import axios from "axios";
 import { useState } from "react";
 
+/* Code suivant pour faire un fltrage 
+import { useLocation } from "react-router-dom";
+
+ export default function Driver() {
+  const { state } = useLocation();
+ return (
+    <div>
+      {console.log(`DriverPage🚗destination: ${state.destination} passenger: ${state.passenger}`) }
+      <h1>{location.destination}</h1>
+    </div>
+  );
+} 
+*/
 export default function Driver() {
   const [people, setPeople] = useState([]);
 
@@ -11,7 +24,7 @@ export default function Driver() {
 
   return people.map((person) => {
     return (
-      <div className="card">
+      <div className="driver-card">
         <div className="driverIdBlock">
           <div className="driverImgDiv">
             <img

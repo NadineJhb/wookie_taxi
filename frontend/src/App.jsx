@@ -4,7 +4,7 @@ import Logo from "./components/Logo";
 import "./App.css";
 // import Driver from "./components/Driver"; //
 import Footer from "./components/Footer";
-import Filters from "./components/Filters";
+// import Filters from "./components/Filters";
 
 function App() {
   const planets = [
@@ -158,7 +158,7 @@ function App() {
       <Background planets={planets} />
       <SearchBar />
       <Footer />
-      <Filters />
+      {/* <Filters /> */}
       {/*  <Driver /> */}
     </div>
   );
