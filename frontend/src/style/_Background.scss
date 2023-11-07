@@ -2,16 +2,6 @@ body {
   background-image: url("src/public/images/planets/fond1.jpg");
 }
 .background {
-  h1 {
-    display: flex;
-    color: var(--secondary-color);
-    font-family: var(--font);
-    font-size: 2rem;
-    padding: 0.5rem;
-    margin-bottom: 1%;
-    margin-left: 5%;
-  }
-
   .img-container {
     position: absolute;
 

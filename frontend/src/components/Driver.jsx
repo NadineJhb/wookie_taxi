@@ -3,6 +3,19 @@ import axios from "axios";
 import { useState } from "react";
 import DriverCard from "./DriverCard";
 
+/* Code suivant pour faire un fltrage 
+import { useLocation } from "react-router-dom";
+
+ export default function Driver() {
+  const { state } = useLocation();
+ return (
+    <div>
+      {console.log(`DriverPage🚗destination: ${state.destination} passenger: ${state.passenger}`) }
+      <h1>{location.destination}</h1>
+    </div>
+  );
+} 
+*/
 export default function Driver() {
   const [people, setPeople] = useState([]);
 
