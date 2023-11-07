@@ -3,8 +3,9 @@ import SearchBar from "./components/SearchBar";
 import Background from "./components/Background";
 import Logo from "./components/Logo";
 import "./App.css";
-// import Driver from "./components/Driver"; //
+
 import Footer from "./components/Footer";
+
 // import Filters from "./components/Filters";
 
 function App() {
@@ -167,8 +168,8 @@ function App() {
         setInputDestination={setInputDestination}
       />
       <Footer />
+
       {/* <Filters /> */}
-      {/*  <Driver /> */}
     </div>
   );
 }

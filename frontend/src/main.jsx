@@ -6,6 +6,7 @@ import "./style/index.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Driver from "./components/Driver";
+import Captcha from "./components/Captcha";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,11 @@ const router = createBrowserRouter([
   {
     path: "/driver",
     element: <Driver />,
+  },
+
+  {
+    path: "/captcha",
+    element: <Captcha />,
   },
 ]);
 
