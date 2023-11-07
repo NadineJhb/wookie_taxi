@@ -1,65 +1,59 @@
-.card-Yavin,
-.card-Tatooine,
-.card-Mustafar,
-.card-Naboo,
-.card-Dagobah,
-.card-Alderaan {
-  display: flex;
-  width: 467px;
-  height: 270px;
-  margin: 10px;
-  color: var(--secondary-color);
-  background-color: var(--background-color);
-  padding: 15px;
-  border: 2px solid var(--primary-color);
-  border-radius: 5px 0 5px 0;
-}
+.planet-card {
+  position: relative;
 
-.planetImageDiv {
-  width: 100vw;
-  height: 190px;
-  display: flex;
-  overflow: hidden;
-  justify-content: center;
-  margin-top: 2%;
-
-  img {
+  .card {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    left: 0;
+    width: 350px;
+    height: 210px;
+    color: var(--secondary-color);
+    background-color: var(--background-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 10px 0 10px 0;
+    z-index: 1;
+  }
+  .planetImageDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+  }
+  .img-planet {
     width: 100%;
   }
 }
 
-.button-Yavin,
-.button-Tatooine,
-.button-Mustafar,
-.button-Naboo,
-.button-Dagobah,
-.button-Alderaan {
-  background-color: var(--primary-color);
-  box-shadow: rgba(0, 0, 0, 0.25);
-  border-inline: none;
-  font-size: calc(var(--font-size-standard) * 1);
-  margin-top: 10%;
-  width: 220px;
-  height: 48px;
-  border-radius: 15px;
-  visibility: hidden;
-}
-
-.Yavin-text,
+.Yavin,
 .Tatooine-text,
 .Mustafar-text,
 .Naboo-text,
 .Dagobah-text,
 .Alderaan-text {
-  h1 {
-    font-size: calc(var(--font-size-standard) * 1.1);
-    margin-top: 6%;
-    margin-left: 3%;
-  }
+  padding: 10px;
 
+  h1 {
+    font-size: calc(var(--font-size-standard) * 1);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
   p {
+    font-weight: var(--font-weight-text);
+    font-size: calc(var(--font-size-standard) * 0.6);
+    margin-bottom: 10px;
+  }
+  .button-card {
+    background-color: var(--primary-color);
+    box-shadow: rgba(0, 0, 0, 0.25);
+    border-inline: none;
     font-size: calc(var(--font-size-standard) * 0.8);
-    margin-top: 8%;
-    margin-left: 3%;
+    width: 140px;
+    height: 40px;
+    border-radius: 15px;
+    margin-top: 3px;
+    margin-left: auto;
   }
 }

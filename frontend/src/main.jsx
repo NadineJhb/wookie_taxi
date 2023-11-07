@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
+import "./style/index.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Drivers from "./pages/Drivers";
+import DriversPage from "./pages/DriversPage";
 import App from "./App";
 
 const router = createBrowserRouter([
@@ -11,8 +11,8 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/chauffeurs",
-    element: <Drivers />,
+    path: "/drivers",
+    element: <DriversPage />,
   },
 ]);
 

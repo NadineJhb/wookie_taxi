@@ -1,0 +1,13 @@
+.all {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding: 35px;
+}
+
+.search {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: auto;
+}
