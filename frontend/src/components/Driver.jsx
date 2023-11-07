@@ -6,7 +6,7 @@ import DriverCard from "./DriverCard";
 export default function Driver() {
   const [people, setPeople] = useState([]);
 
-  axios.get("https://swapi.dev/api/people").then((res) => {
+  axios.get("https://swapi.dev/api/people/?page=3").then((res) => {
     setPeople(res.data.results);
   });
 
@@ -19,7 +19,7 @@ export default function Driver() {
         gender={driver.gender}
         skinColor={driver.skin_color}
         eyeColor={driver.eye_color}
-        driverVehiculeUrl={driver.vehicles[0]}
+        driverVehicleUrl={driver.vehicles[0]}
       />
     );
   });
