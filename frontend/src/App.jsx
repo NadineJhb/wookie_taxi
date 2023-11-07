@@ -1,3 +1,4 @@
+import { React, useState } from "react";
 import SearchBar from "./components/SearchBar";
 import Background from "./components/Background";
 import Logo from "./components/Logo";
@@ -7,6 +8,7 @@ import Footer from "./components/Footer";
 // import Filters from "./components/Filters";
 
 function App() {
+  const [inputDestination, setInputDestination] = useState("");
   const planets = [
     {
       name: "Yavin IV",
@@ -155,8 +157,15 @@ function App() {
     <div className="App">
       {/* <TextPlanetApi /> */}
       <Logo />
-      <Background planets={planets} />
-      <SearchBar />
+      <Background
+        planets={planets}
+        inputDestination={inputDestination}
+        setInputDestination={setInputDestination}
+      />
+      <SearchBar
+        inputDestination={inputDestination}
+        setInputDestination={setInputDestination}
+      />
       <Footer />
       {/* <Filters /> */}
       {/*  <Driver /> */}
