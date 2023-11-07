@@ -37,11 +37,7 @@ export default function Driver() {
       .then((data) => {
         const characters = [];
         for (let i = 0; i < data.length; i += 1) {
-          // console.log(data[i].data.results[0].name);
           for (let k = 0; k < 10; k += 1) {
-            // console.log(data[i].data.results[k]);
-
-            // console.log(randomDrivers);
             if (data[i].data.results[k].vehicles.length > 0) {
               characters.push(data[i].data.results[k]);
             }
