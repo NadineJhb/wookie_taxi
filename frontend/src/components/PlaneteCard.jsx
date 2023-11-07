@@ -1,9 +1,12 @@
 import PropTypes from "prop-types";
 
-function PlaneteCard({ planet }) {
+function PlaneteCard({ planet, setInputDestination }) {
+  const handleClick = (event) => {
+    setInputDestination(event.target.value);
+  };
+
   return (
     <div className="planet-card">
-      {/* YAVIN CARD */}
       <div className="card">
         <div className="planetImageDiv">
           <img
@@ -17,7 +20,12 @@ function PlaneteCard({ planet }) {
           <p>Population : {planet.population} </p>
           <p>Terrain : {planet.terrain}</p>
           <p>Climate : {planet.climate} </p>
-          <button type="submit" className="button-card">
+          <button
+            onClick={handleClick}
+            type="submit"
+            className="button-card"
+            value={planet.name}
+          >
             Y aller
           </button>
         </div>
@@ -27,6 +35,7 @@ function PlaneteCard({ planet }) {
 }
 
 PlaneteCard.propTypes = {
+  setInputDestination: PropTypes.func.isRequired,
   planet: PropTypes.shape({
     name: PropTypes.string.isRequired,
     climate: PropTypes.string.isRequired,

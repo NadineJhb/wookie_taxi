@@ -2,7 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import PlaneteCard from "./PlaneteCard";
 
-function Background({ planets }) {
+function Background({ planets, setInputDestination }) {
   const [planet, setPlanet] = useState(null);
   const handleClick = (planetInfo) => {
     if (planet && planet.name === planetInfo.name) {
@@ -28,7 +28,10 @@ function Background({ planets }) {
               aria-hidden
             />
             {planet && planet.name === planetItem.name && (
-              <PlaneteCard planet={planet} />
+              <PlaneteCard
+                planet={planet}
+                setInputDestination={setInputDestination}
+              />
             )}
           </div>
         );
@@ -38,6 +41,7 @@ function Background({ planets }) {
 }
 
 Background.propTypes = {
+  setInputDestination: PropTypes.func.isRequired,
   planets: PropTypes.shape({
     name: PropTypes.string.isRequired,
     map: PropTypes.string.isRequired,

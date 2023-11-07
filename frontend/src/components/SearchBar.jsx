@@ -1,11 +1,12 @@
 import { React, useState } from "react";
+import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 import { BiSolidMap } from "react-icons/bi";
 
 /* recuperer depart, destination passangers + search bar */
-function SearchBar() {
-  const [inputDestination, setInputDestination] = useState("");
+
+function SearchBar({ inputDestination, setInputDestination }) {
   const [inputPassenger, setInputPassenger] = useState("");
   const navigate = useNavigate();
 
@@ -53,4 +54,10 @@ function SearchBar() {
     </div>
   );
 }
+
+SearchBar.propTypes = {
+  setInputDestination: PropTypes.func.isRequired,
+  inputDestination: PropTypes.string.isRequired,
+};
+
 export default SearchBar;
