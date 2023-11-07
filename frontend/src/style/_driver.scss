@@ -72,21 +72,3 @@
     align-self: flex-end;
   }
 }
-
-.loaderText {
-  color: var(--secondary-color);
-  font-family: var(--font);
-  font-size: 50px;
-  text-align: center;
-  padding: 80px;
-}
-
-.loaderImg {
-  width: 400px;
-}
-
-.sabreLoader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}

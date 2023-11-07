@@ -1,3 +1,4 @@
+import { React, useState } from "react";
 import SearchBar from "./components/SearchBar";
 import Background from "./components/Background";
 import Logo from "./components/Logo";
@@ -5,6 +6,7 @@ import "./App.css";
 import Footer from "./components/Footer";
 
 function App() {
+  const [inputDestination, setInputDestination] = useState("");
   const planets = [
     {
       name: "Yavin IV",
@@ -152,8 +154,15 @@ function App() {
   return (
     <div className="App">
       <Logo />
-      <Background planets={planets} />
-      <SearchBar />
+      <Background
+        planets={planets}
+        inputDestination={inputDestination}
+        setInputDestination={setInputDestination}
+      />
+      <SearchBar
+        inputDestination={inputDestination}
+        setInputDestination={setInputDestination}
+      />
       <Footer />
     </div>
   );

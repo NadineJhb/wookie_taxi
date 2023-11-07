@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./style/index.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
-import DriversPage from "./pages/DriversPage";
+import Driver from "./components/Driver";
 
 const router = createBrowserRouter([
   {
@@ -12,7 +12,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/driver",
-    element: <DriversPage />,
+    element: <Driver />,
   },
 ]);
 
