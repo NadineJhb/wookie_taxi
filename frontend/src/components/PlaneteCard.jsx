@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 function PlaneteCard({ planet }) {
   return (
     <div className="planet-card">
-      {/* YAVIN CARD */}
       <div className="card">
         <div className="planetImageDiv">
           <img
