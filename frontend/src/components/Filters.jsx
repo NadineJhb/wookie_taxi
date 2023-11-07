@@ -24,7 +24,6 @@ function Filters() {
         </div>
         <div className="Favorite">
           <h3>Favorite</h3>
-          <img src="images/favorite.png" alt="" className="heartFav" />
         </div>
       </div>
     </div>
