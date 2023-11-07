@@ -15,7 +15,7 @@ function DriverCard({ driverName, driverVehicleUrl }) {
 
   return (
     vehicle && (
-      <div className="card">
+      <div className="driver-card">
         <div className="driverIdBlock">
           <div className="driverImgDiv">
             <img
