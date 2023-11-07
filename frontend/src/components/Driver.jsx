@@ -2,19 +2,21 @@ import "../style/_driver.scss";
 import axios from "axios";
 import { useState } from "react";
 
-/* Code suivant pour faire un fltrage 
+/* Code suivant pour faire un fltrage
 import { useLocation } from "react-router-dom";
 
- export default function Driver() {
+export default function Driver() {
   const { state } = useLocation();
- return (
+  return (
     <div>
-      {console.log(`DriverPage🚗destination: ${state.destination} passenger: ${state.passenger}`) }
+      {console.log(
+        `DriverPage🚗destination: ${state.destination} passenger: ${state.passenger}`
+      )}
       <h1>{location.destination}</h1>
     </div>
   );
-} 
-*/
+} */
+
 export default function Driver() {
   const [people, setPeople] = useState([]);
 

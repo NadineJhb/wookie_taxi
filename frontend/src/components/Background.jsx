@@ -2,7 +2,8 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import PlaneteCard from "./PlaneteCard";
 
-function Background({ planets }) {
+// eslint-disable-next-line react/prop-types
+function Background({ planets, setInputDestination }) {
   const [planet, setPlanet] = useState(null);
   const handleClick = (planetInfo) => {
     if (planet && planet.name === planetInfo.name) {
@@ -28,7 +29,10 @@ function Background({ planets }) {
               aria-hidden
             />
             {planet && planet.name === planetItem.name && (
-              <PlaneteCard planet={planet} />
+              <PlaneteCard
+                planet={planet}
+                setInputDestination={setInputDestination}
+              />
             )}
           </div>
         );

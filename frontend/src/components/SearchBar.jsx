@@ -4,8 +4,9 @@ import { FiSearch } from "react-icons/fi";
 import { BiSolidMap } from "react-icons/bi";
 
 /* recuperer depart, destination passangers + search bar */
-function SearchBar() {
-  const [inputDestination, setInputDestination] = useState("");
+
+// eslint-disable-next-line react/prop-types
+function SearchBar({ inputDestination, setInputDestination }) {
   const [inputPassenger, setInputPassenger] = useState("");
   const navigate = useNavigate();
 

@@ -1,6 +1,11 @@
 import PropTypes from "prop-types";
 
-function PlaneteCard({ planet }) {
+// eslint-disable-next-line react/prop-types
+function PlaneteCard({ planet, setInputDestination }) {
+  const handleClick = (event) => {
+    setInputDestination(event.target.value);
+  };
+
   return (
     <div className="planet-card">
       <div className="card">
@@ -16,7 +21,12 @@ function PlaneteCard({ planet }) {
           <p>Population : {planet.population} </p>
           <p>Terrain : {planet.terrain}</p>
           <p>Climate : {planet.climate} </p>
-          <button type="submit" className="button-card">
+          <button
+            onClick={handleClick}
+            type="submit"
+            className="button-card"
+            value={planet.name}
+          >
             Y aller
           </button>
         </div>
