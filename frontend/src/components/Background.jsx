@@ -14,9 +14,6 @@ function Background({ planets }) {
 
   return (
     <div className="background">
-      <h1>LE COVOIT' DE LA GALAXIE !</h1>
-      {/* <div className="Alderaan"> */}
-
       {planets.map((planetItem) => {
         return (
           <div

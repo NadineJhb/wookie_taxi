@@ -6,6 +6,7 @@ import "./style/index.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Booking from "./components/Booking";
+import Driver from "./components/Driver";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: "/booking",
     element: <Booking />,
+  },
+  {
+    path: "/driver",
+    element: <Driver />,
   },
 ]);
 
