@@ -28,12 +28,17 @@
   }
 }
 
-.favorite {
-  font-size: calc(var(--font-size-standard) * 0.8);
-  padding: 15px;
+.Favorite {
+  display: flex;
+  flex-direction: row-reverse;
 
-  .heart {
-    width: 80px;
-    height: 80px;
+  h3 {
+    border: 1px solid red;
+  }
+
+  .heartFav {
+    background-size: cover;
+    width: 30px;
+    height: 30px;
   }
 }
