@@ -10,7 +10,6 @@ function SearchBar() {
   const navigate = useNavigate();
 
   const handleClickSearch = () => {
-    // console.log(`First page ------ passenger: ${inputPassenger} destination: ${inputDestination}`)
     navigate("/driver", {
       state: { destination: inputDestination, passenger: inputPassenger },
     });
