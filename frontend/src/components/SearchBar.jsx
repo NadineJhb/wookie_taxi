@@ -7,7 +7,7 @@ import { BiSolidMap } from "react-icons/bi";
 /* recuperer depart, destination passangers + search bar */
 
 function SearchBar({ inputDestination, setInputDestination }) {
-  const [inputPassenger, setInputPassenger] = useState("");
+  const [inputPassenger, setInputPassenger] = useState(0);
   const navigate = useNavigate();
 
   const handleClickSearch = () => {
