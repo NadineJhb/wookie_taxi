@@ -1,23 +1,10 @@
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import DriverCard from "./DriverCard";
 
-/* Code suivant pour faire un fltrage
-import { useLocation } from "react-router-dom";
-
 export default function Driver() {
   const { state } = useLocation();
-  return (
-    <div>
-      {console.log(
-        `DriverPage🚗destination: ${state.destination} passenger: ${state.passenger}`
-      )}
-      <h1>{location.destination}</h1>
-    </div>
-  );
-} */
-
-export default function Driver() {
   const [peoples, setPeoples] = useState([]);
   const array = [
     "https://swapi.dev/api/people",
@@ -88,6 +75,7 @@ export default function Driver() {
               skinColor={driver.skin_color}
               eyeColor={driver.eye_color}
               driverVehicleUrl={driver.vehicles[0]}
+              stateSearchBar={state}
             />
           );
         })

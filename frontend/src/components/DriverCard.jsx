@@ -1,9 +1,19 @@
 import PropTypes from "prop-types";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-function DriverCard({ driverName, driverVehicleUrl }) {
+function DriverCard({ driverName, driverVehicleUrl, stateSearchBar }) {
   const [vehicle, setVehicle] = useState(undefined);
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/captcha", {
+      state: {
+        destination: stateSearchBar.destination,
+        passenger: stateSearchBar.passenger,
+      },
+    });
+  };
 
   useEffect(() => {
     if (driverVehicleUrl) {
@@ -44,7 +54,9 @@ function DriverCard({ driverName, driverVehicleUrl }) {
               alt="kana"
               className="starshipImg"
             />
-            <button type="button">Réserver</button>
+            <button type="button" onClick={handleClick}>
+              Réserver
+            </button>
           </div>
         </div>
       </div>
@@ -55,6 +67,7 @@ function DriverCard({ driverName, driverVehicleUrl }) {
 DriverCard.propTypes = {
   driverName: PropTypes.string.isRequired,
   driverVehicleUrl: PropTypes.shape.isRequired,
+  stateSearchBar: PropTypes.string.isRequired,
 };
 
 export default DriverCard;
