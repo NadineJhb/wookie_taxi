@@ -1,54 +1,99 @@
-import "../style/_driver.scss";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import DriverCard from "./DriverCard";
+import Filters from "./Filters";
+
+// Code suivant pour faire un fltrage //
 
 export default function Driver() {
+  const { state } = useLocation();
+  //*   return (
+  //     <div>
+  //       {console.log(
+  //         `DriverPage🚗destination: ${state.destination} passenger: ${state.passenger}`
+  //       )}
+  //       <h1>{location.destination}</h1>
+  //     </div>
+  //   );
+  // }*/
+
   const [people, setPeople] = useState([]);
+  const array = [
+    "https://swapi.dev/api/people",
+    "https://swapi.dev/api/people/?page=2",
+    "https://swapi.dev/api/people/?page=3",
+    "https://swapi.dev/api/people/?page=4",
+    //  "https://swapi.dev/api/people/?page=5",
+    //  "https://swapi.dev/api/people/?page=6",
+    //  "https://swapi.dev/api/people/?page=7",
+    //  "https://swapi.dev/api/people/?page=8",
+    //  "https://swapi.dev/api/people/?page=9",
+  ];
 
-  axios.get("https://swapi.dev/api/people").then((res) => {
-    setPeople(res.data.results);
-  });
+  useEffect(() => {
+    axios
+      .all(array.map((endpoint) => axios.get(endpoint)))
+      .then((data) => {
+        const characters = [];
+        for (let i = 0; i < data.length; i += 1) {
+          for (let k = 0; k < 10; k += 1) {
+            if (data[i].data.results[k].vehicles.length > 0) {
+              characters.push(data[i].data.results[k]);
+            }
+          }
+        }
+        console.warn("characters : ", characters);
 
-  return people.map((person) => {
-    return (
-      <div className="card">
-        <div className="driverIdBlock">
-          <div className="driverImgDiv">
+        const randomCharacters = [];
+        for (let j = 0; j < 5; j += 1) {
+          const randomDrivers =
+            characters[Math.floor(Math.random() * characters.length)];
+
+          const verifName = randomDrivers.name;
+          if (!randomCharacters.find(({ name }) => name === verifName)) {
+            randomCharacters.push(randomDrivers);
+          } else {
+            j -= 1;
+          }
+        }
+        setPeople(randomCharacters);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
+  return (
+    <div className="driver-page">
+      {" "}
+      <div className="filterBlock">
+        <Filters />
+      </div>
+      {people.length === 0 ? (
+        <div className="loader">
+          <p className="loaderText">
+            Un peu de patience, nous consultons les chauffeurs disponibles.
+          </p>
+          <div className="sabreLoader">
             <img
-              src="src/public/images/characters/yoda.jpg"
-              alt="Avatar"
-              className="driverImg"
+              src="src/public/images/wookie.gif"
+              alt="Loader"
+              className="loaderImg"
             />
           </div>
-          <div className="info-container">
-            <h2>{person.name}</h2>
-            <p>
-              <strong>Birth year :</strong> {person.birth_year}
-            </p>
-            <p>
-              <strong>Height :</strong> {person.height} cm
-            </p>
-            <p>
-              <strong>Gender :</strong> {person.gender}
-            </p>
-            <p>
-              <strong>Skin :</strong> {person.skin_color}
-            </p>
-            <p>
-              <strong>Eyes :</strong> {person.eye_color}
-            </p>
-          </div>
         </div>
-        <div className="right-side">
-          <div className="isFavorite" />
-          <img
-            src="src/public/images/starship/kana.png"
-            alt="kana"
-            className="starshipImg"
-          />
-          <button type="button">Réserver</button>
-        </div>
-      </div>
-    );
-  });
+      ) : (
+        people.map((driver) => {
+          return (
+            <div>
+              <DriverCard
+                driverName={driver.name}
+                driverVehicleUrl={driver.vehicles[0]}
+                state={state}
+              />
+            </div>
+          );
+        })
+      )}
+    </div>
+  );
 }
