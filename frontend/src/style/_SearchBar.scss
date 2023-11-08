@@ -6,7 +6,7 @@
     color: var(--secondary-color);
     font-family: var(--font);
     font-weight: var(--font-weight-text-title);
-    font-size: 2.7rem;
+    font-size: 2.4rem;
     padding: 2rem 1rem 1rem 1rem;
   }
 
@@ -20,14 +20,14 @@
     position: flex;
 
     .map-icon {
-      margin-right: calc(var(--spacing) * 0.4);
+      font-size: calc(var(--spacing) * 3);
     }
 
     .search-to,
     .search-from {
       padding: calc(var(--spacing) * 1) calc(var(--font-size-standard) * 2.4)
         calc(var(--spacing) * 1.2) calc(var(--spacing) * 1.4);
-      font-size: calc(var(--font-size-standard) * 0.9);
+      font-size: calc(var(--font-size-standard) * 0.85);
       background-color: #ffde06;
       border: none;
     }
@@ -38,6 +38,11 @@
       display: flex;
     }
 
+    .depart {
+      display: flex;
+      padding: calc(var(--spacing) * 0.4);
+    }
+
     .search-to {
       width: 250px;
       border-right: 1px solid grey;
@@ -46,10 +51,10 @@
     }
 
     .search-passenger {
-      width: 100px;
+      width: 200px;
       font-family: var(--font);
       outline: none;
-      background-image: url(./src/public/images/search-number.png);
+      background-image: url(./src/public/images/icons/stormtrooper_black.png);
       background-repeat: no-repeat;
       background-position: left;
       background-size: calc(var(--font-size-standard) * 1.5);

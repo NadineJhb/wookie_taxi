@@ -21,7 +21,8 @@ function SearchBar({ inputDestination, setInputDestination }) {
       <h1>LE COVOIT' DE LA GALAXIE !</h1>
       <div className="searchbar-container">
         <div className="search-from">
-          <BiSolidMap className="map-icon" /> Départ : ENDOR
+          <BiSolidMap className="map-icon" />
+          <p className="depart">Départ : ENDOR</p>
         </div>
 
         <form action="">
