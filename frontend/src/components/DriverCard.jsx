@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-function DriverCard({ driverName, driverVehicleUrl }) {
+function DriverCard({ driverName, driverVehicleUrl, state }) {
   const [vehicle, setVehicle] = useState(undefined);
 
   useEffect(() => {
@@ -13,8 +13,11 @@ function DriverCard({ driverName, driverVehicleUrl }) {
     }
   }, []);
 
+  console.warn(state.passenger);
+
   return (
-    vehicle && (
+    vehicle &&
+    vehicle.passengers === state.passenger && (
       <div className="driver-card">
         <div className="driverIdBlock">
           <div className="driverImgDiv">
@@ -40,7 +43,7 @@ function DriverCard({ driverName, driverVehicleUrl }) {
         <div className="right-side">
           <div className="isFavorite">
             <img
-              src="src/public/images/starship/kana.png"
+              src={`src/public/images/starship/${vehicle.name}.jpg`}
               alt="kana"
               className="starshipImg"
             />
@@ -55,6 +58,7 @@ function DriverCard({ driverName, driverVehicleUrl }) {
 DriverCard.propTypes = {
   driverName: PropTypes.string.isRequired,
   driverVehicleUrl: PropTypes.shape.isRequired,
+  state: PropTypes.shape({ passenger: PropTypes.string.isRequired }).isRequired,
 };
 
 export default DriverCard;

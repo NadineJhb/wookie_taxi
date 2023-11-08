@@ -1,29 +1,29 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import DriverCard from "./DriverCard";
-
-/* Code suivant pour faire un fltrage
 import { useLocation } from "react-router-dom";
+import DriverCard from "./DriverCard";
+import Filters from "./Filters";
+
+// Code suivant pour faire un fltrage //
 
 export default function Driver() {
   const { state } = useLocation();
-  return (
-    <div>
-      {console.log(
-        `DriverPage🚗destination: ${state.destination} passenger: ${state.passenger}`
-      )}
-      <h1>{location.destination}</h1>
-    </div>
-  );
-} */
+  //*   return (
+  //     <div>
+  //       {console.log(
+  //         `DriverPage🚗destination: ${state.destination} passenger: ${state.passenger}`
+  //       )}
+  //       <h1>{location.destination}</h1>
+  //     </div>
+  //   );
+  // }*/
 
-export default function Driver() {
-  const [peoples, setPeoples] = useState([]);
+  const [people, setPeople] = useState([]);
   const array = [
     "https://swapi.dev/api/people",
     "https://swapi.dev/api/people/?page=2",
-    //  "https://swapi.dev/api/people/?page=3",
-    //  "https://swapi.dev/api/people/?page=4",
+    "https://swapi.dev/api/people/?page=3",
+    "https://swapi.dev/api/people/?page=4",
     //  "https://swapi.dev/api/people/?page=5",
     //  "https://swapi.dev/api/people/?page=6",
     //  "https://swapi.dev/api/people/?page=7",
@@ -57,14 +57,18 @@ export default function Driver() {
             j -= 1;
           }
         }
-        setPeoples(randomCharacters);
+        setPeople(randomCharacters);
       })
       .catch((err) => console.error(err));
   }, []);
 
   return (
-    <div>
-      {peoples.length === 0 ? (
+    <div className="driver-page">
+      {" "}
+      <div className="filterBlock">
+        <Filters />
+      </div>
+      {people.length === 0 ? (
         <div className="loader">
           <p className="loaderText">
             Un peu de patience, nous consultons les chauffeurs disponibles.
@@ -78,17 +82,15 @@ export default function Driver() {
           </div>
         </div>
       ) : (
-        peoples.map((driver) => {
+        people.map((driver) => {
           return (
-            <DriverCard
-              driverName={driver.name}
-              birthYear={driver.birth_year}
-              height={driver.height}
-              gender={driver.gender}
-              skinColor={driver.skin_color}
-              eyeColor={driver.eye_color}
-              driverVehicleUrl={driver.vehicles[0]}
-            />
+            <div>
+              <DriverCard
+                driverName={driver.name}
+                driverVehicleUrl={driver.vehicles[0]}
+                state={state}
+              />
+            </div>
           );
         })
       )}
