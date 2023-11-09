@@ -58,6 +58,9 @@ function SearchBar({ inputDestination, setInputDestination }) {
 SearchBar.propTypes = {
   setInputDestination: PropTypes.func.isRequired,
   inputDestination: PropTypes.string.isRequired,
+  planet: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default SearchBar;
