@@ -41,11 +41,7 @@ function DriverCard({ driverName, driverVehicleUrl, stateSearchBar }) {
             <h2>{driverName}</h2>
             <div className="isFavorite"> &nbsp;</div>
           </div>
-          <img
-            src={`src/public/images/starship/${vehicle.name}.jpg`}
-            alt="kana"
-            className="starshipImg"
-          />
+
           <button type="button" onClick={handleClick}>
             Réserver
           </button>
@@ -63,8 +59,8 @@ function DriverCard({ driverName, driverVehicleUrl, stateSearchBar }) {
             </div>
             <div className="vehicleImage-button">
               <img
-                src="src/public/images/starship/Snowspeeder.webp"
-                alt="starship"
+                src={`src/public/images/starship/${vehicle.name}.png`}
+                alt="kana"
                 className="starshipImg"
               />
             </div>

@@ -39,7 +39,7 @@ function Booking() {
               <div className="booking-passenger">
                 <img
                   className="icon-passenger"
-                  src="./src/public/images/icons/stormtrooper_white.png"
+                  src="src/public/images/icons/stormtrooper_white.png"
                   alt="icon"
                 />
                 <p>{state.passenger}</p>
