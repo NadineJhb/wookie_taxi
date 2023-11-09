@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-function DriverCard({ driverName, driverVehicleUrl, state }) {
+function DriverCard({ driverName, driverEyeColor, driverVehicleUrl, state }) {
   const [vehicle, setVehicle] = useState(undefined);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ function DriverCard({ driverName, driverVehicleUrl, state }) {
 
   return (
     vehicle &&
-    vehicle.passengers === state.passenger && (
+    vehicle.passengers === state.passenger.toString() && (
       <div className="driver-card">
         <div className="driverIdBlock">
           <div className="driverImgDiv">
@@ -33,10 +33,17 @@ function DriverCard({ driverName, driverVehicleUrl, state }) {
               <strong>Vehicle name</strong> {vehicle.name}
             </p>
             <p>
-              <strong>Vehicle model :</strong> {vehicle.model}
+              <strong>Max atmosphering speed :</strong>{" "}
+              {vehicle.max_atmosphering_speed} mph
             </p>
             <p>
-              <strong>Passengers :</strong> {vehicle.passengers}
+              <strong>Passengers :</strong> {vehicle.passengers} seats left
+            </p>
+            <p>
+              <strong>Driver eye color:</strong> {driverEyeColor} eyes
+            </p>
+            <p>
+              <strong>Crew :</strong> {vehicle.crew} crew members on board
             </p>
           </div>
         </div>
@@ -58,6 +65,7 @@ function DriverCard({ driverName, driverVehicleUrl, state }) {
 DriverCard.propTypes = {
   driverName: PropTypes.string.isRequired,
   driverVehicleUrl: PropTypes.shape.isRequired,
+  driverEyeColor: PropTypes.string.isRequired,
   state: PropTypes.shape({ passenger: PropTypes.string.isRequired }).isRequired,
 };
 

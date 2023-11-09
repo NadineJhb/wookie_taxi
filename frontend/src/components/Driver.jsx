@@ -19,11 +19,12 @@ export default function Driver() {
   // }*/
 
   const [people, setPeople] = useState([]);
+  const [filteredPeople, setFilteredPeople] = useState(people);
   const array = [
     "https://swapi.dev/api/people",
     "https://swapi.dev/api/people/?page=2",
-    "https://swapi.dev/api/people/?page=3",
-    "https://swapi.dev/api/people/?page=4",
+    // "https://swapi.dev/api/people/?page=3",
+    // "https://swapi.dev/api/people/?page=4",
     //  "https://swapi.dev/api/people/?page=5",
     //  "https://swapi.dev/api/people/?page=6",
     //  "https://swapi.dev/api/people/?page=7",
@@ -66,7 +67,7 @@ export default function Driver() {
     <div className="driver-page">
       {" "}
       <div className="filterBlock">
-        <Filters />
+        <Filters setFilteredPeople={setFilteredPeople} people={people} />
       </div>
       {people.length === 0 ? (
         <div className="loader">
@@ -82,12 +83,13 @@ export default function Driver() {
           </div>
         </div>
       ) : (
-        people.map((driver) => {
+        filteredPeople.map((driver) => {
           return (
-            <div>
+            <div key={driver.name} className={driver.name}>
               <DriverCard
                 driverName={driver.name}
                 driverVehicleUrl={driver.vehicles[0]}
+                driverEyeColor={driver.eye_color}
                 state={state}
               />
             </div>
