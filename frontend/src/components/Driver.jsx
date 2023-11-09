@@ -3,6 +3,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import DriverCard from "./DriverCard";
 import Filters from "./Filters";
+import Logo from "./Logo";
+import SearchBar from "./SearchBar";
 
 export default function Driver() {
   const { state } = useLocation();
@@ -52,39 +54,47 @@ export default function Driver() {
 
   return (
     <div className="driver-page">
-      {" "}
-      <div className="filterBlock">
-        <Filters />
-      </div>
-      {people.length === 0 ? (
-        <div className="loader">
-          <p className="loaderText">
-            Un peu de patience, nous consultons les chauffeurs disponibles.
-          </p>
-          <div className="wookieLoader">
-            <img
-              src="src/public/images/wookie.gif"
-              alt="Loader"
-              className="loaderImg"
-            />
+      <Logo />
+      <div className="filter-search-cards">
+        <div className="filterBlock">
+          <Filters />
+        </div>
+
+        <div className="search-cards">
+          <div>
+            <SearchBar />
+          </div>
+          <div className="cards">
+            {people.length === 0 ? (
+              <div className="loader">
+                <p className="loaderText">
+                  Un peu de patience, nous consultons les chauffeurs
+                  disponibles.
+                </p>
+                <div className="sabreLoader">
+                  <img
+                    src="src/public/images/wookie.gif"
+                    alt="Loader"
+                    className="loaderImg"
+                  />
+                </div>
+              </div>
+            ) : (
+              people.map((driver) => {
+                return (
+                  <div>
+                    <DriverCard
+                      driverName={driver.name}
+                      driverVehicleUrl={driver.vehicles[0]}
+                      state={state}
+                    />
+                  </div>
+                );
+              })
+            )}
           </div>
         </div>
-      ) : (
-        people.map((driver) => {
-          return (
-            <DriverCard
-              driverName={driver.name}
-              birthYear={driver.birth_year}
-              height={driver.height}
-              gender={driver.gender}
-              skinColor={driver.skin_color}
-              eyeColor={driver.eye_color}
-              driverVehicleUrl={driver.vehicles[0]}
-              stateSearchBar={state}
-            />
-          );
-        })
-      )}
+      </div>
     </div>
   );
 }

@@ -30,15 +30,15 @@ function DriverCard({ driverName, driverVehicleUrl, stateSearchBar }) {
     vehicle &&
     vehicle.passengers === stateSearchBar.passenger && (
       <div className="driver-card">
-        <div className="driverIdBlock">
-          <div className="driverImgDiv">
-            <img
-              src={`src/public/images/characters/${driverName}.jpg`}
-              alt="Avatar"
-              className="driverImg"
-            />
-          </div>
-          <div className="info-container">
+        <div className="driverImgDiv">
+          <img
+            src={`src/public/images/characters/${driverName}.jpg`}
+            alt="Avatar"
+            className="driverImg"
+          />
+        </div>
+        <div className="info-container">
+          <div className="drivername-favorite">
             <h2>{driverName}</h2>
             <p>
               <strong>Vehicle name</strong> {vehicle.name}
