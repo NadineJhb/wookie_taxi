@@ -24,10 +24,10 @@ const router = createBrowserRouter([
     path: "/captcha",
     element: <Captcha />,
   },
-  // // {
-  // //   path: "/booking",
-  // //   element: <Booking />,
-  // // },
+  {
+    path: "/booking",
+    element: <Booking />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

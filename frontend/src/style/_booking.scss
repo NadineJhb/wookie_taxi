@@ -116,3 +116,8 @@
     padding-top: calc(var(--spacing) * 3);
   }
 }
+
+a {
+  text-decoration: none;
+  color: var(--tertiary-color);
+}

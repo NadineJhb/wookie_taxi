@@ -3,7 +3,6 @@ import SearchBar from "./components/SearchBar";
 import Background from "./components/Background";
 import Logo from "./components/Logo";
 import "./App.css";
-
 import Footer from "./components/Footer";
 
 // import Filters from "./components/Filters";

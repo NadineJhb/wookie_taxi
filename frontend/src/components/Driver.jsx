@@ -12,11 +12,11 @@ export default function Driver() {
     "https://swapi.dev/api/people/?page=2",
     "https://swapi.dev/api/people/?page=3",
     "https://swapi.dev/api/people/?page=4",
-    //  "https://swapi.dev/api/people/?page=5",
-    //  "https://swapi.dev/api/people/?page=6",
-    //  "https://swapi.dev/api/people/?page=7",
-    //  "https://swapi.dev/api/people/?page=8",
-    //  "https://swapi.dev/api/people/?page=9",
+    // "https://swapi.dev/api/people/?page=5",
+    // "https://swapi.dev/api/people/?page=6",
+    // "https://swapi.dev/api/people/?page=7",
+    // "https://swapi.dev/api/people/?page=8",
+    // "https://swapi.dev/api/people/?page=9",
   ];
 
   useEffect(() => {
@@ -61,7 +61,7 @@ export default function Driver() {
           <p className="loaderText">
             Un peu de patience, nous consultons les chauffeurs disponibles.
           </p>
-          <div className="sabreLoader">
+          <div className="wookieLoader">
             <img
               src="src/public/images/wookie.gif"
               alt="Loader"
