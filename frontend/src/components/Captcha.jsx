@@ -1,12 +1,12 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
+import { useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
-
 import Logo from "./Logo";
 import Footer from "./Footer";
 
 function Captcha() {
+  const { state } = useLocation();
   const [personnage, setPersonnage] = useState("");
-
+  const navigate = useNavigate();
   const [alert, setAlert] = useState(false);
 
   const handleClick = (e) => {
@@ -17,7 +17,14 @@ function Captcha() {
     if (personnage !== "chewbacca") {
       setAlert(!alert);
     } else {
-      setAlert(alert);
+      navigate("/booking", {
+        state: {
+          destination: state.destination,
+          passenger: state.passenger,
+          name: state.Name,
+          driverVehicleUrl: state.driverVehicleUrl,
+        },
+      });
     }
   };
 

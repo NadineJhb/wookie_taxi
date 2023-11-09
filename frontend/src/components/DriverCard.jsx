@@ -1,9 +1,22 @@
 import PropTypes from "prop-types";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-function DriverCard({ driverName, driverVehicleUrl, state }) {
+function DriverCard({ driverName, driverVehicleUrl, stateSearchBar }) {
   const [vehicle, setVehicle] = useState(undefined);
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/captcha", {
+      state: {
+        destination: stateSearchBar.destination,
+        passenger: stateSearchBar.passenger,
+        Name: driverName,
+        driverVehicleUrl: vehicle.name,
+      },
+    });
+    // console.log(vehicle.name)
+  };
 
   useEffect(() => {
     if (driverVehicleUrl) {
@@ -13,11 +26,9 @@ function DriverCard({ driverName, driverVehicleUrl, state }) {
     }
   }, []);
 
-  console.warn(state.passenger);
-
   return (
     vehicle &&
-    vehicle.passengers === state.passenger && (
+    vehicle.passengers === stateSearchBar.passenger && (
       <div className="driver-card">
         <div className="driverImgDiv">
           <img
@@ -31,6 +42,17 @@ function DriverCard({ driverName, driverVehicleUrl, state }) {
             <h2>{driverName}</h2>
             <div className="isFavorite"> &nbsp;</div>
           </div>
+        </div>
+        <div className="right-side">
+          <div className="isFavorite">
+            <img
+              src={`src/public/images/starship/${vehicle.name}.jpg`}
+              alt="kana"
+              className="starshipImg"
+            />
+            <button type="button" onClick={handleClick}>
+              Réserver
+            </button>
           <div className="info-vehicleImage-button">
             <div className="card-information">
               <p>
@@ -61,6 +83,7 @@ function DriverCard({ driverName, driverVehicleUrl, state }) {
 DriverCard.propTypes = {
   driverName: PropTypes.string.isRequired,
   driverVehicleUrl: PropTypes.shape.isRequired,
+  stateSearchBar: PropTypes.string.isRequired,
   state: PropTypes.shape({ passenger: PropTypes.string.isRequired }).isRequired,
 };
 

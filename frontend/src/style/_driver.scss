@@ -112,3 +112,26 @@
     }
   }
 }
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loaderText {
+  color: var(--secondary-color);
+  width: 100%;
+  font-size: calc(var(--font-size-standard) * 2);
+}
+
+.wookieLoader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 80%;
+  }
+}
