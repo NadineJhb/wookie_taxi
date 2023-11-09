@@ -24,7 +24,8 @@ function DriverCard({ driverName, driverVehicleUrl, stateSearchBar }) {
   }, []);
 
   return (
-    vehicle && (
+    vehicle &&
+    vehicle.passengers === stateSearchBar.passenger && (
       <div className="driver-card">
         <div className="driverIdBlock">
           <div className="driverImgDiv">
@@ -50,7 +51,7 @@ function DriverCard({ driverName, driverVehicleUrl, stateSearchBar }) {
         <div className="right-side">
           <div className="isFavorite">
             <img
-              src="src/public/images/starship/kana.png"
+              src={`src/public/images/starship/${vehicle.name}.jpg`}
               alt="kana"
               className="starshipImg"
             />
@@ -68,6 +69,7 @@ DriverCard.propTypes = {
   driverName: PropTypes.string.isRequired,
   driverVehicleUrl: PropTypes.shape.isRequired,
   stateSearchBar: PropTypes.string.isRequired,
+  state: PropTypes.shape({ passenger: PropTypes.string.isRequired }).isRequired,
 };
 
 export default DriverCard;
