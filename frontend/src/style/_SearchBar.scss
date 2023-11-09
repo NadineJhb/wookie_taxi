@@ -1,10 +1,9 @@
-
 .searchbar-container {
   background-color: #ffde06;
   padding: calc(var(--spacing) * 1.4);
   display: flex;
   border-radius: var(--search-border-radius);
-  width: 700px;
+  width: 50vw;
   position: relative;
   position: flex;
 
@@ -12,19 +11,27 @@
     font-size: calc(var(--spacing) * 3);
   }
 
-  .search-to,
   .search-from {
-    padding: calc(var(--spacing) * 1) calc(var(--font-size-standard) * 2.4)
-      calc(var(--spacing) * 1.2) calc(var(--spacing) * 1.4);
+    padding: calc(var(--spacing) * 0.8) calc(var(--font-size-standard) * 2.4)
+      calc(var(--spacing) * 0.8) calc(var(--spacing) * 0.2);
     font-size: calc(var(--font-size-standard) * 0.85);
     background-color: #ffde06;
     border: none;
-  }
-
-  .search-from {
     border-right: 1px solid grey;
     color: #000000;
     display: flex;
+  }
+
+  .search-to {
+    padding: calc(var(--spacing) * 0.8) calc(var(--font-size-standard) * 1.2)
+      calc(var(--spacing) * 0.8) calc(var(--spacing) * 1.2);
+    font-size: calc(var(--font-size-standard) * 0.85);
+    background-color: #ffde06;
+    border: none;
+    width: 16vw;
+    border-right: 1px solid grey;
+    font-family: var(--font);
+    outline: none;
   }
 
   .depart {
@@ -32,15 +39,8 @@
     padding: calc(var(--spacing) * 0.4);
   }
 
-  .search-to {
-    width: 250px;
-    border-right: 1px solid grey;
-    font-family: var(--font);
-    outline: none;
-  }
-
   .search-passenger {
-    width: 200px;
+    width: 10vw;
     font-family: var(--font);
     outline: none;
     background-image: url(./src/public/images/icons/stormtrooper_black.png);
@@ -75,4 +75,3 @@
       0px;
   }
 }
-

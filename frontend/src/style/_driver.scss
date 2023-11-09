@@ -1,6 +1,18 @@
 .driver-page {
-  display: flex;
-  gap: 30px;
+  .filterBlock {
+    display: flex;
+    justify-content: center;
+  }
+
+  .filter-search-cards {
+    margin: auto;
+    display: grid;
+    grid-template-columns: (1fr 2fr);
+  }
+
+  .cards {
+    padding-top: calc(var(--spacing) * 4);
+  }
 
   .driver-card {
     background-color: var(--background-color);
