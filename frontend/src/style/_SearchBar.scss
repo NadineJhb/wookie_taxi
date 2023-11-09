@@ -1,89 +1,77 @@
-.title-searchbar-container {
-  display: block;
-  margin-left: 5%;
+.searchbar-container {
+  background-color: #ffde06;
+  padding: calc(var(--spacing) * 1.4);
+  display: flex;
+  border-radius: var(--search-border-radius);
+  width: 50vw;
+  position: relative;
+  position: flex;
 
-  h1 {
-    color: var(--secondary-color);
-    font-family: var(--font);
-    font-weight: var(--font-weight-text-title);
-    font-size: 2.4rem;
-    padding: 2rem 1rem 1rem 1rem;
+  .map-icon {
+    font-size: calc(var(--spacing) * 3);
   }
 
-  .searchbar-container {
+  .search-from {
+    padding: calc(var(--spacing) * 0.8) calc(var(--font-size-standard) * 2.4)
+      calc(var(--spacing) * 0.8) calc(var(--spacing) * 0.2);
+    font-size: calc(var(--font-size-standard) * 0.85);
     background-color: #ffde06;
-    padding: calc(var(--spacing) * 1.4);
+    border: none;
+    border-right: 1px solid grey;
+    color: #000000;
     display: flex;
-    border-radius: var(--search-border-radius);
-    width: 700px;
+  }
+
+  .search-to {
+    padding: calc(var(--spacing) * 0.8) calc(var(--font-size-standard) * 1.2)
+      calc(var(--spacing) * 0.8) calc(var(--spacing) * 1.2);
+    font-size: calc(var(--font-size-standard) * 0.85);
+    background-color: #ffde06;
+    border: none;
+    width: 16vw;
+    border-right: 1px solid grey;
+    font-family: var(--font);
+    outline: none;
+  }
+
+  .depart {
+    display: flex;
+    padding: calc(var(--spacing) * 0.4);
+  }
+
+  .search-passenger {
+    width: 10vw;
+    font-family: var(--font);
+    outline: none;
+    background-image: url(./src/public/images/icons/stormtrooper_black.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: calc(var(--font-size-standard) * 1.5);
+    font-size: calc(var(--font-size-standard) * 0.9);
+    background-color: #ffde06;
+    border: none;
+    line-height: calc(var(--spacing) * 5);
+    padding-left: calc(var(--spacing) * 6);
+  }
+
+  .search-icon {
+    font-size: calc(var(--font-size-standard) * 1.8);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+  .search-btn {
     position: relative;
-    position: flex;
-
-    .map-icon {
-      font-size: calc(var(--spacing) * 3);
-    }
-
-    .search-to,
-    .search-from {
-      padding: calc(var(--spacing) * 1) calc(var(--font-size-standard) * 2.4)
-        calc(var(--spacing) * 1.2) calc(var(--spacing) * 1.4);
-      font-size: calc(var(--font-size-standard) * 0.85);
-      background-color: #ffde06;
-      border: none;
-    }
-
-    .search-from {
-      border-right: 1px solid grey;
-      color: #000000;
-      display: flex;
-    }
-
-    .depart {
-      display: flex;
-      padding: calc(var(--spacing) * 0.4);
-    }
-
-    .search-to {
-      width: 250px;
-      border-right: 1px solid grey;
-      font-family: var(--font);
-      outline: none;
-    }
-
-    .search-passenger {
-      width: 200px;
-      font-family: var(--font);
-      outline: none;
-      background-image: url(./src/public/images/icons/stormtrooper_black.png);
-      background-repeat: no-repeat;
-      background-position: left;
-      background-size: calc(var(--font-size-standard) * 1.5);
-      font-size: calc(var(--font-size-standard) * 0.9);
-      background-color: #ffde06;
-      border: none;
-      line-height: calc(var(--spacing) * 5);
-      padding-left: calc(var(--spacing) * 6);
-    }
-
-    .search-icon {
-      font-size: calc(var(--font-size-standard) * 1.8);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      cursor: pointer;
-    }
-    .search-btn {
-      position: relative;
-      position: absolute;
-      height: 100%;
-      width: 14%;
-      top: 0;
-      right: 0;
-      background-color: #ffde06;
-      border: none;
-      border-radius: 0px var(--search-border-radius) var(--search-border-radius)
-        0px;
-    }
+    position: absolute;
+    height: 100%;
+    width: 14%;
+    top: 0;
+    right: 0;
+    background-color: #ffde06;
+    border: none;
+    border-radius: 0px var(--search-border-radius) var(--search-border-radius)
+      0px;
   }
 }
