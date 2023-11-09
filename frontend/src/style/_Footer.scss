@@ -9,3 +9,11 @@
   padding: 10px;
   margin-left: 40vw;
 }
+
+// Partie responsive mobile
+@media screen and (min-width: 360px) {
+  .footer p {
+    font-size: calc(var(--font-size-standard) * 0.6);
+    margin-left: 20vw;
+  }
+}

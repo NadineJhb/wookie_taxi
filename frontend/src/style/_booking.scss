@@ -116,3 +116,20 @@
     padding-top: calc(var(--spacing) * 3);
   }
 }
+
+// Partie reponsive mobile
+@media screen and (max-width: 360px) {
+  .booking-container {
+    width: 80vw;
+    height: 70vh;
+
+    h2 {
+      font-size: calc(var(--font-size-standard) * 0.9);
+      text-align: center;
+    }
+
+    h3 {
+      font-size: calc(var(--font-size-standard) * 0.6);
+    }
+  }
+}
