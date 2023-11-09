@@ -82,13 +82,16 @@ export default function Driver() {
             ) : (
               people.map((driver) => {
                 return (
-                  <div>
-                    <DriverCard
-                      driverName={driver.name}
-                      driverVehicleUrl={driver.vehicles[0]}
-                      state={state}
-                    />
-                  </div>
+                  <DriverCard
+                    driverName={driver.name}
+                    birthYear={driver.birth_year}
+                    height={driver.height}
+                    gender={driver.gender}
+                    skinColor={driver.skin_color}
+                    eyeColor={driver.eye_color}
+                    driverVehicleUrl={driver.vehicles[0]}
+                    stateSearchBar={state}
+                  />
                 );
               })
             )}
