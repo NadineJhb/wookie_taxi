@@ -86,7 +86,7 @@ export default function Driver() {
                     <DriverCard
                       driverName={driver.name}
                       driverVehicleUrl={driver.vehicles[0]}
-                      state={state}
+                      stateSearchBar={state}
                     />
                   </div>
                 );

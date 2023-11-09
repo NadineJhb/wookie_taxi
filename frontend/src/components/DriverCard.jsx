@@ -39,15 +39,7 @@ function DriverCard({ driverName, driverVehicleUrl, stateSearchBar }) {
         <div className="info-container">
           <div className="drivername-favorite">
             <h2>{driverName}</h2>
-            <p>
-              <strong>Vehicle name</strong> {vehicle.name}
-            </p>
-            <p>
-              <strong>Vehicle model :</strong> {vehicle.model}
-            </p>
-            <p>
-              <strong>Passengers :</strong> {vehicle.passengers}
-            </p>
+            <div className="isFavorite"> &nbsp;</div>
           </div>
         </div>
         <div className="right-side">
@@ -60,6 +52,27 @@ function DriverCard({ driverName, driverVehicleUrl, stateSearchBar }) {
             <button type="button" onClick={handleClick}>
               Réserver
             </button>
+            <div className="info-vehicleImage-button">
+              <div className="card-information">
+                <p>
+                  <strong>Vehicle name</strong> {vehicle.name}
+                </p>
+                <p>
+                  <strong>Vehicle model :</strong> {vehicle.model}
+                </p>
+                <p>
+                  <strong>Passengers :</strong> {vehicle.passengers}
+                </p>
+              </div>
+              <div className="vehicleImage-button">
+                <img
+                  src="src/public/images/starship/Snowspeeder.webp"
+                  alt="starship"
+                  className="starshipImg"
+                />
+                <button type="submit"> Réserver </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
