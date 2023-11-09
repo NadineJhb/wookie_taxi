@@ -15,7 +15,6 @@ function DriverCard({ driverName, driverVehicleUrl, stateSearchBar }) {
         driverVehicleUrl: vehicle.name,
       },
     });
-    // console.log(vehicle.name)
   };
 
   useEffect(() => {
