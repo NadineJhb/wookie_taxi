@@ -1,22 +1,9 @@
 import PropTypes from "prop-types";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 
-function DriverCard({ driverName, driverVehicleUrl, stateSearchBar }) {
+function DriverCard({ driverName, driverVehicleUrl, state }) {
   const [vehicle, setVehicle] = useState(undefined);
-  const navigate = useNavigate();
-  const handleClick = () => {
-    navigate("/captcha", {
-      state: {
-        destination: stateSearchBar.destination,
-        passenger: stateSearchBar.passenger,
-        Name: driverName,
-        driverVehicleUrl: vehicle.name,
-      },
-    });
-    // console.log(vehicle.name)
-  };
 
   useEffect(() => {
     if (driverVehicleUrl) {
@@ -26,41 +13,44 @@ function DriverCard({ driverName, driverVehicleUrl, stateSearchBar }) {
     }
   }, []);
 
+  console.warn(state.passenger);
+
   return (
     vehicle &&
-    vehicle.passengers === stateSearchBar.passenger && (
+    vehicle.passengers === state.passenger && (
       <div className="driver-card">
-        <div className="driverIdBlock">
-          <div className="driverImgDiv">
-            <img
-              src={`src/public/images/characters/${driverName}.jpg`}
-              alt="Avatar"
-              className="driverImg"
-            />
-          </div>
-          <div className="info-container">
-            <h2>{driverName}</h2>
-            <p>
-              <strong>Vehicle name</strong> {vehicle.name}
-            </p>
-            <p>
-              <strong>Vehicle model :</strong> {vehicle.model}
-            </p>
-            <p>
-              <strong>Passengers :</strong> {vehicle.passengers}
-            </p>
-          </div>
+        <div className="driverImgDiv">
+          <img
+            src={`src/public/images/characters/${driverName}.jpg`}
+            alt="Avatar"
+            className="driverImg"
+          />
         </div>
-        <div className="right-side">
-          <div className="isFavorite">
-            <img
-              src={`src/public/images/starship/${vehicle.name}.jpg`}
-              alt="kana"
-              className="starshipImg"
-            />
-            <button type="button" onClick={handleClick}>
-              Réserver
-            </button>
+        <div className="info-container">
+          <div className="drivername-favorite">
+            <h2>{driverName}</h2>
+            <div className="isFavorite"> &nbsp;</div>
+          </div>
+          <div className="info-vehicleImage-button">
+            <div className="card-information">
+              <p>
+                <strong>Vehicle name</strong> {vehicle.name}
+              </p>
+              <p>
+                <strong>Vehicle model :</strong> {vehicle.model}
+              </p>
+              <p>
+                <strong>Passengers :</strong> {vehicle.passengers}
+              </p>
+            </div>
+            <div className="vehicleImage-button">
+              <img
+                src="src/public/images/starship/Snowspeeder.webp"
+                alt="starship"
+                className="starshipImg"
+              />
+              <button type="submit"> Réserver </button>
+            </div>
           </div>
         </div>
       </div>
@@ -71,7 +61,6 @@ function DriverCard({ driverName, driverVehicleUrl, stateSearchBar }) {
 DriverCard.propTypes = {
   driverName: PropTypes.string.isRequired,
   driverVehicleUrl: PropTypes.shape.isRequired,
-  stateSearchBar: PropTypes.string.isRequired,
   state: PropTypes.shape({ passenger: PropTypes.string.isRequired }).isRequired,
 };
 
