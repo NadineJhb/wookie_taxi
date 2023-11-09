@@ -1,3 +1,16 @@
 .footerCapsule {
   flex-grow: 1;
 }
+
+.title-searchbar-container {
+  display: block;
+  margin-left: 5%;
+
+  h1 {
+    color: var(--secondary-color);
+    font-family: var(--font);
+    font-weight: var(--font-weight-text-title);
+    font-size: 2.4rem;
+    padding: 2rem 1rem 1rem 1rem;
+  }
+}

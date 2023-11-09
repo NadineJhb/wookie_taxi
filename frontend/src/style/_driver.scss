@@ -1,18 +1,34 @@
 .driver-page {
-  display: flex;
-  gap: 30px;
-
-  .driver-card {
-    background-color: var(--background-color);
+  //< Filters />
+  .filterBlock {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+  }
+
+  //all the elements except logo on top
+  .filter-search-cards {
+    margin: auto;
+    display: grid;
+    grid-template-columns: (1fr 2fr);
+  }
+
+  .cards {
+    padding-top: calc(var(--spacing) * 4);
+  }
+
+  //style for driver card
+  .driver-card {
+    display: flex;
+    background-color: var(--background-color);
     width: 50vw;
     border-radius: 10px;
     color: var(--secondary-color);
-    padding: 25px;
+    padding: calc(var(--spacing) * 3);
     gap: 15px;
     font-family: var(--font);
     margin-bottom: 20px;
+    position: relative;
+    margin-bottom: calc(var(--spacing) * 4);
 
     h2 {
       margin-bottom: 20px;
@@ -24,14 +40,19 @@
       padding: 4px 0;
     }
 
-    .driverIdBlock {
+    .info-container {
+      width: 100%;
+      padding: calc(var(--spacing) * 1) calc(var(--spacing) * 0.8);
+    }
+
+    .drivername-favorite {
       display: flex;
-      gap: 15px;
+      justify-content: space-between;
     }
 
     .driverImgDiv {
-      width: 200px;
-      height: 250px;
+      width: 20vw;
+      height: 260px;
       overflow: hidden;
       border-radius: 5px;
       border: 1px solid var(--secondary-color);
@@ -40,24 +61,38 @@
     }
 
     .driverImg {
-      object-fit: contain;
+      object-fit: cover;
     }
 
-    .right-side {
+    .info-vehicleImage-button {
+      padding-top: calc(var(--spacing) * 2);
+      display: flex;
+    }
+
+    .vehicleImage-button {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      align-items: right;
+    }
+
+    .card-information {
+      width: 100%;
+    }
+
+    .starshipImg {
+      width: 10vw;
     }
 
     button {
       background-color: var(--primary-color);
-      padding: 12px 24px;
+      padding: 1.6% 3%;
       border-radius: 10px;
       font-family: var(--font);
-      font-weight: bold;
       font-size: var(--font-size-standard);
       border: none;
+      position: absolute;
+      bottom: calc(var(--spacing) * 3);
+      width: 10vw;
     }
 
     .isFavorite {
