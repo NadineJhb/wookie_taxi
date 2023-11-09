@@ -163,10 +163,13 @@ function App() {
         inputDestination={inputDestination}
         setInputDestination={setInputDestination}
       />
-      <SearchBar
-        inputDestination={inputDestination}
-        setInputDestination={setInputDestination}
-      />
+      <div className="title-searchbar-container">
+        <h1>LE COVOIT' DE LA GALAXIE !</h1>
+        <SearchBar
+          inputDestination={inputDestination}
+          setInputDestination={setInputDestination}
+        />
+      </div>
       <Footer />
       {/* <Filters />
  <Driver /> */}

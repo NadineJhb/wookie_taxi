@@ -4,20 +4,8 @@ import { useLocation } from "react-router-dom";
 import DriverCard from "./DriverCard";
 import Filters from "./Filters";
 
-// Code suivant pour faire un fltrage //
-
 export default function Driver() {
   const { state } = useLocation();
-  //*   return (
-  //     <div>
-  //       {console.log(
-  //         `DriverPage🚗destination: ${state.destination} passenger: ${state.passenger}`
-  //       )}
-  //       <h1>{location.destination}</h1>
-  //     </div>
-  //   );
-  // }*/
-
   const [people, setPeople] = useState([]);
   const array = [
     "https://swapi.dev/api/people",
