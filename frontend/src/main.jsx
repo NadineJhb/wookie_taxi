@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Booking from "./components/Booking";
 import Driver from "./components/Driver";
+import Captcha from "./components/Captcha";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,11 @@ const router = createBrowserRouter([
   {
     path: "/driver",
     element: <Driver />,
+  },
+
+  {
+    path: "/captcha",
+    element: <Captcha />,
   },
 ]);
 
