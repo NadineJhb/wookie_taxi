@@ -39,33 +39,33 @@ function DriverCard({ driverName, driverVehicleUrl, stateSearchBar }) {
         <div className="info-container">
           <div className="drivername-favorite">
             <h2>{driverName}</h2>
-            <div className="favorite">&nbsp;</div>
+            <div className="isFavorite">&nbsp;</div>
           </div>
-        </div>
 
-        <div className="info-vehicleImage-button">
-          <div className="card-information">
-            <p>
-              <strong>Vehicle name</strong> {vehicle.name}
-            </p>
-            <p>
-              <strong>Vehicle model :</strong> {vehicle.model}
-            </p>
-            <p>
-              <strong>Passengers :</strong> {vehicle.passengers}
-            </p>
-          </div>
-          <div className="vehicleImage-button">
-            <div className="vehicleImage-container">
-              <img
-                src={`src/public/images/starship/${vehicle.name}.png`}
-                alt="kana"
-                className="starshipImg"
-              />
+          <div className="info-vehicleImage-button">
+            <div className="card-information">
+              <p>
+                <strong>Vehicle name</strong> {vehicle.name}
+              </p>
+              <p>
+                <strong>Vehicle model :</strong> {vehicle.model}
+              </p>
+              <p>
+                <strong>Passengers :</strong> {vehicle.passengers}
+              </p>
             </div>
-            <button type="button" onClick={handleClick}>
-              Réserver
-            </button>
+            <div className="vehicleImage-button">
+              <div className="vehicleImage-container">
+                <img
+                  src={`src/public/images/starship/${vehicle.name}.png`}
+                  alt="kana"
+                  className="starshipImg"
+                />
+              </div>
+              <button type="button" onClick={handleClick}>
+                Réserver
+              </button>
+            </div>
           </div>
         </div>
       </div>
