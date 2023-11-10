@@ -17,7 +17,6 @@ function DriverCard({ driverName, driverVehicleUrl, stateSearchBar }) {
     });
     // console.log(vehicle.name)
   };
-
   useEffect(() => {
     if (driverVehicleUrl) {
       axios.get(driverVehicleUrl).then((res) => {
@@ -42,17 +41,10 @@ function DriverCard({ driverName, driverVehicleUrl, stateSearchBar }) {
             <h2>{driverName}</h2>
             <div className="isFavorite"> &nbsp;</div>
           </div>
-        </div>
-        <div className="right-side">
-          <div className="isFavorite">
-            <img
-              src={`src/public/images/starship/${vehicle.name}.jpg`}
-              alt="kana"
-              className="starshipImg"
-            />
-            <button type="button" onClick={handleClick}>
-              Réserver
-            </button>
+
+          <button type="button" onClick={handleClick}>
+            Réserver
+          </button>
           <div className="info-vehicleImage-button">
             <div className="card-information">
               <p>
@@ -67,11 +59,10 @@ function DriverCard({ driverName, driverVehicleUrl, stateSearchBar }) {
             </div>
             <div className="vehicleImage-button">
               <img
-                src="src/public/images/starship/Snowspeeder.webp"
-                alt="starship"
+                src={`src/public/images/starship/${vehicle.name}.png`}
+                alt="kana"
                 className="starshipImg"
               />
-              <button type="submit"> Réserver </button>
             </div>
           </div>
         </div>
