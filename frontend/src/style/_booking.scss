@@ -45,14 +45,16 @@
   .booking-images-infos {
     display: flex;
     justify-content: space-around;
-    padding: calc(var(--spacing) * 3.4) 5% calc(var(--spacing) * 4) 5%;
+    padding: calc(var(--spacing) * 6) 3% calc(var(--spacing) * 4) 3%;
   }
 
   .booking-driver-photo {
     border: 1px solid var(--secondary-color);
-    width: 25%;
+    width: 35%;
     min-width: 140px;
-    height: 30vh;
+    max-width: 260px;
+    max-height: 280px;
+
     object-fit: cover;
   }
 
@@ -61,7 +63,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    padding: calc(var(--spacing) * 3) 0 calc(var(--spacing) * 3) 0;
+    padding-left: calc(var(--spacing) * 2.6);
   }
 
   //second block : first part with départ, destination and vehicle image
@@ -139,8 +141,7 @@
     .booking-images-infos {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-
+      text-align: center;
       padding: calc(var(--spacing) * 2) 5% calc(var(--spacing) * 2) 5%;
     }
     p {
@@ -153,7 +154,6 @@
     .booking-planet-vehiclephoto {
       text-align: center;
       flex-direction: column;
-
       gap: calc(var(--spacing) * 0);
     }
 
@@ -161,20 +161,9 @@
       width: 10vw;
     }
 
-    .booking-driver-photo {
-      margin-left: 30px;
-
-      width: 20%;
-      height: 25vh;
-    }
     button {
       padding: calc(var(--spacing) * 1) calc(var(--spacing) * 1);
-
       font-size: calc(var(--font-size-standard) * 0.6);
-    }
-
-    .button-home {
-      padding-top: calc(var(--spacing) * 0);
     }
 
     .icon-passenger {
