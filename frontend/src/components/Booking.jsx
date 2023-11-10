@@ -31,7 +31,7 @@ function Booking() {
               </div>
               <img
                 className="booking-vehicle-photo"
-                src={`src/public/images/starship/${state.driverVehicleUrl}.png`}
+                src="src/public/images/starship/dod.png"
                 alt="booking-vehicle"
               />
             </div>
