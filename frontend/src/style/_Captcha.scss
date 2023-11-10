@@ -124,3 +124,43 @@
 .hidden {
   display: none;
 }
+
+// Partie responsive mobile
+
+@media screen and (max-width: 360px) {
+  .title {
+    h1 {
+      font-size: calc(var(--font-size-standard) * 0.8);
+    }
+  }
+
+  .container-captcha {
+    background-color: var(--background-color);
+    border-radius: 5px;
+    width: 300px;
+    height: 300px;
+
+    h2 {
+      font-size: calc(var(--font-size-standard) * 0.6);
+    }
+  }
+  .container-img {
+    width: 100%;
+    height: 70%;
+  }
+  .button-container {
+    .button-captcha {
+      font-size: calc(var(--font-size-standard) * 0.6);
+      width: 100px;
+      height: 25px;
+    }
+  }
+  .container-verification {
+    .text-alert {
+      text-align: center;
+      font-size: calc(var(--font-size-standard) * 0.4);
+      width: 180px;
+      height: 25px;
+    }
+  }
+}

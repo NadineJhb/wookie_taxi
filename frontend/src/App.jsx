@@ -3,7 +3,6 @@ import SearchBar from "./components/SearchBar";
 import Background from "./components/Background";
 import Logo from "./components/Logo";
 import "./App.css";
-
 import Footer from "./components/Footer";
 
 // import Filters from "./components/Filters";
@@ -156,7 +155,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* <TextPlanetApi /> */}
       <Logo />
       <Background
         planets={planets}
@@ -178,3 +176,9 @@ function App() {
 }
 
 export default App;
+
+// export async loaderPeople() {
+//   axios.all ...=> data
+
+//   return data
+// }
