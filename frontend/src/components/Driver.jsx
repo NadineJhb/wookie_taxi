@@ -20,28 +20,16 @@ export default function Driver() {
 
   const [people, setPeople] = useState([]);
   const [filteredPeople, setFilteredPeople] = useState(people);
-  const array = [
-    "https://swapi.dev/api/people",
-    "https://swapi.dev/api/people/?page=2",
-    // "https://swapi.dev/api/people/?page=3",
-    // "https://swapi.dev/api/people/?page=4",
-    //  "https://swapi.dev/api/people/?page=5",
-    //  "https://swapi.dev/api/people/?page=6",
-    //  "https://swapi.dev/api/people/?page=7",
-    //  "https://swapi.dev/api/people/?page=8",
-    //  "https://swapi.dev/api/people/?page=9",
-  ];
 
   useEffect(() => {
     axios
-      .all(array.map((endpoint) => axios.get(endpoint)))
+      .get("https://netflix-clone-back.onrender.com/characters")
       .then((data) => {
         const characters = [];
-        for (let i = 0; i < data.length; i += 1) {
-          for (let k = 0; k < 10; k += 1) {
-            if (data[i].data.results[k].vehicles.length > 0) {
-              characters.push(data[i].data.results[k]);
-            }
+        for (let i = 0; i < data.data.length; i += 1) {
+          if (data.data[i].vehicles.length > 0) {
+            characters.push(data.data[i]);
+            console.warn(data.data[i]);
           }
         }
         console.warn("characters : ", characters);
@@ -86,12 +74,7 @@ export default function Driver() {
         filteredPeople.map((driver) => {
           return (
             <div key={driver.name} className={driver.name}>
-              <DriverCard
-                driverName={driver.name}
-                driverVehicleUrl={driver.vehicles[0]}
-                driverEyeColor={driver.eye_color}
-                state={state}
-              />
+              <DriverCard driver={driver} state={state} />
             </div>
           );
         })

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 function Filters({ people, setFilteredPeople }) {
+  console.warn("filters here");
+
   const [eye, setEye] = useState(false);
   const [big, setBig] = useState(false);
   const [tall, setTall] = useState(false);
@@ -117,13 +119,7 @@ function Filters({ people, setFilteredPeople }) {
         <fieldset className="favorite">
           <legend>Favorite</legend>
           <div className="entry">
-            <input
-              type="checkbox"
-              id="9"
-              name="favorite"
-              value="favorite"
-              defaultChecked={false}
-            />
+            <input type="checkbox" id="9" name="favorite" value="favorite" />
             <label htmlFor="9">Favorite</label>
           </div>
         </fieldset>
@@ -133,7 +129,7 @@ function Filters({ people, setFilteredPeople }) {
 }
 
 Filters.propTypes = {
-  people: PropTypes.shape.isRequired,
+  people: PropTypes.func.isRequired,
   setFilteredPeople: PropTypes.func.isRequired,
 };
 

@@ -1,56 +1,46 @@
-import PropTypes from "prop-types";
-import axios from "axios";
-import { useState, useEffect } from "react";
+import PropTypes, { arrayOf } from "prop-types";
 
-function DriverCard({ driverName, driverEyeColor, driverVehicleUrl, state }) {
-  const [vehicle, setVehicle] = useState(undefined);
-
-  useEffect(() => {
-    if (driverVehicleUrl) {
-      axios.get(driverVehicleUrl).then((res) => {
-        setVehicle(res.data);
-      });
-    }
-  }, []);
-
-  console.warn(state.passenger);
+function DriverCard({ driver, state }) {
+  console.warn("driverCard here");
 
   return (
-    vehicle &&
-    vehicle.passengers === state.passenger.toString() && (
+    driver.vehicles[0] &&
+    driver.vehicles[0].passengers === state.passenger.toString() && (
       <div className="driver-card">
         <div className="driverIdBlock">
           <div className="driverImgDiv">
             <img
-              src={`src/public/images/characters/${driverName}.jpg`}
+              src={`src/public/images/characters/${driver.name}.jpg`}
               alt="Avatar"
               className="driverImg"
             />
           </div>
           <div className="info-container">
-            <h2>{driverName}</h2>
+            <h2>{driver.name}</h2>
             <p>
-              <strong>Vehicle name</strong> {vehicle.name}
+              <strong>Vehicle name</strong> {driver.vehicles.name}
             </p>
             <p>
               <strong>Max atmosphering speed :</strong>{" "}
-              {vehicle.max_atmosphering_speed} mph
+              {driver.vehicles[0].max_atmosphering_speed} mph
             </p>
             <p>
-              <strong>Passengers :</strong> {vehicle.passengers} seats left
+              <strong>Passengers :</strong> {driver.vehicles[0].passengers}{" "}
+              seats left
             </p>
             <p>
-              <strong>Driver eye color:</strong> {driverEyeColor} eyes
+              <strong>Driver eye color:</strong> {driver.eye_color} eyes
             </p>
             <p>
-              <strong>Crew :</strong> {vehicle.crew} crew members on board
+              <strong>Crew :</strong> {driver.vehicles[0].crew} crew members on
+              board
             </p>
           </div>
         </div>
         <div className="right-side">
           <div className="isFavorite">
             <img
-              src={`src/public/images/starship/${vehicle.name}.jpg`}
+              src={`src/public/images/starship/${driver.vehicles[0].name}.jpg`}
               alt="kana"
               className="starshipImg"
             />
@@ -63,10 +53,18 @@ function DriverCard({ driverName, driverEyeColor, driverVehicleUrl, state }) {
 }
 
 DriverCard.propTypes = {
-  driverName: PropTypes.string.isRequired,
-  driverVehicleUrl: PropTypes.shape.isRequired,
-  driverEyeColor: PropTypes.string.isRequired,
-  state: PropTypes.shape({ passenger: PropTypes.string.isRequired }).isRequired,
+  driver: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    eye_color: PropTypes.string.isRequired,
+    vehicles: arrayOf(
+      PropTypes.shape({
+        crew: PropTypes.number.isRequired,
+        max_atmosphering_speed: PropTypes.number.isRequired,
+        passenger: PropTypes.string.isRequired,
+      })
+    ),
+  }).isRequired,
+  state: PropTypes.func.isRequired,
 };
 
 export default DriverCard;
