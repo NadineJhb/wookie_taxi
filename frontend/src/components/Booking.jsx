@@ -1,7 +1,10 @@
+import { useLocation, NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 import "../style/_booking.scss";
 import Logo from "./Logo";
 
 function Booking() {
+  const { state } = useLocation();
   return (
     <>
       <Logo />
@@ -11,24 +14,24 @@ function Booking() {
         </div>
         <h3 className="booking-driver-text">
           Votre Wookie Taxi avec &nbsp;
-          <h3 className="booking-drivername">Dark Vador</h3>
+          <h3 className="booking-drivername">{state.name}</h3>
           &nbsp; est confirmé.
         </h3>
         <div className="booking-images-infos">
           <img
             className="booking-driver-photo"
-            src="src/public/images/characters/yoda.jpg"
+            src={`src/public/images/characters/${state.name}.jpg`}
             alt="booking-driver"
           />
           <div className="booking-infos">
             <div className="booking-planet-vehiclephoto">
               <div className="booking-depart-destination">
                 <p>Départ : Endor</p>
-                <p>Destination : Tatooïne</p>
+                <p>Destination : {state.destination}</p>
               </div>
               <img
                 className="booking-vehicle-photo"
-                src="src/public/images/starship/Snowspeeder.webp"
+                src={`src/public/images/starship/${state.driverVehicleUrl}.png`}
                 alt="booking-vehicle"
               />
             </div>
@@ -39,7 +42,7 @@ function Booking() {
                   src="./src/public/images/icons/stormtrooper_white.png"
                   alt="icon"
                 />
-                <p>2 passagers</p>
+                <p>{state.passenger}</p>
               </div>
               <div className="booking-vehicle">
                 <img
@@ -47,19 +50,28 @@ function Booking() {
                   src="./src/public/images/icons/vehicle.png"
                   alt="icon"
                 />
-                <p>Véhicule : Snowspeeder</p>
+                <p>Véhicule : {state.driverVehicleUrl}</p>
               </div>
             </div>
           </div>
         </div>
         <div className="button-home">
           <button type="button" className="return-home">
-            Revenir à l'accueil
+            <NavLink to="/">Revenir à l'accueil</NavLink>
           </button>
         </div>
       </div>
     </>
   );
 }
+
+Booking.propTypes = {
+  state: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    destination: PropTypes.string.isRequired,
+    driverVehicleUrl: PropTypes.string.isRequired,
+    passenger: PropTypes.number.isRequired,
+  }).isRequired,
+};
 
 export default Booking;

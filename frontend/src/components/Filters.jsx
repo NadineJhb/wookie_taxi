@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 function Filters({ people, setFilteredPeople }) {
-  console.warn("filters here");
-
   const [eye, setEye] = useState(false);
   const [big, setBig] = useState(false);
   const [tall, setTall] = useState(false);
@@ -18,8 +16,9 @@ function Filters({ people, setFilteredPeople }) {
     const filtered3 = filtered2.filter((person) =>
       !big ? true : person.mass >= 80
     );
+    // console.log(filtered3)
     setFilteredPeople(filtered3);
-  }, [eye, big, tall]);
+  }, [eye, big, tall, people]);
 
   return (
     <div>

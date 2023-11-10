@@ -3,8 +3,8 @@ import SearchBar from "./components/SearchBar";
 import Background from "./components/Background";
 import Logo from "./components/Logo";
 import "./App.css";
-// import Driver from "./components/Driver"; //
 import Footer from "./components/Footer";
+
 // import Filters from "./components/Filters";
 
 function App() {
@@ -155,17 +155,19 @@ function App() {
 
   return (
     <div className="App">
-      {/* <TextPlanetApi /> */}
       <Logo />
       <Background
         planets={planets}
         inputDestination={inputDestination}
         setInputDestination={setInputDestination}
       />
-      <SearchBar
-        inputDestination={inputDestination}
-        setInputDestination={setInputDestination}
-      />
+      <div className="title-searchbar-container">
+        <h1>LE COVOIT' DE LA GALAXIE !</h1>
+        <SearchBar
+          inputDestination={inputDestination}
+          setInputDestination={setInputDestination}
+        />
+      </div>
       <Footer />
       {/* <Filters />
  <Driver /> */}
@@ -174,3 +176,9 @@ function App() {
 }
 
 export default App;
+
+// export async loaderPeople() {
+//   axios.all ...=> data
+
+//   return data
+// }

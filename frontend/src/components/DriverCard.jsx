@@ -1,50 +1,65 @@
 import PropTypes, { arrayOf } from "prop-types";
+import { useNavigate } from "react-router-dom";
 
-function DriverCard({ driver, state }) {
-  console.warn("driverCard here");
+function DriverCard({ driver, stateSearchBar }) {
+  console.warn(driver);
+
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/captcha", {
+      state: {
+        destination: stateSearchBar.destination,
+        passenger: stateSearchBar.passenger,
+        Name: driver.name,
+      },
+    });
+  };
 
   return (
-    driver.vehicles[0] &&
-    driver.vehicles[0].passengers === state.passenger.toString() && (
+    driver.vehicles.length > 0 &&
+    driver.vehicles[0].passengers === stateSearchBar.passenger.toString() && (
       <div className="driver-card">
-        <div className="driverIdBlock">
-          <div className="driverImgDiv">
-            <img
-              src={`src/public/images/characters/${driver.name}.jpg`}
-              alt="Avatar"
-              className="driverImg"
-            />
-          </div>
-          <div className="info-container">
-            <h2>{driver.name}</h2>
-            <p>
-              <strong>Vehicle name</strong> {driver.vehicles.name}
-            </p>
-            <p>
-              <strong>Max atmosphering speed :</strong>{" "}
-              {driver.vehicles[0].max_atmosphering_speed} mph
-            </p>
-            <p>
-              <strong>Passengers :</strong> {driver.vehicles[0].passengers}{" "}
-              seats left
-            </p>
-            <p>
-              <strong>Driver eye color:</strong> {driver.eye_color} eyes
-            </p>
-            <p>
-              <strong>Crew :</strong> {driver.vehicles[0].crew} crew members on
-              board
-            </p>
-          </div>
+        <div className="driverImgDiv">
+          <img
+            src={`src/public/images/characters/${driver.name}.jpg`}
+            alt="Avatar"
+            className="driverImg"
+          />
         </div>
-        <div className="right-side">
-          <div className="isFavorite">
-            <img
-              src={`src/public/images/starship/${driver.vehicles[0].name}.jpg`}
-              alt="kana"
-              className="starshipImg"
-            />
-            <button type="button">Réserver</button>
+        <div className="info-container">
+          <div className="drivername-favorite">
+            <h2>{driver.name}</h2>
+            <div className="isFavorite"> &nbsp;</div>
+          </div>
+
+          <button type="button" onClick={handleClick}>
+            Réserver
+          </button>
+          <div className="info-vehicleImage-button">
+            <div className="card-information">
+              <p>
+                <strong>Passengers :</strong> {driver.vehicles[0].passengers}{" "}
+                seats left
+              </p>
+              <p>
+                <strong>Max atmosphering speed :</strong>{" "}
+                {driver.vehicles[0].max_atmosphering_speed} mph
+              </p>
+              <p>
+                <strong>Driver eye color:</strong> {driver.eye_color} eyes
+              </p>
+              <p>
+                <strong>Crew :</strong> {driver.vehicles[0].crew} crew members
+                on board
+              </p>
+            </div>
+            <div className="vehicleImage-button">
+              <img
+                src={`src/public/images/starship/${driver.vehicles[0].name}.png`}
+                alt="kana"
+                className="starshipImg"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -64,7 +79,7 @@ DriverCard.propTypes = {
       })
     ),
   }).isRequired,
-  state: PropTypes.func.isRequired,
+  stateSearchBar: PropTypes.func.isRequired,
 };
 
 export default DriverCard;
