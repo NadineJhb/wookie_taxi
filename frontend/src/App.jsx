@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 
 function App() {
   const [inputDestination, setInputDestination] = useState("");
-  const [inputPassenger, setInputPassenger] = useState(0);
+  const [inputPassenger, setInputPassenger] = useState(1);
   const planets = [
     {
       name: "Yavin IV",
