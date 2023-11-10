@@ -9,16 +9,22 @@ import SearchBar from "./SearchBar";
 export default function Driver() {
   const { state } = useLocation();
   const [people, setPeople] = useState([]);
+  const [destinationDriverpage, setDestinationDriverpage] = useState(
+    state.destination
+  );
+  const [passengerDriverpage, setPassengerDriverpage] = useState(
+    state.passenger
+  );
   const array = [
     "https://swapi.dev/api/people",
     "https://swapi.dev/api/people/?page=2",
     "https://swapi.dev/api/people/?page=3",
     "https://swapi.dev/api/people/?page=4",
-    "https://swapi.dev/api/people/?page=5",
-    //  "https://swapi.dev/api/people/?page=6",
-    //  "https://swapi.dev/api/people/?page=7",
-    //  "https://swapi.dev/api/people/?page=8",
-    //  "https://swapi.dev/api/people/?page=9",
+    // "https://swapi.dev/api/people/?page=5",
+    // "https://swapi.dev/api/people/?page=6",
+    // "https://swapi.dev/api/people/?page=7",
+    // "https://swapi.dev/api/people/?page=8",
+    // "https://swapi.dev/api/people/?page=9",
   ];
 
   useEffect(() => {
@@ -62,7 +68,12 @@ export default function Driver() {
 
         <div className="search-cards">
           <div>
-            <SearchBar />
+            <SearchBar
+              inputDestination={destinationDriverpage}
+              setInputDestination={setDestinationDriverpage}
+              inputPassenger={passengerDriverpage}
+              setInputPassenger={setPassengerDriverpage}
+            />
           </div>
           <div className="cards">
             {people.length === 0 ? (
