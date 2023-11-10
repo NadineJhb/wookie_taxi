@@ -62,7 +62,10 @@ export default function Driver() {
 
         <div className="search-cards">
           <div>
-            <SearchBar />
+            <SearchBar
+              inputDestination={state.destination}
+              inputPassenger={state.passenger}
+            />
           </div>
           <div className="cards">
             {people.length === 0 ? (
