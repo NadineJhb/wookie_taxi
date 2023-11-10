@@ -43,9 +43,6 @@ function DriverCard({ driverName, driverVehicleUrl, stateSearchBar }) {
           </div>
         </div>
 
-        <button className="reserved" type="button" onClick={handleClick}>
-          Réserver
-        </button>
         <div className="info-vehicleImage-button">
           <div className="card-information">
             <p>
@@ -59,11 +56,16 @@ function DriverCard({ driverName, driverVehicleUrl, stateSearchBar }) {
             </p>
           </div>
           <div className="vehicleImage-button">
-            <img
-              src={`src/public/images/starship/${vehicle.name}.png`}
-              alt="kana"
-              className="starshipImg"
-            />
+            <div className="vehicleImage-container">
+              <img
+                src={`src/public/images/starship/${vehicle.name}.png`}
+                alt="kana"
+                className="starshipImg"
+              />
+            </div>
+            <button type="button" onClick={handleClick}>
+              Réserver
+            </button>
           </div>
         </div>
       </div>

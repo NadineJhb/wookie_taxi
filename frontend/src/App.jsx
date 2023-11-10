@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 
 function App() {
   const [inputDestination, setInputDestination] = useState("");
+  const [inputPassenger, setInputPassenger] = useState(1);
   const planets = [
     {
       name: "Yavin IV",
@@ -166,6 +167,8 @@ function App() {
         <SearchBar
           inputDestination={inputDestination}
           setInputDestination={setInputDestination}
+          inputPassenger={inputPassenger}
+          setInputPassenger={setInputPassenger}
         />
       </div>
       <Footer />
