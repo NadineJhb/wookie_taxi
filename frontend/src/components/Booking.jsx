@@ -5,6 +5,7 @@ import Logo from "./Logo";
 
 function Booking() {
   const { state } = useLocation();
+  console.warn(state.name);
   return (
     <>
       <Logo />
