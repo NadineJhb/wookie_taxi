@@ -1,6 +1,6 @@
-import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import DriverCard from "./DriverCard";
 import Filters from "./Filters";
 import Logo from "./Logo";
@@ -15,10 +15,10 @@ export default function Driver() {
     "https://swapi.dev/api/people/?page=3",
     "https://swapi.dev/api/people/?page=4",
     "https://swapi.dev/api/people/?page=5",
-    "https://swapi.dev/api/people/?page=6",
-    "https://swapi.dev/api/people/?page=7",
-    // "https://swapi.dev/api/people/?page=8",
-    // "https://swapi.dev/api/people/?page=9",
+    //  "https://swapi.dev/api/people/?page=6",
+    //  "https://swapi.dev/api/people/?page=7",
+    //  "https://swapi.dev/api/people/?page=8",
+    //  "https://swapi.dev/api/people/?page=9",
   ];
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export default function Driver() {
         console.warn("characters : ", characters);
 
         const randomCharacters = [];
-        for (let j = 0; j < 10; j += 1) {
+        for (let j = 0; j < 8; j += 1) {
           const randomDrivers =
             characters[Math.floor(Math.random() * characters.length)];
 
@@ -83,13 +83,16 @@ export default function Driver() {
             ) : (
               people.map((driver) => {
                 return (
-                  <div>
-                    <DriverCard
-                      driverName={driver.name}
-                      driverVehicleUrl={driver.vehicles[0]}
-                      stateSearchBar={state}
-                    />
-                  </div>
+                  <DriverCard
+                    driverName={driver.name}
+                    birthYear={driver.birth_year}
+                    height={driver.height}
+                    gender={driver.gender}
+                    skinColor={driver.skin_color}
+                    eyeColor={driver.eye_color}
+                    driverVehicleUrl={driver.vehicles[0]}
+                    stateSearchBar={state}
+                  />
                 );
               })
             )}

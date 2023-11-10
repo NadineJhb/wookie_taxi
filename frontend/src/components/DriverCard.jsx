@@ -3,9 +3,19 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-function DriverCard({ driverName, driverVehicleUrl, stateSearchBar }) {
+function DriverCard({
+  driverName,
+  driverVehicleUrl,
+  stateSearchBar,
+  isFavorite,
+}) {
   const [vehicle, setVehicle] = useState(undefined);
   const navigate = useNavigate();
+  const [favorite, setFavorite] = useState(isFavorite);
+
+  const handleClick1 = () => {
+    setFavorite(!favorite);
+  };
   const handleClick = () => {
     navigate("/captcha", {
       state: {
@@ -16,7 +26,6 @@ function DriverCard({ driverName, driverVehicleUrl, stateSearchBar }) {
       },
     });
   };
-
   useEffect(() => {
     if (driverVehicleUrl) {
       axios.get(driverVehicleUrl).then((res) => {
@@ -26,8 +35,8 @@ function DriverCard({ driverName, driverVehicleUrl, stateSearchBar }) {
   }, []);
 
   return (
-    vehicle &&
-    vehicle.passengers === stateSearchBar.passenger && (
+    vehicle && (
+      // vehicle.passengers === stateSearchBar.passenger && (
       <div className="driver-card">
         <div className="driverImgDiv">
           <img
@@ -39,39 +48,39 @@ function DriverCard({ driverName, driverVehicleUrl, stateSearchBar }) {
         <div className="info-container">
           <div className="drivername-favorite">
             <h2>{driverName}</h2>
-            <div className="isFavorite"> &nbsp;</div>
+            <div className="favorite">
+              <button
+                className={favorite ? "isFavorite" : "notFavorite"}
+                type="button"
+                onClick={handleClick1}
+              >
+                {" "}
+                &nbsp;
+              </button>
+            </div>
           </div>
-        </div>
-        <div className="right-side">
-          <div className="isFavorite">
-            <img
-              src={`src/public/images/starship/${vehicle.name}.jpg`}
-              alt="kana"
-              className="starshipImg"
-            />
-            <button type="button" onClick={handleClick}>
-              Réserver
-            </button>
-            <div className="info-vehicleImage-button">
-              <div className="card-information">
-                <p>
-                  <strong>Vehicle name</strong> {vehicle.name}
-                </p>
-                <p>
-                  <strong>Vehicle model :</strong> {vehicle.model}
-                </p>
-                <p>
-                  <strong>Passengers :</strong> {vehicle.passengers}
-                </p>
-              </div>
-              <div className="vehicleImage-button">
-                <img
-                  src="src/public/images/starship/Snowspeeder.webp"
-                  alt="starship"
-                  className="starshipImg"
-                />
-                <button type="submit"> Réserver </button>
-              </div>
+
+          <button className="reserved" type="button" onClick={handleClick}>
+            Réserver
+          </button>
+          <div className="info-vehicleImage-button">
+            <div className="card-information">
+              <p>
+                <strong>Vehicle name</strong> {vehicle.name}
+              </p>
+              <p>
+                <strong>Vehicle model :</strong> {vehicle.model}
+              </p>
+              <p>
+                <strong>Passengers :</strong> {vehicle.passengers}
+              </p>
+            </div>
+            <div className="vehicleImage-button">
+              <img
+                src={`src/public/images/starship/${vehicle.name}.png`}
+                alt="kana"
+                className="starshipImg"
+              />
             </div>
           </div>
         </div>
@@ -85,6 +94,7 @@ DriverCard.propTypes = {
   driverVehicleUrl: PropTypes.shape.isRequired,
   stateSearchBar: PropTypes.string.isRequired,
   state: PropTypes.shape({ passenger: PropTypes.string.isRequired }).isRequired,
+  isFavorite: PropTypes.string.isRequired,
 };
 
 export default DriverCard;
