@@ -14,9 +14,9 @@ export default function Driver() {
     "https://swapi.dev/api/people/?page=2",
     "https://swapi.dev/api/people/?page=3",
     "https://swapi.dev/api/people/?page=4",
-    // "https://swapi.dev/api/people/?page=5",
-    // "https://swapi.dev/api/people/?page=6",
-    // "https://swapi.dev/api/people/?page=7",
+    "https://swapi.dev/api/people/?page=5",
+    "https://swapi.dev/api/people/?page=6",
+    "https://swapi.dev/api/people/?page=7",
     // "https://swapi.dev/api/people/?page=8",
     // "https://swapi.dev/api/people/?page=9",
   ];
@@ -36,7 +36,7 @@ export default function Driver() {
         console.warn("characters : ", characters);
 
         const randomCharacters = [];
-        for (let j = 0; j < 5; j += 1) {
+        for (let j = 0; j < 10; j += 1) {
           const randomDrivers =
             characters[Math.floor(Math.random() * characters.length)];
 
@@ -46,6 +46,7 @@ export default function Driver() {
           } else {
             j -= 1;
           }
+          console.warn("random: ", randomCharacters);
         }
         setPeople(randomCharacters);
       })
