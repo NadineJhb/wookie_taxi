@@ -2,8 +2,6 @@ import PropTypes, { arrayOf } from "prop-types";
 import { useNavigate } from "react-router-dom";
 
 function DriverCard({ driver, stateSearchBar }) {
-  console.warn(driver);
-
   const navigate = useNavigate();
   const handleClick = () => {
     navigate("/captcha", {
@@ -11,13 +9,14 @@ function DriverCard({ driver, stateSearchBar }) {
         destination: stateSearchBar.destination,
         passenger: stateSearchBar.passenger,
         Name: driver.name,
+        driverVehicleUrl: driver.vehicles[0].name,
       },
     });
   };
 
   return (
     driver.vehicles.length > 0 &&
-    driver.vehicles[0].passengers === stateSearchBar.passenger.toString() && (
+    driver.vehicles[0].passengers >= stateSearchBar.passenger.toString() && (
       <div className="driver-card">
         <div className="driverImgDiv">
           <img
@@ -32,9 +31,6 @@ function DriverCard({ driver, stateSearchBar }) {
             <div className="isFavorite"> &nbsp;</div>
           </div>
 
-          <button type="button" onClick={handleClick}>
-            Réserver
-          </button>
           <div className="info-vehicleImage-button">
             <div className="card-information">
               <p>
@@ -52,13 +48,21 @@ function DriverCard({ driver, stateSearchBar }) {
                 <strong>Crew :</strong> {driver.vehicles[0].crew} crew members
                 on board
               </p>
+              <p>
+                <strong>Size :</strong> {driver.height} cm
+              </p>
             </div>
             <div className="vehicleImage-button">
-              <img
-                src={`src/public/images/starship/${driver.vehicles[0].name}.png`}
-                alt="kana"
-                className="starshipImg"
-              />
+              <div className="vehicleImage-container">
+                <img
+                  src={`src/public/images/starship/${driver.vehicles[0].name}.png`}
+                  alt="kana"
+                  className="starshipImg"
+                />
+              </div>
+              <button type="button" onClick={handleClick}>
+                Réserver
+              </button>
             </div>
           </div>
         </div>
@@ -71,6 +75,7 @@ DriverCard.propTypes = {
   driver: PropTypes.shape({
     name: PropTypes.string.isRequired,
     eye_color: PropTypes.string.isRequired,
+    height: PropTypes.number.isRequired,
     vehicles: arrayOf(
       PropTypes.shape({
         crew: PropTypes.number.isRequired,

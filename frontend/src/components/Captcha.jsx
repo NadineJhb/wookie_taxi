@@ -9,8 +9,6 @@ function Captcha() {
   const navigate = useNavigate();
   const [alert, setAlert] = useState(false);
 
-  console.warn(state);
-
   const handleClick = (e) => {
     setPersonnage(e.target.alt);
   };
@@ -24,6 +22,7 @@ function Captcha() {
           destination: state.destination,
           passenger: state.passenger,
           name: state.Name,
+          driverVehicleUrl: state.driverVehicleUrl,
         },
       });
     }

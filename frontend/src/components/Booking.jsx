@@ -5,6 +5,7 @@ import Logo from "./Logo";
 
 function Booking() {
   const { state } = useLocation();
+  console.warn(state.name);
   return (
     <>
       <Logo />
@@ -31,7 +32,7 @@ function Booking() {
               </div>
               <img
                 className="booking-vehicle-photo"
-                src="src/public/images/starship/dod.png"
+                src={`src/public/images/starship/${state.driverVehicleUrl}.png`}
                 alt="booking-vehicle"
               />
             </div>
@@ -39,7 +40,7 @@ function Booking() {
               <div className="booking-passenger">
                 <img
                   className="icon-passenger"
-                  src="./src/public/images/icons/stormtrooper_white.png"
+                  src="src/public/images/icons/stormtrooper_white.png"
                   alt="icon"
                 />
                 <p>{state.passenger}</p>
