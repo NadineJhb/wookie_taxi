@@ -20,6 +20,7 @@
     border-right: 1px solid grey;
     color: #000000;
     display: flex;
+    width: 16vw;
   }
 
   .search-to {
@@ -28,7 +29,7 @@
     font-size: calc(var(--font-size-standard) * 0.85);
     background-color: #ffde06;
     border: none;
-    width: 16vw;
+    width: 20vw;
     border-right: 1px solid grey;
     font-family: var(--font);
     outline: none;
