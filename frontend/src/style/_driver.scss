@@ -96,6 +96,7 @@
       font-size: var(--font-size-standard);
       border: none;
       width: 10vw;
+      cursor: pointer;
     }
 
     .isFavorite {
@@ -115,11 +116,6 @@
     }
   }
 }
-
-// Partie reponsive mobile
-@media screen and (max-width: 360px) {
-}
-
 .loader {
   display: flex;
   flex-direction: column;
@@ -145,26 +141,4 @@
 
 // Partie reponsive mobile
 @media screen and (max-width: 360px) {
-  .loader {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .loaderText {
-    color: var(--secondary-color);
-    width: 100%;
-    font-size: calc(var(--font-size-standard) * 2);
-  }
-
-  .wookieLoader {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    img {
-      width: 80%;
-    }
-  }
 }
