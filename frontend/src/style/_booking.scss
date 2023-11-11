@@ -116,6 +116,9 @@
 
   //third block : button
   button {
+    transition:
+      transform 0.5s ease,
+      box-shadow 0.5s ease;
     box-shadow: 0px 1px 0px 0px #fff6af;
     background: linear-gradient(to bottom, #f0da37 5%, #ffde06 100%);
     border: 1px solid var(--tertiary-color);
@@ -132,6 +135,7 @@
     cursor: pointer;
   }
   button:hover {
+    transform: scale(1.1);
     background: linear-gradient(to bottom, #ffde06 5%, #ffec64 100%);
     background-color: var(--tertiary-color);
   }
