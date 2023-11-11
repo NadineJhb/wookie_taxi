@@ -50,6 +50,18 @@
 
   .booking-driver-photo {
     border: 1px solid var(--secondary-color);
+    box-shadow:
+      0 0 1px #fff,
+      0 0 2px #fff,
+      0 0 3px #fff,
+      0 0 4px #fff,
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 10px #fff,
+      0 0 15px #fff,
+      inset 0 0 10px #fff,
+      inset 0 0 10px #fff,
+      inset 0 0 15px #fff;
     width: 35%;
     min-width: 140px;
     max-width: 260px;
@@ -104,6 +116,12 @@
 
   //third block : button
   button {
+    box-shadow: 0px 1px 0px 0px #fff6af;
+    background: linear-gradient(to bottom, #f0da37 5%, #ffde06 100%);
+    border: 1px solid var(--tertiary-color);
+    display: inline-block;
+    text-shadow: 0px 1px 0px #ffee66;
+    text-decoration: none;
     background-color: var(--primary-color);
     padding: calc(var(--spacing) * 1.8) calc(var(--spacing) * 3.2);
     border-radius: calc(var(--search-border-radius) * 0.5);
@@ -112,6 +130,10 @@
     font-size: calc(var(--font-size-standard) * 0.8);
     border: none;
     cursor: pointer;
+  }
+  button:hover {
+    background: linear-gradient(to bottom, #ffde06 5%, #ffec64 100%);
+    background-color: var(--tertiary-color);
   }
 
   .button-home {

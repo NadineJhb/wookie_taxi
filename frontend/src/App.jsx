@@ -163,7 +163,7 @@ function App() {
         setInputDestination={setInputDestination}
       />
       <div className="title-searchbar-container">
-        <h1>LE COVOIT' DE LA GALAXIE !</h1>
+        <h1>YOUR RIDE THROUGH GALAXY !</h1>
         <SearchBar
           inputDestination={inputDestination}
           setInputDestination={setInputDestination}

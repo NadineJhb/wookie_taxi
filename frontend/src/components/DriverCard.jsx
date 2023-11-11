@@ -61,7 +61,7 @@ function DriverCard({ driver, stateSearchBar }) {
                 />
               </div>
               <button type="button" onClick={handleClick}>
-                Réserver
+                Book
               </button>
             </div>
           </div>

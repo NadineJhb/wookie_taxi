@@ -32,14 +32,13 @@ function Captcha() {
     <>
       <Logo />
       <div className="title">
-        <h1>Êtes-vous un vrai fan de Star Wars ?</h1>
+        <h1>Are you a real Star Wars fan ?</h1>
       </div>
 
       <div className="container-global">
         <div className="container-captcha">
           <h2>
-            Sélectionnez la/les cases contenant des WOOKIES afin de confirmer
-            votre identité.
+            Select all images with <p>WOOKIES</p> to confirm your identity.
           </h2>
           <div className="container-img">
             <button
@@ -134,11 +133,11 @@ function Captcha() {
                 className="button-captcha"
                 onClick={handleVerification}
               >
-                Vérifier
+                VERIFY
               </button>
             </div>
             <div className={alert === true ? "text-alert" : "hidden"}>
-              <p>❌ Erreur de validation. Veuillez réessayer.</p>
+              <p>❌ Error in validation. Please try again.</p>
             </div>
           </div>
         </div>

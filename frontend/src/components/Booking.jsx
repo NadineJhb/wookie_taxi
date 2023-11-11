@@ -11,12 +11,12 @@ function Booking() {
       <Logo />
       <div className="booking-container">
         <div className="booking-title">
-          <h2>Merci pour votre réservation !</h2>
+          <h2>Thank you for your booking !</h2>
         </div>
         <h3 className="booking-driver-text">
-          Votre Wookie Taxi avec &nbsp;
+          Your Wookie Taxi with &nbsp;
           <h3 className="booking-drivername">{state.name}</h3>
-          &nbsp; est confirmé.
+          &nbsp; is confirmed.
         </h3>
         <div className="booking-images-infos">
           <img
@@ -27,7 +27,7 @@ function Booking() {
           <div className="booking-infos">
             <div className="booking-planet-vehiclephoto">
               <div className="booking-depart-destination">
-                <p>Départ : Endor</p>
+                <p>Departure : Endor</p>
                 <p>Destination : {state.destination}</p>
               </div>
               <img
@@ -51,14 +51,14 @@ function Booking() {
                   src="./src/public/images/icons/vehicle.png"
                   alt="icon"
                 />
-                <p>Véhicule : {state.driverVehicleUrl}</p>
+                <p>Vehicle : {state.driverVehicleUrl}</p>
               </div>
             </div>
           </div>
         </div>
         <div className="button-home">
           <button type="button" className="return-home">
-            <NavLink to="/">Revenir à l'accueil</NavLink>
+            <NavLink to="/">Return to homepage</NavLink>
           </button>
         </div>
       </div>
