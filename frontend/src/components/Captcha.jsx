@@ -6,7 +6,9 @@ import Footer from "./Footer";
 function Captcha() {
   const { state } = useLocation();
   const [personnage, setPersonnage] = useState("");
+
   const navigate = useNavigate();
+
   const [alert, setAlert] = useState(false);
 
   const handleClick = (e) => {
@@ -136,6 +138,7 @@ function Captcha() {
                 VERIFY
               </button>
             </div>
+
             <div className={alert === true ? "text-alert" : "hidden"}>
               <p>❌ Error in validation. Please try again.</p>
             </div>
