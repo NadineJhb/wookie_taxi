@@ -27,8 +27,12 @@ function Booking() {
           <div className="booking-infos">
             <div className="booking-planet-vehiclephoto">
               <div className="booking-depart-destination">
-                <p>Departure : Endor</p>
-                <p>Destination : {state.destination}</p>
+                <p>
+                  <strong>Departure</strong> : Endor
+                </p>
+                <p>
+                  <strong>Destination</strong> : {state.destination}
+                </p>
               </div>
               <img
                 className="booking-vehicle-photo"
@@ -43,7 +47,9 @@ function Booking() {
                   src="src/public/images/icons/stormtrooper_white.png"
                   alt="icon"
                 />
-                <p>{state.passenger}</p>
+                <p>
+                  <strong>{state.passenger}</strong>
+                </p>
               </div>
               <div className="booking-vehicle">
                 <img
@@ -51,7 +57,9 @@ function Booking() {
                   src="./src/public/images/icons/vehicle.png"
                   alt="icon"
                 />
-                <p>Vehicle : {state.driverVehicleUrl}</p>
+                <p>
+                  <strong>Vehicle :</strong> {state.driverVehicleUrl}
+                </p>
               </div>
             </div>
           </div>
