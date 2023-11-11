@@ -98,30 +98,30 @@
 .button-container {
   display: flex;
   justify-content: flex-end;
+}
+.button-captcha {
+  box-shadow: 0px 1px 0px 0px #fff6af;
+  background: linear-gradient(to bottom, #f0da37 5%, #ffde06 100%);
+  background-color: #f3de3c;
+  border: 1px solid var(--tertiary-color);
+  display: inline-block;
+  text-shadow: 0px 1px 0px #ffee66;
+  text-decoration: none;
+  font-size: calc(var(--font-size-standard) * 0.8);
+  font-family: var(--font);
+  background-color: var(--primary-color);
+  border-inline: none;
+  font-size: calc(var(--font-size-standard) * 0.7);
+  font-weight: 700;
+  width: 140px;
+  height: 35px;
+  border-radius: 8px;
+  cursor: pointer;
+}
 
-  .button-captcha {
-    box-shadow: 0px 1px 0px 0px #fff6af;
-    background: linear-gradient(to bottom, #f0da37 5%, #ffde06 100%);
-    background-color: #f3de3c;
-    border: 1px solid var(--tertiary-color);
-    display: inline-block;
-    text-shadow: 0px 1px 0px #ffee66;
-    text-decoration: none;
-    font-size: calc(var(--font-size-standard) * 0.8);
-    font-family: var(--font);
-    background-color: var(--primary-color);
-    border-inline: none;
-    font-size: calc(var(--font-size-standard) * 0.7);
-    font-weight: 700;
-    width: 140px;
-    height: 35px;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  .button-captcha:hover {
-    background: linear-gradient(to bottom, #ffde06 5%, #ffec64 100%);
-    background-color: var(--tertiary-color);
-  }
+.button-captcha:hover {
+  background: linear-gradient(to bottom, #ffde06 5%, #ffec64 100%);
+  background-color: var(--tertiary-color);
 }
 
 .container-verification {

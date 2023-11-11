@@ -142,69 +142,65 @@
     padding-top: calc(var(--spacing) * 3);
   }
 }
+a {
+  text-decoration: none;
+  color: var(--tertiary-color);
+}
 
 // Partie reponsive mobile
 @media screen and (max-width: 360px) {
   .booking-container {
     width: 80vw;
     height: 73vh;
-    padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 3)
-      calc(var(--spacing) * 2) calc(var(--spacing) * 4);
-    margin-bottom: calc(var(--spacing) * 2);
+    padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 0)
+      calc(var(--spacing) * 4);
 
     h2 {
       font-size: calc(var(--font-size-standard) * 0.8);
       text-align: center;
     }
-
     h3 {
       font-size: calc(var(--font-size-standard) * 0.6);
     }
-
+    .booking-driver-photo {
+      margin-left: 25%;
+      width: 100px;
+      height: 150px;
+    }
     .booking-images-infos {
-      display: flex;
       flex-direction: column;
-      text-align: center;
-      padding: calc(var(--spacing) * 2) 5% calc(var(--spacing) * 2) 5%;
+      padding: calc(var(--spacing) * 1.5);
     }
     p {
-      padding-bottom: calc(var(--spacing) * 1.5);
+      padding-bottom: calc(var(--spacing) * 1);
       font-size: calc(var(--font-size-standard) * 0.7);
     }
     .booking-infos {
-      padding: calc(var(--spacing) * 1) 0 calc(var(--spacing) * 1) 0;
+      display: flex;
+      justify-content: center;
+      padding: calc(var(--spacing) * 2) 0 calc(var(--spacing) * 1);
     }
     .booking-planet-vehiclephoto {
-      text-align: center;
       flex-direction: column;
       gap: calc(var(--spacing) * 0);
     }
-
     .booking-vehicle-photo {
-      width: 10vw;
+      width: 25vw;
     }
-
+    .booking-passenger,
+    .booking-vehicle {
+      margin-left: 60px;
+    }
+    .icon-passenger,
+    .icon-vehicle {
+      height: 20px;
+    }
+    .button-home {
+      padding-top: calc(var(--spacing) * 0);
+    }
     button {
       padding: calc(var(--spacing) * 1) calc(var(--spacing) * 1);
       font-size: calc(var(--font-size-standard) * 0.6);
     }
-
-    .icon-passenger {
-      height: calc(var(--spacing) * 3);
-      padding-right: calc(var(--spacing) * 2);
-      padding-left: 15px;
-    }
-
-    .icon-vehicle {
-      height: calc(var(--spacing) * 3);
-
-      padding-right: calc(var(--spacing) * 2);
-      padding-left: 15px;
-    }
   }
-}
-
-a {
-  text-decoration: none;
-  color: var(--tertiary-color);
 }

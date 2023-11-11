@@ -48,7 +48,7 @@ function Booking() {
                   alt="icon"
                 />
                 <p>
-                  <strong>{state.passenger}</strong>
+                  <strong>{state.passenger} passenger</strong>
                 </p>
               </div>
               <div className="booking-vehicle">
