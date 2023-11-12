@@ -1,6 +1,6 @@
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import DriverCard from "./DriverCard";
 import Filters from "./Filters";
 import Logo from "./Logo";
@@ -9,40 +9,31 @@ import SearchBar from "./SearchBar";
 export default function Driver() {
   const { state } = useLocation();
   const [people, setPeople] = useState([]);
+  const [filteredPeople, setFilteredPeople] = useState(people);
+
+  const navigate = useNavigate();
+
   const [destinationDriverpage, setDestinationDriverpage] = useState(
     state.destination
   );
   const [passengerDriverpage, setPassengerDriverpage] = useState(
     state.passenger
   );
-  const array = [
-    "https://swapi.dev/api/people",
-    "https://swapi.dev/api/people/?page=2",
-    "https://swapi.dev/api/people/?page=3",
-    "https://swapi.dev/api/people/?page=4",
-    // "https://swapi.dev/api/people/?page=5",
-    // "https://swapi.dev/api/people/?page=6",
-    // "https://swapi.dev/api/people/?page=7",
-    // "https://swapi.dev/api/people/?page=8",
-    // "https://swapi.dev/api/people/?page=9",
-  ];
 
   useEffect(() => {
+    if (!state) navigate("/");
     axios
-      .all(array.map((endpoint) => axios.get(endpoint)))
+      .get("https://netflix-clone-back.onrender.com/characters")
       .then((data) => {
         const characters = [];
-        for (let i = 0; i < data.length; i += 1) {
-          for (let k = 0; k < 10; k += 1) {
-            if (data[i].data.results[k].vehicles.length > 0) {
-              characters.push(data[i].data.results[k]);
-            }
+        for (let i = 0; i < data.data.length; i += 1) {
+          if (data.data[i].vehicles.length > 0) {
+            characters.push(data.data[i]);
           }
         }
-        console.warn("characters : ", characters);
 
         const randomCharacters = [];
-        for (let j = 0; j < 5; j += 1) {
+        for (let j = 0; j < 20; j += 1) {
           const randomDrivers =
             characters[Math.floor(Math.random() * characters.length)];
 
@@ -64,7 +55,7 @@ export default function Driver() {
       <Logo />
       <div className="filter-search-cards">
         <div className="filterBlock">
-          <Filters />
+          <Filters setFilteredPeople={setFilteredPeople} people={people} />
         </div>
 
         <div className="search-cards">
@@ -92,15 +83,10 @@ export default function Driver() {
                 </div>
               </div>
             ) : (
-              people.map((driver) => {
+              filteredPeople.map((driver) => {
                 return (
                   <DriverCard
-                    driverName={driver.name}
-                    birthYear={driver.birth_year}
-                    height={driver.height}
-                    gender={driver.gender}
-                    skinColor={driver.skin_color}
-                    eyeColor={driver.eye_color}
+                    driver={driver}
                     driverVehicleUrl={driver.vehicles[0]}
                     stateSearchBar={state}
                   />

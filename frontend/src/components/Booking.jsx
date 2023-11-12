@@ -5,6 +5,7 @@ import Logo from "./Logo";
 
 function Booking() {
   const { state } = useLocation();
+  console.warn(state.name);
   return (
     <>
       <Logo />
@@ -57,7 +58,7 @@ function Booking() {
         </div>
         <div className="button-home">
           <button type="button" className="return-home">
-            <NavLink to="/">Revenir à l'accueil</NavLink>
+            <NavLink to="/home">Revenir à l'accueil</NavLink>
           </button>
         </div>
       </div>
