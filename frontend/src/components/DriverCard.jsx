@@ -1,63 +1,61 @@
-import PropTypes from "prop-types";
-import axios from "axios";
-import { useState, useEffect } from "react";
+import PropTypes, { arrayOf } from "prop-types";
 import { useNavigate } from "react-router-dom";
 
-function DriverCard({ driverName, driverVehicleUrl, stateSearchBar }) {
-  const [vehicle, setVehicle] = useState(undefined);
+function DriverCard({ driver, stateSearchBar }) {
   const navigate = useNavigate();
   const handleClick = () => {
     navigate("/captcha", {
       state: {
         destination: stateSearchBar.destination,
         passenger: stateSearchBar.passenger,
-        Name: driverName,
-        driverVehicleUrl: vehicle.name,
+        Name: driver.name,
+        driverVehicleUrl: driver.vehicles[0].name,
       },
     });
-    // console.log(vehicle.name)
   };
-  useEffect(() => {
-    if (driverVehicleUrl) {
-      axios.get(driverVehicleUrl).then((res) => {
-        setVehicle(res.data);
-      });
-    }
-  }, []);
 
   return (
-    vehicle &&
-    vehicle.passengers === stateSearchBar.passenger && (
+    driver.vehicles.length > 0 &&
+    driver.vehicles[0].passengers >= stateSearchBar.passenger.toString() && (
       <div className="driver-card">
         <div className="driverImgDiv">
           <img
-            src={`src/public/images/characters/${driverName}.jpg`}
+            src={`src/public/images/characters/${driver.name}.jpg`}
             alt="Avatar"
             className="driverImg"
           />
         </div>
         <div className="info-container">
           <div className="drivername-favorite">
-            <h2>{driverName}</h2>
+            <h2>{driver.name}</h2>
             <div className="isFavorite"> &nbsp;</div>
           </div>
 
           <div className="info-vehicleImage-button">
             <div className="card-information">
               <p>
-                <strong>Vehicle name</strong> {vehicle.name}
+                <strong>Passengers :</strong> {driver.vehicles[0].passengers}{" "}
+                seats left
               </p>
               <p>
-                <strong>Vehicle model :</strong> {vehicle.model}
+                <strong>Max atmosphering speed :</strong>{" "}
+                {driver.vehicles[0].max_atmosphering_speed} mph
               </p>
               <p>
-                <strong>Passengers :</strong> {vehicle.passengers}
+                <strong>Driver eye color:</strong> {driver.eye_color} eyes
+              </p>
+              <p>
+                <strong>Crew :</strong> {driver.vehicles[0].crew} crew members
+                on board
+              </p>
+              <p>
+                <strong>Size :</strong> {driver.height} cm
               </p>
             </div>
             <div className="vehicleImage-button">
               <div className="vehicleImage-container">
                 <img
-                  src={`src/public/images/starship/${vehicle.name}.png`}
+                  src={`src/public/images/starship/${driver.vehicles[0].name}.png`}
                   alt="kana"
                   className="starshipImg"
                 />
@@ -74,10 +72,19 @@ function DriverCard({ driverName, driverVehicleUrl, stateSearchBar }) {
 }
 
 DriverCard.propTypes = {
-  driverName: PropTypes.string.isRequired,
-  driverVehicleUrl: PropTypes.shape.isRequired,
-  stateSearchBar: PropTypes.string.isRequired,
-  state: PropTypes.shape({ passenger: PropTypes.string.isRequired }).isRequired,
+  driver: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    eye_color: PropTypes.string.isRequired,
+    height: PropTypes.number.isRequired,
+    vehicles: arrayOf(
+      PropTypes.shape({
+        crew: PropTypes.number.isRequired,
+        max_atmosphering_speed: PropTypes.number.isRequired,
+        passenger: PropTypes.string.isRequired,
+      })
+    ),
+  }).isRequired,
+  stateSearchBar: PropTypes.func.isRequired,
 };
 
 export default DriverCard;
