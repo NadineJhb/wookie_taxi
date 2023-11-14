@@ -23,7 +23,7 @@ function Filters({ people, setFilteredPeople }) {
   return (
     <div>
       <div className="container-filters">
-        {/* <h1>Filter</h1> */}
+        {/* <h1>Filter by</h1> */}
 
         {/* <fieldset className="container-starship">
           <legend>Starship</legend>

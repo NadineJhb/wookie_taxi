@@ -24,7 +24,7 @@ function SearchBar({
     <div className="searchbar-container">
       <div className="search-from">
         <BiSolidMap className="map-icon" />
-        <p className="depart">Départ : ENDOR</p>
+        <p className="depart">Departure : ENDOR</p>
       </div>
 
       <form action="">

@@ -26,7 +26,7 @@ function PlaneteCard({ planet, setInputDestination }) {
             className="button-card"
             value={planet.name}
           >
-            Y aller
+            Select
           </button>
         </div>
       </div>

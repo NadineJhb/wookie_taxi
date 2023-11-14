@@ -48,6 +48,9 @@ function DriverCard({ driver, stateSearchBar, isFavorite }) {
           <div className="info-vehicleImage-button">
             <div className="card-information">
               <p>
+                <strong>Vehicle :</strong> {driver.vehicles[0].name}
+              </p>
+              <p>
                 <strong>Passengers :</strong> {driver.vehicles[0].passengers}{" "}
                 seats left
               </p>
@@ -56,12 +59,13 @@ function DriverCard({ driver, stateSearchBar, isFavorite }) {
                 {driver.vehicles[0].max_atmosphering_speed} mph
               </p>
               <p>
-                <strong>Driver eye color:</strong> {driver.eye_color} eyes
-              </p>
-              <p>
                 <strong>Crew :</strong> {driver.vehicles[0].crew} crew members
                 on board
               </p>
+              <p>
+                <strong>Driver eye color:</strong> {driver.eye_color} eyes
+              </p>
+
               <p>
                 <strong>Size :</strong> {driver.height} cm
               </p>
@@ -75,7 +79,7 @@ function DriverCard({ driver, stateSearchBar, isFavorite }) {
                 />
               </div>
               <button type="button" onClick={handleClick}>
-                Réserver
+                Book
               </button>
             </div>
           </div>
