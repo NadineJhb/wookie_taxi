@@ -13,13 +13,6 @@ export default function Driver() {
 
   const navigate = useNavigate();
 
-  const [destinationDriverpage, setDestinationDriverpage] = useState(
-    state.destination
-  );
-  const [passengerDriverpage, setPassengerDriverpage] = useState(
-    state.passenger
-  );
-
   useEffect(() => {
     if (!state) navigate("/");
     axios
@@ -48,7 +41,14 @@ export default function Driver() {
         setPeople(randomCharacters);
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [state]);
+
+  const [destinationDriverpage, setDestinationDriverpage] = useState(
+    state.destination
+  );
+  const [passengerDriverpage, setPassengerDriverpage] = useState(
+    state.passenger
+  );
 
   return (
     <div className="driver-page">
