@@ -69,10 +69,7 @@ export default function Driver() {
           <div className="cards">
             {people.length === 0 ? (
               <div className="loader">
-                <p className="loaderText">
-                  Un peu de patience, nous consultons les chauffeurs
-                  disponibles.
-                </p>
+                <p className="loaderText">Checking for avalable drivers...</p>
                 <div className="sabreLoader">
                   <img
                     src="src/public/images/wookie.gif"
