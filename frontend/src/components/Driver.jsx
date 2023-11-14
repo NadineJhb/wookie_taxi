@@ -65,8 +65,10 @@ export default function Driver() {
               setInputDestination={setDestinationDriverpage}
               inputPassenger={passengerDriverpage}
               setInputPassenger={setPassengerDriverpage}
-            />
+              searchIcon="hideSearchIcon"
+            />{" "}
           </div>
+
           <div className="cards">
             {people.length === 0 ? (
               <div className="loader">
@@ -82,11 +84,9 @@ export default function Driver() {
             ) : (
               filteredPeople.map((driver) => {
                 return (
-                  <DriverCard
-                    driver={driver}
-                    driverVehicleUrl={driver.vehicles[0]}
-                    stateSearchBar={state}
-                  />
+                  <div key={driver.name} className={driver.name}>
+                    <DriverCard driver={driver} stateSearchBar={state} />
+                  </div>
                 );
               })
             )}

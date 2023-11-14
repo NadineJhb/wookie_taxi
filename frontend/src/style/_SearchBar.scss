@@ -55,13 +55,17 @@
     padding-left: calc(var(--spacing) * 6);
   }
 
-  .search-icon {
+  .displaySearchIcon {
     font-size: calc(var(--font-size-standard) * 1.8);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     cursor: pointer;
+  }
+
+  .hideSearchIcon {
+    display: none;
   }
 
   .search-btn {
