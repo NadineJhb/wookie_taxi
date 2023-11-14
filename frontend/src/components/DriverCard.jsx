@@ -78,7 +78,7 @@ function DriverCard({ driver, stateSearchBar, isFavorite }) {
                   className="starshipImg"
                 />
               </div>
-              <button type="button" onClick={handleClick}>
+              <button type="button" className="book" onClick={handleClick}>
                 Book
               </button>
             </div>

@@ -123,7 +123,7 @@
       width: 100%;
     }
 
-    button {
+    .book {
       transition:
         transform 0.5s ease,
         box-shadow 0.5s ease;
@@ -143,35 +143,38 @@
       width: 10vw;
       cursor: pointer;
     }
-    button:hover {
+    .book:hover {
       transform: scale(1.1);
       background: linear-gradient(to bottom, #ffde06 5%, #ffec64 100%);
       background-color: var(--tertiary-color);
     }
+  }
 
-    .isFavorite {
-      width: 40px;
-      height: 40px;
-      background: none;
-      background-image: url(src/public/images/icons/yellow-heart.256x205.png);
-      background-repeat: no-repeat;
-      background-size: 100%;
-      align-self: flex-end;
-      cursor: pointer;
-    }
+  .isFavorite {
+    width: 40px;
+    height: 40px;
+    background: none;
+    border-style: none;
+    background-image: url(src/public/images/icons/yellow-heart.256x205.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    align-self: flex-end;
+    cursor: pointer;
+  }
 
-    .notFavorite {
-      width: 40px;
-      height: 40px;
-      background: none;
-      background-image: url(src/public/images/icons/yellow-heart.256x213.png);
-      background-repeat: no-repeat;
-      background-size: 100%;
-      align-self: flex-end;
-      cursor: pointer;
-    }
+  .notFavorite {
+    width: 40px;
+    height: 40px;
+    background: none;
+    border-style: none;
+    background-image: url(src/public/images/icons/yellow-heart.256x213.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    align-self: flex-end;
+    cursor: pointer;
   }
 }
+
 .loader {
   display: flex;
   flex-direction: column;
@@ -196,8 +199,6 @@
   }
 }
 
-
 // Partie reponsive mobile
 @media screen and (max-width: 360px) {
 }
-
