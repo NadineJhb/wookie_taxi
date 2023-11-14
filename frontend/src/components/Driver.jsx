@@ -41,7 +41,14 @@ export default function Driver() {
         setPeople(randomCharacters);
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [state]);
+
+  const [destinationDriverpage, setDestinationDriverpage] = useState(
+    state.destination
+  );
+  const [passengerDriverpage, setPassengerDriverpage] = useState(
+    state.passenger
+  );
 
   return (
     <div className="driver-page">
@@ -53,7 +60,13 @@ export default function Driver() {
 
         <div className="search-cards">
           <div>
-            <SearchBar />
+            <SearchBar
+              inputDestination={destinationDriverpage}
+              setInputDestination={setDestinationDriverpage}
+              inputPassenger={passengerDriverpage}
+              setInputPassenger={setPassengerDriverpage}
+              searchIcon="hideSearchIcon"
+            />{" "}
           </div>
 
           <div className="cards">
