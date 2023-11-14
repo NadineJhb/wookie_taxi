@@ -14,7 +14,8 @@ function SearchBar({
 }) {
   const navigate = useNavigate();
 
-  const handleClickSearch = () => {
+  const handleClickSearch = (e) => {
+    e.preventDefault();
     navigate("/driver", {
       state: { destination: inputDestination, passenger: inputPassenger },
     });
@@ -26,8 +27,7 @@ function SearchBar({
         <BiSolidMap className="map-icon" />
         <p className="depart">Departure : ENDOR</p>
       </div>
-
-      <form action="">
+      <form onSubmit={handleClickSearch}>
         <input
           type="text"
           placeholder="Destination"
@@ -43,11 +43,7 @@ function SearchBar({
           onChange={(e) => setInputPassenger(e.target.value)}
         />
         <div>
-          <button
-            onClick={handleClickSearch}
-            type="submit"
-            className="search-btn"
-          >
+          <button type="submit" className="search-btn">
             <FiSearch className="search-icon" />
           </button>
         </div>
