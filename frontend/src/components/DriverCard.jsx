@@ -1,8 +1,15 @@
 import PropTypes, { arrayOf } from "prop-types";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
-function DriverCard({ driver, stateSearchBar }) {
+function DriverCard({ driver, stateSearchBar, isFavorite }) {
   const navigate = useNavigate();
+  const [favorite, setFavorite] = useState(isFavorite);
+
+  const handleClick1 = () => {
+    setFavorite(!favorite);
+  };
+
   const handleClick = () => {
     navigate("/captcha", {
       state: {
@@ -28,7 +35,14 @@ function DriverCard({ driver, stateSearchBar }) {
         <div className="info-container">
           <div className="drivername-favorite">
             <h2>{driver.name}</h2>
-            <div className="isFavorite"> &nbsp;</div>
+            {/* <div className="isFavorite"> &nbsp;</div> */}
+            <button
+              type="button"
+              className={favorite ? "isFavorite" : "notFavorite"}
+              onClick={handleClick1}
+            >
+              <p> </p>
+            </button>
           </div>
 
           <div className="info-vehicleImage-button">
@@ -89,6 +103,7 @@ DriverCard.propTypes = {
     ),
   }).isRequired,
   stateSearchBar: PropTypes.func.isRequired,
+  isFavorite: PropTypes.string.isRequired,
 };
 
 export default DriverCard;

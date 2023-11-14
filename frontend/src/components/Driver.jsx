@@ -43,6 +43,7 @@ export default function Driver() {
           } else {
             j -= 1;
           }
+          console.warn("random: ", randomCharacters);
         }
         setPeople(randomCharacters);
       })
