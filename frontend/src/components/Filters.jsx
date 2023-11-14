@@ -29,77 +29,100 @@ function Filters({ people, setFilteredPeople }) {
   return (
     <div>
       <div className="container-filters">
-        {/* <h1>Filter by</h1> */}
-
-        {/* <fieldset className="container-starship">
-          <legend>Starship</legend>
-
-          <div className="entry">
-            <input
-              type="radio"
-              id="3"
-              name="Starship"
-              value="SnowSpeeder"
-              checked
+        <div className="container-filter-title">
+          <img src="src/public/images/icons/filters.png" alt="filter-icon" />
+          <h1>Filter by</h1>
+        </div>
+        <fieldset className="container-starship">
+          <div className="container-filter-category">
+            <img
+              src="src/public/images/icons/vehicle_yellow.png"
+              alt="vehicle-icon"
             />
-            <label htmlFor="3">SnowSpeeder</label>
+            <legend>Starship</legend>
+          </div>
+          <div className="entry">
+            <div className="container-text-checkbox">
+              <label htmlFor="3">SnowSpeeder</label>
+              <input
+                type="checkbox"
+                id="3"
+                name="Starship"
+                value="SnowSpeeder"
+                checked
+              />
+            </div>
           </div>
 
           <div className="entry">
-            <input
-              type="radio"
-              id="4"
-              name="Starship"
-              value="Imperial Speeder Bike"
-            />
-            <label htmlFor="4">Imperial Speeder Bike</label>
+            <div className="container-text-checkbox">
+              <label htmlFor="4">Imperial Speeder Bike</label>
+              <input
+                type="checkbox"
+                id="4"
+                name="Starship"
+                value="Imperial Speeder Bike"
+              />
+            </div>
           </div>
 
           <div className="entry">
-            <input type="radio" id="5" name="Starship" value="AT-ST" />
-            <label htmlFor="5">AT-ST</label>
+            <div className="container-text-checkbox">
+              <label htmlFor="5">AT-ST</label>
+              <input type="checkbox" id="5" name="Starship" value="AT-ST" />
+            </div>
           </div>
-        </fieldset> */}
+        </fieldset>
 
         <fieldset className="container-looks">
-          <legend>Options</legend>
-
-          <h4>Physical attributes</h4>
-          <div className="entry">
-            <input
-              type="checkbox"
-              onInput={(e) => setEye(e.target.checked)}
-              id="6"
-              name="looks"
-              value={eye}
-              defaultChecked={false}
+          <div className="container-filter-category">
+            <img
+              src="src/public/images/icons/personage_yellow.png"
+              alt="personage-icon"
             />
-            <label htmlFor="6">Blue eyes, please</label>
+            <legend>Options</legend>
           </div>
 
           <div className="entry">
-            <input
-              type="checkbox"
-              onInput={(e) => setTall(e.target.checked)}
-              id="7"
-              name="looks"
-              value={tall}
-              defaultChecked={false}
-            />
-
-            <label htmlFor="7">I like them tall</label>
+            <div className="container-text-checkbox">
+              <label htmlFor="6">Blue eyes, please</label>
+              <input
+                type="checkbox"
+                onInput={(e) => setEye(e.target.checked)}
+                id="6"
+                name="looks"
+                value={eye}
+                defaultChecked={false}
+              />
+            </div>
           </div>
 
           <div className="entry">
-            <input
-              type="checkbox"
-              onInput={(e) => setBig(e.target.checked)}
-              id="8"
-              name="looks"
-              value={big}
-              defaultChecked={false}
-            />
-            <label htmlFor="8">With an extra layer of muscles</label>
+            <div className="container-text-checkbox">
+              <label htmlFor="7">I like them tall</label>
+              <input
+                type="checkbox"
+                onInput={(e) => setTall(e.target.checked)}
+                id="7"
+                name="looks"
+                value={tall}
+                defaultChecked={false}
+              />
+            </div>
+          </div>
+
+          <div className="entry">
+            <div className="container-text-checkbox">
+              <label htmlFor="8">Muscle</label>
+              <input
+                type="checkbox"
+                onInput={(e) => setBig(e.target.checked)}
+                id="8"
+                name="looks"
+                value={big}
+                defaultChecked={false}
+              />
+            </div>
           </div>
 
           <h4>Gender preferences</h4>
@@ -140,13 +163,18 @@ function Filters({ people, setFilteredPeople }) {
           </div>
         </fieldset>
 
-        {/* <fieldset className="favorite">
-          <legend>Favorite</legend>
+        <fieldset className="favorite">
           <div className="entry">
-            <input type="checkbox" id="9" name="favorite" value="favorite" />
-            <label htmlFor="9">Favorite</label>
+            <div className="container-text-checkbox">
+              <img
+                src="src/public/images/icons/yellow-heart.256x205.png"
+                alt="yellow-heart"
+              />
+              <label htmlFor="9">Favorite</label>
+              <input type="checkbox" id="9" name="favorite" value="favorite" />
+            </div>
           </div>
-        </fieldset> */}
+        </fieldset>
       </div>
     </div>
   );
