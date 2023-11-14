@@ -34,22 +34,22 @@ function DriverCard({ driver, stateSearchBar }) {
           <div className="info-vehicleImage-button">
             <div className="card-information">
               <p>
+                <strong>Homeworld:</strong> {driver.homeworld}
+              </p>
+              <p>
+                <strong>Vehicle :</strong> {driver.vehicles[0].name}{" "}
+              </p>
+              <p>
                 <strong>Passengers :</strong> {driver.vehicles[0].passengers}{" "}
                 seats left
               </p>
               <p>
-                <strong>Max atmosphering speed :</strong>{" "}
+                <strong>Max speed :</strong>{" "}
                 {driver.vehicles[0].max_atmosphering_speed} mph
               </p>
               <p>
-                <strong>Driver eye color:</strong> {driver.eye_color} eyes
-              </p>
-              <p>
-                <strong>Crew :</strong> {driver.vehicles[0].crew} crew members
-                on board
-              </p>
-              <p>
-                <strong>Size :</strong> {driver.height} cm
+                <strong>Crew members on board:</strong>{" "}
+                {driver.vehicles[0].crew}
               </p>
             </div>
             <div className="vehicleImage-button">
@@ -76,6 +76,7 @@ DriverCard.propTypes = {
     name: PropTypes.string.isRequired,
     eye_color: PropTypes.string.isRequired,
     height: PropTypes.number.isRequired,
+    homeworld: PropTypes.string.isRequired,
     vehicles: arrayOf(
       PropTypes.shape({
         crew: PropTypes.number.isRequired,

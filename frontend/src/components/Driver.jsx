@@ -13,13 +13,6 @@ export default function Driver() {
 
   const navigate = useNavigate();
 
-  const [destinationDriverpage, setDestinationDriverpage] = useState(
-    state.destination
-  );
-  const [passengerDriverpage, setPassengerDriverpage] = useState(
-    state.passenger
-  );
-
   useEffect(() => {
     if (!state) navigate("/");
     axios
@@ -59,13 +52,9 @@ export default function Driver() {
 
         <div className="search-cards">
           <div>
-            <SearchBar
-              inputDestination={destinationDriverpage}
-              setInputDestination={setDestinationDriverpage}
-              inputPassenger={passengerDriverpage}
-              setInputPassenger={setPassengerDriverpage}
-            />
+            <SearchBar />
           </div>
+
           <div className="cards">
             {people.length === 0 ? (
               <div className="loader">
@@ -73,7 +62,7 @@ export default function Driver() {
                   Un peu de patience, nous consultons les chauffeurs
                   disponibles.
                 </p>
-                <div className="sabreLoader">
+                <div className="wookieLoader">
                   <img
                     src="src/public/images/wookie.gif"
                     alt="Loader"
@@ -84,11 +73,9 @@ export default function Driver() {
             ) : (
               filteredPeople.map((driver) => {
                 return (
-                  <DriverCard
-                    driver={driver}
-                    driverVehicleUrl={driver.vehicles[0]}
-                    stateSearchBar={state}
-                  />
+                  <div key={driver.name} className={driver.name}>
+                    <DriverCard driver={driver} stateSearchBar={state} />
+                  </div>
                 );
               })
             )}
