@@ -165,7 +165,7 @@
 
 // Partie responsive mobile
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 600px) {
   .title {
     h1 {
       font-size: calc(var(--font-size-standard) * 0.8);
