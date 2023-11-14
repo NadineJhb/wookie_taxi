@@ -66,9 +66,7 @@ function Booking() {
         </div>
         <div className="button-home">
           <button type="button" className="return-home">
-
-            <NavLink to="/">Return to homepage</NavLink>
-
+            <NavLink to="/home">Return to homepage</NavLink>
           </button>
         </div>
       </div>

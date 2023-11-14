@@ -26,6 +26,11 @@ export default function Intro() {
                 <p> </p>
               </button>
             </div>
+            <div className="skipIntro">
+              <button className="skip" type="button" onClick={handleClick}>
+                <p> Skip intro </p>
+              </button>
+            </div>
             <div className="crawl-text">
               <header className="crawl-header">
                 <span className="crawl-episode">Episode 6.5</span>
