@@ -5,20 +5,26 @@ function Filters({ people, setFilteredPeople }) {
   const [eye, setEye] = useState(false);
   const [big, setBig] = useState(false);
   const [tall, setTall] = useState(false);
+  const [gender, setGender] = useState("all");
 
   useEffect(() => {
     const filtered = people.filter((person) =>
-      !eye ? true : person.eye_color === "blue"
+      !eye
+        ? true
+        : person.eye_color === "blue" || person.eye_color === "blue-gray"
     );
     const filtered2 = filtered.filter((person) =>
-      !tall ? true : person.height >= 165
+      !tall ? true : person.height >= 179
     );
     const filtered3 = filtered2.filter((person) =>
       !big ? true : person.mass >= 80
     );
-    // console.log(filtered3)
-    setFilteredPeople(filtered3);
-  }, [eye, big, tall, people]);
+    const filtered4 = filtered3.filter((person) =>
+      gender === "all" ? true : person.gender === gender
+    );
+    setFilteredPeople(filtered4);
+    console.warn(filtered4);
+  }, [eye, big, tall, gender, people]);
 
   return (
     <div>
@@ -58,6 +64,7 @@ function Filters({ people, setFilteredPeople }) {
         <fieldset className="container-looks">
           <legend>Options</legend>
 
+          <h4>Physical attributes</h4>
           <div className="entry">
             <input
               type="checkbox"
@@ -93,6 +100,43 @@ function Filters({ people, setFilteredPeople }) {
               defaultChecked={false}
             />
             <label htmlFor="8">With an extra layer of muscles</label>
+          </div>
+
+          <h4>Gender preferences</h4>
+          <div className="entry">
+            <input
+              type="radio"
+              onInput={(e) => setGender(e.target.value)}
+              id="11"
+              name="gender"
+              value="all"
+              defaultChecked
+            />
+            <label htmlFor="11">All</label>
+          </div>
+          <div className="entry">
+            <input
+              type="radio"
+              onInput={(e) => setGender(e.target.value)}
+              id="9"
+              name="gender"
+              value="female"
+              defaultChecked={false}
+            />
+            <label htmlFor="9">Women</label>
+          </div>
+
+          <div className="entry">
+            <input
+              type="radio"
+              onInput={(e) => setGender(e.target.value)}
+              id="10"
+              name="gender"
+              value="male"
+              defaultChecked={false}
+            />
+
+            <label htmlFor="11">Men</label>
           </div>
         </fieldset>
 
