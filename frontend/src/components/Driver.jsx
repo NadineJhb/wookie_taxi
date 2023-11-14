@@ -36,6 +36,7 @@ export default function Driver() {
           } else {
             j -= 1;
           }
+          console.warn("random: ", randomCharacters);
         }
         setPeople(randomCharacters);
       })
@@ -58,11 +59,8 @@ export default function Driver() {
           <div className="cards">
             {people.length === 0 ? (
               <div className="loader">
-                <p className="loaderText">
-                  Un peu de patience, nous consultons les chauffeurs
-                  disponibles.
-                </p>
-                <div className="wookieLoader">
+                <p className="loaderText">Checking for avalable drivers...</p>
+                <div className="sabreLoader">
                   <img
                     src="src/public/images/wookie.gif"
                     alt="Loader"
