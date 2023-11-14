@@ -11,6 +11,7 @@ function SearchBar({
   setInputDestination,
   inputPassenger,
   setInputPassenger,
+  searchIcon,
 }) {
   const navigate = useNavigate();
 
@@ -44,7 +45,7 @@ function SearchBar({
         />
         <div>
           <button type="submit" className="search-btn">
-            <FiSearch className="search-icon" />
+            <FiSearch className={searchIcon} />
           </button>
         </div>
       </form>
@@ -57,6 +58,7 @@ SearchBar.propTypes = {
   inputDestination: PropTypes.string.isRequired,
   inputPassenger: PropTypes.string.isRequired,
   setInputPassenger: PropTypes.func.isRequired,
+  searchIcon: PropTypes.string.isRequired,
   planet: PropTypes.shape({
     name: PropTypes.string.isRequired,
   }).isRequired,
