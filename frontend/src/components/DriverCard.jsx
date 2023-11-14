@@ -1,8 +1,15 @@
 import PropTypes, { arrayOf } from "prop-types";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
-function DriverCard({ driver, stateSearchBar }) {
+function DriverCard({ driver, stateSearchBar, isFavorite }) {
   const navigate = useNavigate();
+  const [favorite, setFavorite] = useState(isFavorite);
+
+  const handleClick1 = () => {
+    setFavorite(!favorite);
+  };
+
   const handleClick = () => {
     navigate("/captcha", {
       state: {
@@ -28,11 +35,21 @@ function DriverCard({ driver, stateSearchBar }) {
         <div className="info-container">
           <div className="drivername-favorite">
             <h2>{driver.name}</h2>
-            <div className="isFavorite"> &nbsp;</div>
+            {/* <div className="isFavorite"> &nbsp;</div> */}
+            <button
+              type="button"
+              className={favorite ? "isFavorite" : "notFavorite"}
+              onClick={handleClick1}
+            >
+              <p> </p>
+            </button>
           </div>
 
           <div className="info-vehicleImage-button">
             <div className="card-information">
+              <p>
+                <strong>Vehicle :</strong> {driver.vehicles[0].name}
+              </p>
               <p>
                 <strong>Passengers :</strong> {driver.vehicles[0].passengers}{" "}
                 seats left
@@ -42,12 +59,13 @@ function DriverCard({ driver, stateSearchBar }) {
                 {driver.vehicles[0].max_atmosphering_speed} mph
               </p>
               <p>
-                <strong>Driver eye color:</strong> {driver.eye_color} eyes
-              </p>
-              <p>
                 <strong>Crew :</strong> {driver.vehicles[0].crew} crew members
                 on board
               </p>
+              <p>
+                <strong>Driver eye color:</strong> {driver.eye_color} eyes
+              </p>
+
               <p>
                 <strong>Size :</strong> {driver.height} cm
               </p>
@@ -61,7 +79,7 @@ function DriverCard({ driver, stateSearchBar }) {
                 />
               </div>
               <button type="button" onClick={handleClick}>
-                Réserver
+                Book
               </button>
             </div>
           </div>
@@ -85,6 +103,7 @@ DriverCard.propTypes = {
     ),
   }).isRequired,
   stateSearchBar: PropTypes.func.isRequired,
+  isFavorite: PropTypes.string.isRequired,
 };
 
 export default DriverCard;

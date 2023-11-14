@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./style/index.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
+import Intro from "./components/Intro";
 import Booking from "./components/Booking";
 import Driver from "./components/Driver";
 import Captcha from "./components/Captcha";
@@ -10,6 +11,10 @@ import Captcha from "./components/Captcha";
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <Intro />,
+  },
+  {
+    path: "/home",
     element: <App />,
   },
   {
@@ -23,10 +28,6 @@ const router = createBrowserRouter([
   {
     path: "/captcha",
     element: <Captcha />,
-  },
-  {
-    path: "/booking",
-    element: <Booking />,
   },
 ]);
 
