@@ -26,12 +26,21 @@ function DriverCard({ driver, stateSearchBar, checkFavorite }) {
     driver.vehicles[0].passengers >= stateSearchBar.passenger.toString() &&
     !(checkFavorite === true && favorite === false) && (
       <div className="driver-card">
-        <div className="driverImgDiv">
-          <img
-            src={`src/public/images/characters/${driver.name}.jpg`}
-            alt="Avatar"
-            className="driverImg"
-          />
+        <div className="flip-card">
+          <div className="flip-card-inner">
+            <div className="flip-card-front">
+              <img
+                src={`src/public/images/characters/${driver.name}.jpg`}
+                alt="Avatar"
+                className="driverImg"
+              />
+            </div>
+            <div className="flip-card-back">
+              <h1>{driver.name}</h1>
+              <p>{driver.homeworld}</p>
+              <p>We love that guy</p>
+            </div>
+          </div>
         </div>
         <div className="info-container">
           <div className="drivername-favorite">
