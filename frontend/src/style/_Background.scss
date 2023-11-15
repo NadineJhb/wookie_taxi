@@ -62,5 +62,47 @@ body {
   }
 }
 // Partie reponsive mobile
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 375px) {
+  body {
+    background-size: 150vh;
+  }
+  .background {
+    .img-container {
+      position: absolute;
+      .img-background-planet {
+        z-index: 1;
+        width: 80%;
+      }
+    }
+    .background-Dagobah {
+      width: 200px;
+      left: 5%;
+      top: 20%;
+    }
+    .background-Tatooine {
+      width: 130px;
+      left: 60%;
+      bottom: 20%;
+    }
+    .background-Yavin {
+      left: 70%;
+      bottom: 50%;
+      width: 20%;
+    }
+    .background-Mustafar {
+      left: 70%;
+      bottom: 70%;
+      width: 30%;
+    }
+    .background-Alderaan {
+      left: 40%;
+      bottom: 2%;
+      width: 100px;
+    }
+    .background-Naboo {
+      bottom: 15%;
+      left: 10%;
+      width: 30%;
+    }
+  }
 }

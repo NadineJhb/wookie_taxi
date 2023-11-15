@@ -1,9 +1,11 @@
 .searchbar-container {
+  border: 1px solid red;
   background-color: #ffde06;
   padding: calc(var(--spacing) * 1.4);
   display: flex;
   border-radius: var(--search-border-radius);
-  width: 50vw;
+  width: 55%;
+
   position: relative;
   position: flex;
 
@@ -83,5 +85,72 @@
 }
 
 // Partie reponsive mobile
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 375px) {
+  .searchbar-container {
+    margin-top: 80%;
+    border: 1px solid red;
+    padding: calc(var(--spacing) * 1);
+
+    width: 150%;
+
+    .search-from {
+      flex-direction: row;
+      border: 1px solid red;
+      padding: 10px;
+      font-size: calc(var(--font-size-standard) * 0.5);
+
+      width: 20vw;
+    }
+    .map-icon {
+      font-size: calc(var(--spacing) * 3);
+    }
+
+    .search-to {
+      border: 1px solid red;
+      padding: calc(var(--spacing) * 0.8) calc(var(--font-size-standard) * 1.2)
+        calc(var(--spacing) * 0.8) calc(var(--spacing) * 1.2);
+      font-size: calc(var(--font-size-standard) * 0.5);
+      width: 20vw;
+    }
+
+    .depart {
+      display: flex;
+      padding: calc(var(--spacing) * 0.2);
+    }
+
+    .search-passenger {
+      border: 1px solid red;
+      width: 15vw;
+
+      background-size: calc(var(--font-size-standard) * 1);
+      font-size: calc(var(--font-size-standard) * 0.6);
+
+      line-height: calc(var(--spacing) * 5);
+      padding-left: calc(var(--spacing) * 5);
+    }
+
+    .displaySearchIcon {
+      border: 1px solid red;
+      font-size: calc(var(--font-size-standard) * 2);
+    }
+
+    .hideSearchIcon {
+      border: 1px solid red;
+      display: none;
+    }
+
+    .search-btn {
+      border: 1px solid red;
+      position: relative;
+      position: absolute;
+      height: 100%;
+      width: 14%;
+      top: 0;
+      right: 0;
+      background-color: #ffde06;
+      // border: none;
+      border-radius: 0px var(--search-border-radius) var(--search-border-radius)
+        0px;
+    }
+  }
 }

@@ -74,6 +74,44 @@
   }
 }
 
-// Partie reponsive mobile
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 375px) {
+  .planet-card {
+    position: absolute;
+    .card {
+      display: flex;
+      flex-direction: column;
+      width: 200px; /* Adjust the width as needed */
+      height: 300px; /* Adjust the height as needed */
+      flex-direction: column;
+    }
+    .img-planet {
+      width: 60%;
+    }
+  }
+
+  .Yavin,
+  .Tatooine-text,
+  .Mustafar-text,
+  .Naboo-text,
+  .Dagobah-text,
+  .Alderaan-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    h1 {
+      font-size: calc(var(--font-size-standard) * 0.8);
+    }
+    p {
+      font-weight: var(--font-weight-text);
+      font-size: calc(var(--font-size-standard) * 0.5);
+    }
+
+    .button-card {
+      font-size: 12px;
+      margin-right: 20%;
+      width: 100px;
+      height: 30px;
+    }
+  }
 }

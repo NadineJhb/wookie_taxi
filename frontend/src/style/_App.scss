@@ -24,3 +24,13 @@
     }
   }
 }
+
+@media screen and (max-width: 375px) {
+  .title-searchbar-container {
+    width: fit-content;
+    bottom: 20%;
+    h1 {
+      display: none;
+    }
+  }
+}
