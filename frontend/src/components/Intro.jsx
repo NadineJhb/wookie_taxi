@@ -1,18 +1,41 @@
 import "../style/_Intro.scss";
 import { useNavigate } from "react-router-dom";
+import React, { useRef, useState } from "react";
 
 export default function Intro() {
   const navigate = useNavigate();
-  const handleClick = () => {
-    navigate("/home");
+  const audioRef = useRef(null);
+  const [isMuted, setIsMuted] = useState(false);
+  const playAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.play();
+      setTimeout(() => {
+        navigate("/home");
+      }, 200000000); // Assuming the audio length is about 2 seconds
+    }
   };
+  const handleClick = () => {
+    if (!audioRef.current || audioRef.current.paused) {
+      playAudio();
+    } else {
+      navigate("/home");
+    }
+  };
+  const toggleMute = () => {
+    setIsMuted(!isMuted);
+  };
+
   return (
     <div>
       <title>Wookie Taxi</title>
 
       <body>
+        <audio ref={audioRef} muted={isMuted}>
+          <source src="src/public/son/Introsw.mp4" type="audio/mp3" />
+          <track kind="captions" />
+        </audio>
         <div className="star-wars-opening">
-          <p className="opening-intro">
+          <p className="opening-intro" onClick={playAudio} tabIndex={0}>
             A long time ago in a galaxy far, far away....
           </p>
           <div className="opening-stars">
@@ -26,6 +49,14 @@ export default function Intro() {
                 <p> </p>
               </button>
             </div>
+            <button
+              className="mute-button"
+              type="button"
+              onClick={toggleMute}
+              style={{ width: "20vw", height: "20vh" }}
+            >
+              {isMuted ? "Unmute" : "Mute"}
+            </button>
             <div className="crawl-text">
               <header className="crawl-header">
                 <span className="crawl-episode">Episode 6.5</span>

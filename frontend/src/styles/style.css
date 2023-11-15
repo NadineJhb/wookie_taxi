@@ -32,6 +32,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: url(../public/images/icons/icons8-star-trek-navire-romulien-48-removebg-preview.png), auto;
 }
 
 body {
