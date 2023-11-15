@@ -1,17 +1,19 @@
 import "../style/_Intro.scss";
 import { useNavigate } from "react-router-dom";
 import React, { useRef, useState } from "react";
+import { GoMute, GoUnmute } from "react-icons/go";
 
 export default function Intro() {
   const navigate = useNavigate();
   const audioRef = useRef(null);
   const [isMuted, setIsMuted] = useState(false);
+
   const playAudio = () => {
     if (audioRef.current) {
       audioRef.current.play();
       setTimeout(() => {
         navigate("/home");
-      }, 200000000); // Assuming the audio length is about 2 seconds
+      }, 200000000);
     }
   };
   const handleClick = () => {
@@ -22,7 +24,10 @@ export default function Intro() {
     }
   };
   const toggleMute = () => {
-    setIsMuted(!isMuted);
+    if (audioRef.current) {
+      audioRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
   };
 
   return (
@@ -35,7 +40,7 @@ export default function Intro() {
           <track kind="captions" />
         </audio>
         <div className="star-wars-opening">
-          <p className="opening-intro" onClick={playAudio} tabIndex={0}>
+          <p className="opening-intro" onClick={playAudio} aria-hidden>
             A long time ago in a galaxy far, far away....
           </p>
           <div className="opening-stars">
@@ -49,14 +54,21 @@ export default function Intro() {
                 <p> </p>
               </button>
             </div>
-            <button
-              className="mute-button"
-              type="button"
-              onClick={toggleMute}
-              style={{ width: "20vw", height: "20vh" }}
-            >
-              {isMuted ? "Unmute" : "Mute"}
-            </button>
+            <div className="switch_button">
+              <button
+                className="mute-button"
+                type="button"
+                onClick={toggleMute}
+              >
+                <GoMute className={isMuted ? "hideIcon" : "displayIcon"} />
+                <GoUnmute className={isMuted ? "displayIcon" : "hideIcon"} />
+              </button>
+            </div>
+            <div className="skipIntro">
+              <button className="skip" type="button" onClick={handleClick}>
+                <p> Skip intro </p>
+              </button>
+            </div>
             <div className="crawl-text">
               <header className="crawl-header">
                 <span className="crawl-episode">Episode 6.5</span>
@@ -68,6 +80,7 @@ export default function Intro() {
                 Galactic Empire which oppressed the galaxy. The Death Star was
                 destroyed during the clash.
               </p>
+              ²
               <p>
                 Celebrations spread throughout the galaxy as news of the
                 Emperor's death spread. The one on Endor gave rise to three

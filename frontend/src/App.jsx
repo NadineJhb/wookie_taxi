@@ -169,6 +169,7 @@ function App() {
           setInputDestination={setInputDestination}
           inputPassenger={inputPassenger}
           setInputPassenger={setInputPassenger}
+          searchIcon="displaySearchIcon"
         />
       </div>
       <Footer />
