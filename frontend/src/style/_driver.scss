@@ -8,7 +8,6 @@
     transform: translateY(0);
   }
 }
-
 .driver-page {
   //< Filters />
   .filterBlock {
@@ -39,170 +38,142 @@
     }
   }
 
-  .flip-card {
-    background-color: transparent;
-    width: 250px;
-    height: 250px;
-    perspective: 1000px;
-    overflow: hidden;
-    border-radius: 5px;
+  .driver-card {
+    animation: scaleIn 0.8s ease-out;
     display: flex;
-    justify-content: center;
-  }
-}
+    background-color: var(--background-color);
+    width: 50vw;
+    border-radius: 10px;
+    color: var(--secondary-color);
+    padding: calc(var(--spacing) * 3);
+    gap: 15px;
+    font-family: var(--font);
+    margin-bottom: 20px;
+    position: relative;
+    margin-bottom: calc(var(--spacing) * 4);
 
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
+    h2 {
+      margin-bottom: 20px;
+      font-size: calc(var(--font-size-standard) * 1.5);
+    }
 
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
+    p {
+      font-weight: 200;
+      padding: 4px 0;
+    }
 
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border: 1px solid var(--secondary-color);
-  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
-}
+    .info-container {
+      width: 100%;
+      padding: calc(var(--spacing) * 1) calc(var(--spacing) * 0.8);
+    }
 
-.flip-card-front {
-  background-color: black;
-  color: black;
-}
+    .drivername-favorite {
+      display: flex;
+      justify-content: space-between;
+      //align-items: flex-start;
+    }
 
-.flip-card-back {
-  background-color: black;
-  color: black;
-  transform: rotateY(180deg);
-}
+    .driverImgDiv {
+      width: 300px;
+      height: 260px;
+      overflow: hidden;
+      border-radius: 5px;
+      border: 1px solid var(--secondary-color);
+      box-shadow:
+        0 0 1px #fff,
+        0 0 2px #fff,
+        0 0 3px #fff,
+        0 0 4px #fff,
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 10px #fff,
+        0 0 15px #fff,
+        inset 0 0 10px #fff,
+        inset 0 0 15px #fff,
+        inset 0 0 20px #fff;
 
-.driver-card {
-  animation: scaleIn 0.8s ease-out;
-  display: flex;
-  background-color: var(--background-color);
-  width: 50vw;
-  border-radius: 10px;
-  color: var(--secondary-color);
-  padding: calc(var(--spacing) * 3);
-  gap: 15px;
-  font-family: var(--font);
-  margin-bottom: 20px;
-  position: relative;
-  margin-bottom: calc(var(--spacing) * 4);
-
-  .flip-card-front {
-    display: flex;
-    justify-content: center;
+      display: flex;
+      justify-content: center;
+    }
 
     .driverImg {
-      height: 100%;
+      object-fit: cover;
+    }
+
+    .info-vehicleImage-button {
+      padding-top: calc(var(--spacing) * 2);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .vehicleImage-button {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    npm .card-information {
+      width: 100%;
+    }
+
+    .vehicleImage-container {
+      width: 140px;
+      min-height: 140px;
+    }
+
+    .starshipImg {
+      width: 100%;
+    }
+
+    .book {
+      transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+      box-shadow: 0px 1px 0px 0px #fff6af;
+      background: linear-gradient(to bottom, #f0da37 5%, #ffde06 100%);
+      background-color: #f3de3c;
+      border: 1px solid var(--tertiary-color);
+      display: inline-block;
+      text-shadow: 0px 1px 0px #ffee66;
+      text-decoration: none;
+      font-size: calc(var(--font-size-standard) * 0.8);
+      padding: 7% 3%;
+      border-radius: 10px;
+      font-family: var(--font);
+      font-size: var(--font-size-standard);
+      border: none;
+      width: 10vw;
+      cursor: pointer;
+    }
+    .book:hover {
+      transform: scale(1.1);
+      background: linear-gradient(to bottom, #ffde06 5%, #ffec64 100%);
+      background-color: var(--tertiary-color);
     }
   }
 
-  h2 {
-    margin-bottom: 20px;
-    font-size: calc(var(--font-size-standard) * 1.5);
-  }
-
-  p {
-    font-weight: 200;
-    padding: 4px 0;
-  }
-
-  .info-container {
-    width: 100%;
-    padding: calc(var(--spacing) * 1) calc(var(--spacing) * 0.8);
-  }
-
-  .drivername-favorite {
-    display: flex;
-    justify-content: space-between;
-    //align-items: flex-start;
-  }
-
-  .info-vehicleImage-button {
-    padding-top: calc(var(--spacing) * 2);
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .vehicleImage-button {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  npm .card-information {
-    width: 100%;
-  }
-
-  .vehicleImage-container {
-    width: 140px;
-    min-height: 140px;
-  }
-
-  .starshipImg {
-    width: 100%;
-  }
-
-  .book {
-    transition:
-      transform 0.5s ease,
-      box-shadow 0.5s ease;
-    box-shadow: 0px 1px 0px 0px #fff6af;
-    background: linear-gradient(to bottom, #f0da37 5%, #ffde06 100%);
-    background-color: #f3de3c;
-    border: 1px solid var(--tertiary-color);
-    display: inline-block;
-    text-shadow: 0px 1px 0px #ffee66;
-    text-decoration: none;
-    font-size: calc(var(--font-size-standard) * 0.8);
-    padding: 7% 3%;
-    border-radius: 10px;
-    font-family: var(--font);
-    font-size: var(--font-size-standard);
-    border: none;
-    width: 10vw;
+  .isFavorite {
+    width: 40px;
+    height: 40px;
+    background: none;
+    border-style: none;
+    background-image: url(src/public/images/icons/yellow-heart.256x205.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    align-self: flex-end;
     cursor: pointer;
   }
-  .book:hover {
-    transform: scale(1.1);
-    background: linear-gradient(to bottom, #ffde06 5%, #ffec64 100%);
-    background-color: var(--tertiary-color);
+
+  .notFavorite {
+    width: 40px;
+    height: 40px;
+    background: none;
+    border-style: none;
+    background-image: url(src/public/images/icons/yellow-heart.256x213.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    align-self: flex-end;
+    cursor: pointer;
   }
-}
-
-.isFavorite {
-  width: 40px;
-  height: 40px;
-  background: none;
-  border-style: none;
-  background-image: url(src/public/images/icons/yellow-heart.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  align-self: flex-end;
-  cursor: pointer;
-}
-
-.notFavorite {
-  width: 40px;
-  height: 40px;
-  background: none;
-  border-style: none;
-  background-image: url(src/public/images/icons/white-heart.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  align-self: flex-end;
-  cursor: pointer;
 }
 
 .loader {
