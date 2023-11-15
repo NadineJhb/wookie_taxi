@@ -1,10 +1,22 @@
 import "../style/_Intro.scss";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import ringer from "../public/son/son.mp4";
 
 export default function Intro() {
   const navigate = useNavigate();
   const handleClick = () => {
     navigate("/home");
+  };
+  const audio = new Audio(ringer);
+  const [isMuted, setIsMuted] = useState(false);
+  const [isPlay, setIsPlay] = useState(false);
+  const toggleMute = () => {
+    setIsMuted(!isMuted);
+  };
+  const togglePlay = () => {
+    audio.play();
+    setIsPlay(!isPlay);
   };
   return (
     <div>
@@ -30,6 +42,43 @@ export default function Intro() {
               <button className="skip" type="button" onClick={handleClick}>
                 <p> Skip intro </p>
               </button>
+            </div>
+            <div>
+              <figure>
+                <audio
+                  controls
+                  autoPlay="false"
+                  id="son"
+                  src="/son/son.mp4"
+                  muted={isMuted}
+                >
+                  <a href="son.mp4"> Download audio </a>
+                  <track kind="captions" />
+                </audio>
+              </figure>
+              {!isMuted && isPlay && (
+                <button
+                  className="mute-button"
+                  type="button"
+                  onClick={toggleMute}
+                >
+                  mute
+                </button>
+              )}
+              {isMuted && isPlay && (
+                <button
+                  className="play-button"
+                  type="button"
+                  onClick={toggleMute}
+                >
+                  unmute
+                </button>
+              )}
+              {!isPlay && (
+                <button type="button" onClick={togglePlay}>
+                  Play
+                </button>
+              )}
             </div>
             <div className="crawl-text">
               <header className="crawl-header">
