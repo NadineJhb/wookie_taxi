@@ -3,12 +3,13 @@ import SearchBar from "./components/SearchBar";
 import Background from "./components/Background";
 import Logo from "./components/Logo";
 import "./App.css";
-// import Driver from "./components/Driver"; //
 import Footer from "./components/Footer";
+
 // import Filters from "./components/Filters";
 
 function App() {
   const [inputDestination, setInputDestination] = useState("");
+  const [inputPassenger, setInputPassenger] = useState(1);
   const planets = [
     {
       name: "Yavin IV",
@@ -155,17 +156,22 @@ function App() {
 
   return (
     <div className="App">
-      {/* <TextPlanetApi /> */}
       <Logo />
       <Background
         planets={planets}
         inputDestination={inputDestination}
         setInputDestination={setInputDestination}
       />
-      <SearchBar
-        inputDestination={inputDestination}
-        setInputDestination={setInputDestination}
-      />
+      <div className="title-searchbar-container">
+        <h1>YOUR RIDE THROUGH THE GALAXY !</h1>
+        <SearchBar
+          inputDestination={inputDestination}
+          setInputDestination={setInputDestination}
+          inputPassenger={inputPassenger}
+          setInputPassenger={setInputPassenger}
+          searchIcon="displaySearchIcon"
+        />
+      </div>
       <Footer />
       {/* <Filters />
  <Driver /> */}
@@ -174,3 +180,9 @@ function App() {
 }
 
 export default App;
+
+// export async loaderPeople() {
+//   axios.all ...=> data
+
+//   return data
+// }

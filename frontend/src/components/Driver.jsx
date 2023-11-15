@@ -1,52 +1,32 @@
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import DriverCard from "./DriverCard";
 import Filters from "./Filters";
-
-// Code suivant pour faire un fltrage //
+import Logo from "./Logo";
+import SearchBar from "./SearchBar";
 
 export default function Driver() {
   const { state } = useLocation();
-  //*   return (
-  //     <div>
-  //       {console.log(
-  //         `DriverPage🚗destination: ${state.destination} passenger: ${state.passenger}`
-  //       )}
-  //       <h1>{location.destination}</h1>
-  //     </div>
-  //   );
-  // }*/
-
   const [people, setPeople] = useState([]);
-  const array = [
-    "https://swapi.dev/api/people",
-    "https://swapi.dev/api/people/?page=2",
-    "https://swapi.dev/api/people/?page=3",
-    "https://swapi.dev/api/people/?page=4",
-    //  "https://swapi.dev/api/people/?page=5",
-    //  "https://swapi.dev/api/people/?page=6",
-    //  "https://swapi.dev/api/people/?page=7",
-    //  "https://swapi.dev/api/people/?page=8",
-    //  "https://swapi.dev/api/people/?page=9",
-  ];
+  const [filteredPeople, setFilteredPeople] = useState(people);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
+    if (!state) navigate("/");
     axios
-      .all(array.map((endpoint) => axios.get(endpoint)))
+      .get("https://netflix-clone-back.onrender.com/characters")
       .then((data) => {
         const characters = [];
-        for (let i = 0; i < data.length; i += 1) {
-          for (let k = 0; k < 10; k += 1) {
-            if (data[i].data.results[k].vehicles.length > 0) {
-              characters.push(data[i].data.results[k]);
-            }
+        for (let i = 0; i < data.data.length; i += 1) {
+          if (data.data[i].vehicles.length > 0) {
+            characters.push(data.data[i]);
           }
         }
-        console.warn("characters : ", characters);
 
         const randomCharacters = [];
-        for (let j = 0; j < 5; j += 1) {
+        for (let j = 0; j < 20; j += 1) {
           const randomDrivers =
             characters[Math.floor(Math.random() * characters.length)];
 
@@ -56,44 +36,63 @@ export default function Driver() {
           } else {
             j -= 1;
           }
+          console.warn("random: ", randomCharacters);
         }
         setPeople(randomCharacters);
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [state]);
+
+  const [destinationDriverpage, setDestinationDriverpage] = useState(
+    state.destination
+  );
+  const [passengerDriverpage, setPassengerDriverpage] = useState(
+    state.passenger
+  );
 
   return (
     <div className="driver-page">
-      {" "}
-      <div className="filterBlock">
-        <Filters />
-      </div>
-      {people.length === 0 ? (
-        <div className="loader">
-          <p className="loaderText">
-            Un peu de patience, nous consultons les chauffeurs disponibles.
-          </p>
-          <div className="sabreLoader">
-            <img
-              src="src/public/images/wookie.gif"
-              alt="Loader"
-              className="loaderImg"
-            />
+      <Logo />
+      <div className="filter-search-cards">
+        <div className="filterBlock">
+          <Filters setFilteredPeople={setFilteredPeople} people={people} />
+        </div>
+
+        <div className="search-cards">
+          <div>
+            <SearchBar
+              inputDestination={destinationDriverpage}
+              setInputDestination={setDestinationDriverpage}
+              inputPassenger={passengerDriverpage}
+              setInputPassenger={setPassengerDriverpage}
+              searchIcon="hideSearchIcon"
+            />{" "}
+          </div>
+
+          <div className="cards">
+            {people.length === 0 ? (
+              <div className="loader">
+                <p className="loaderText">Checking for avalable drivers...</p>
+                <div className="sabreLoader">
+                  <img
+                    src="src/public/images/wookie.gif"
+                    alt="Loader"
+                    className="loaderImg"
+                  />
+                </div>
+              </div>
+            ) : (
+              filteredPeople.map((driver) => {
+                return (
+                  <div key={driver.name} className={driver.name}>
+                    <DriverCard driver={driver} stateSearchBar={state} />
+                  </div>
+                );
+              })
+            )}
           </div>
         </div>
-      ) : (
-        people.map((driver) => {
-          return (
-            <div>
-              <DriverCard
-                driverName={driver.name}
-                driverVehicleUrl={driver.vehicles[0]}
-                state={state}
-              />
-            </div>
-          );
-        })
-      )}
+      </div>
     </div>
   );
 }

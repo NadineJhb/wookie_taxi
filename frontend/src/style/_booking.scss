@@ -45,13 +45,28 @@
   .booking-images-infos {
     display: flex;
     justify-content: space-around;
-    padding: calc(var(--spacing) * 3.4) 5% calc(var(--spacing) * 4) 5%;
+    padding: calc(var(--spacing) * 6) 3% calc(var(--spacing) * 4) 3%;
   }
 
   .booking-driver-photo {
-    width: 25%;
+    border: 1px solid var(--secondary-color);
+    box-shadow:
+      0 0 1px #fff,
+      0 0 2px #fff,
+      0 0 3px #fff,
+      0 0 4px #fff,
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 10px #fff,
+      0 0 15px #fff,
+      inset 0 0 10px #fff,
+      inset 0 0 10px #fff,
+      inset 0 0 15px #fff;
+    width: 35%;
     min-width: 140px;
-    height: 30vh;
+    max-width: 260px;
+    max-height: 280px;
+
     object-fit: cover;
   }
 
@@ -60,7 +75,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    padding: calc(var(--spacing) * 3) 0 calc(var(--spacing) * 3) 0;
+    padding-left: calc(var(--spacing) * 2.6);
   }
 
   //second block : first part with départ, destination and vehicle image
@@ -101,6 +116,15 @@
 
   //third block : button
   button {
+    transition:
+      transform 0.5s ease,
+      box-shadow 0.5s ease;
+    box-shadow: 0px 1px 0px 0px #fff6af;
+    background: linear-gradient(to bottom, #f0da37 5%, #ffde06 100%);
+    border: 1px solid var(--tertiary-color);
+    display: inline-block;
+    text-shadow: 0px 1px 0px #ffee66;
+    text-decoration: none;
     background-color: var(--primary-color);
     padding: calc(var(--spacing) * 1.8) calc(var(--spacing) * 3.2);
     border-radius: calc(var(--search-border-radius) * 0.5);
@@ -108,11 +132,79 @@
     font-weight: bold;
     font-size: calc(var(--font-size-standard) * 0.8);
     border: none;
+    cursor: pointer;
+  }
+  button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(to bottom, #ffde06 5%, #ffec64 100%);
+    background-color: var(--tertiary-color);
   }
 
   .button-home {
     display: flex;
     justify-content: center;
     padding-top: calc(var(--spacing) * 3);
+  }
+}
+a {
+  text-decoration: none;
+  color: var(--tertiary-color);
+}
+
+// Partie reponsive mobile
+@media screen and (max-width: 360px) {
+  .booking-container {
+    width: 80vw;
+    height: 73vh;
+    padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 0)
+      calc(var(--spacing) * 4);
+
+    h2 {
+      font-size: calc(var(--font-size-standard) * 0.8);
+      text-align: center;
+    }
+    h3 {
+      font-size: calc(var(--font-size-standard) * 0.6);
+    }
+    .booking-driver-photo {
+      margin-left: 25%;
+      width: 100px;
+      height: 150px;
+    }
+    .booking-images-infos {
+      flex-direction: column;
+      padding: calc(var(--spacing) * 1.5);
+    }
+    p {
+      padding-bottom: calc(var(--spacing) * 1);
+      font-size: calc(var(--font-size-standard) * 0.7);
+    }
+    .booking-infos {
+      display: flex;
+      justify-content: center;
+      padding: calc(var(--spacing) * 2) 0 calc(var(--spacing) * 1);
+    }
+    .booking-planet-vehiclephoto {
+      flex-direction: column;
+      gap: calc(var(--spacing) * 0);
+    }
+    .booking-vehicle-photo {
+      width: 25vw;
+    }
+    .booking-passenger,
+    .booking-vehicle {
+      margin-left: 60px;
+    }
+    .icon-passenger,
+    .icon-vehicle {
+      height: 20px;
+    }
+    .button-home {
+      padding-top: calc(var(--spacing) * 0);
+    }
+    button {
+      padding: calc(var(--spacing) * 1) calc(var(--spacing) * 1);
+      font-size: calc(var(--font-size-standard) * 0.6);
+    }
   }
 }

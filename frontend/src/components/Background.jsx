@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import PlaneteCard from "./PlaneteCard";
+import destroyerImg from "../public/images/starship/destroyer.png";
 
 function Background({ planets, setInputDestination }) {
   const [planet, setPlanet] = useState(null);
@@ -36,6 +37,9 @@ function Background({ planets, setInputDestination }) {
           </div>
         );
       })}
+      <div className="x">
+        <img className="y" src={destroyerImg} alt="starship" />
+      </div>
     </div>
   );
 }
