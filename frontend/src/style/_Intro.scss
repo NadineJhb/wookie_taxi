@@ -214,8 +214,9 @@
     0 0 100px rgb(0, 140, 255);
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 425px) {
   .skip {
     padding: 5px 5px;
+    font-size: 12px;
   }
 }
