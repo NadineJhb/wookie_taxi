@@ -49,7 +49,6 @@ function Filters({ people, setFilteredPeople }) {
                 id="3"
                 name="Starship"
                 value="SnowSpeeder"
-                checked
               />
             </div>
           </div>
