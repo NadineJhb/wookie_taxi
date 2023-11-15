@@ -10,7 +10,7 @@
 }
 
 /* Partie responsive mobile */
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 600px) {
   .footer p {
     font-size: calc(var(--font-size-standard) * 0.4);
   }
