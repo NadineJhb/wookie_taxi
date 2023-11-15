@@ -103,6 +103,7 @@
     .info-vehicleImage-button {
       padding-top: calc(var(--spacing) * 2);
       display: flex;
+      justify-content: space-between;
     }
 
     .vehicleImage-button {

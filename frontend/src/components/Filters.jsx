@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-function Filters({ people, setFilteredPeople }) {
+function Filters({ people, setFilteredPeople, setCheckFavorite }) {
   const [eye, setEye] = useState(false);
   const [big, setBig] = useState(false);
   const [tall, setTall] = useState(false);
@@ -113,7 +113,7 @@ function Filters({ people, setFilteredPeople }) {
 
           <div className="entry">
             <div className="container-text-checkbox">
-              <label htmlFor="8">Muscle</label>
+              <label htmlFor="8">Bring the muscles</label>
               <input
                 type="checkbox"
                 onInput={(e) => setBig(e.target.checked)}
@@ -159,7 +159,7 @@ function Filters({ people, setFilteredPeople }) {
               defaultChecked={false}
             />
 
-            <label htmlFor="11">Men</label>
+            <label htmlFor="10">Men</label>
           </div>
         </fieldset>
 
@@ -171,7 +171,14 @@ function Filters({ people, setFilteredPeople }) {
                 alt="yellow-heart"
               />
               <label htmlFor="9">Favorite</label>
-              <input type="checkbox" id="9" name="favorite" value="favorite" />
+              <input
+                type="checkbox"
+                onInput={(e) => setCheckFavorite(e.target.checked)}
+                id="9"
+                name="favorite"
+                value="favorite"
+                defaultChecked={false}
+              />
             </div>
           </div>
         </fieldset>
@@ -183,6 +190,7 @@ function Filters({ people, setFilteredPeople }) {
 Filters.propTypes = {
   people: PropTypes.func.isRequired,
   setFilteredPeople: PropTypes.func.isRequired,
+  setCheckFavorite: PropTypes.func.isRequired,
 };
 
 export default Filters;
