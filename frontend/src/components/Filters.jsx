@@ -40,7 +40,8 @@ function Filters({ people, setFilteredPeople, setCheckFavorite }) {
               src="src/public/images/icons/r2d2_yellow.png"
               alt="personage-icon"
             />
-            <legend>Look for...</legend>
+            <legend>Looks</legend>
+
           </div>
 
           <div className="entry">
@@ -127,7 +128,8 @@ function Filters({ people, setFilteredPeople, setCheckFavorite }) {
         <fieldset className="favorite">
           <div className="container-favorite">
             <img
-              src="src/public/images/icons/yellow-heart.256x205.png"
+              src="src/public/images/icons/yellow-heart.png"
+
               alt="yellow-heart"
             />
             <div className="text-favorite-checkbox">
