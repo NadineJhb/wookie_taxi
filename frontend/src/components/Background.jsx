@@ -32,6 +32,7 @@ function Background({ planets, setInputDestination }) {
               <PlaneteCard
                 planet={planet}
                 setInputDestination={setInputDestination}
+                handleClick={(planetArg) => handleClick(planetArg)}
               />
             )}
           </div>
@@ -46,7 +47,7 @@ function Background({ planets, setInputDestination }) {
 
 Background.propTypes = {
   setInputDestination: PropTypes.func.isRequired,
-  planets: PropTypes.shape({
+  planets: PropTypes.arrayOf(PropTypes.shape)({
     name: PropTypes.string.isRequired,
     map: PropTypes.string.isRequired,
   }).isRequired,
