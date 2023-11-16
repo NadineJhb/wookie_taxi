@@ -19,70 +19,74 @@
   h1 {
     text-align: center;
     font-size: calc(var(--font-size-standard) * 1.3);
-    margin-bottom: 20px;
+    margin-bottom: 10%;
+  }
+
+  .container-looks,
+  .container-gender,
+  .container-favorite {
+    padding-right: calc(var(--spacing) * 4);
+    padding-bottom: calc(var(--spacing) * 4);
+  }
+
+  fieldset {
+    border: 0;
+  }
+
+  //category name
+  legend {
+    font-size: calc(var(--font-size-standard) * 1);
+    font-weight: var(--font-weight-text-bold);
+  }
+
+  //checkbox, radiobutton text
+  label {
+    font-size: calc(var(--font-size-standard) * 0.9);
+    font-weight: var(--font-weight-text);
+  }
+
+  //container for input
+  .entry {
+    display: flex;
+    gap: 8%;
+    padding: 1% 5% 1% 10%;
+  }
+
+  .entry input {
+    accent-color: var(--primary-color);
   }
 
   //container for icon and text for category
   .container-filter-category {
     display: flex;
-    justify-content: start;
+    align-items: center;
     gap: calc(var(--spacing) * 1.6);
+    padding: calc(var(--spacing) * 1.4);
   }
 
   .container-filter-category img {
     height: 30px;
   }
 
-  //checkbox + text il faut adjouter flex + space-between
-  .container-text-checkbox {
+  .container-favorite {
     display: flex;
+    gap: 10px;
   }
 
-  fieldset {
-    border: 0;
+  .favorite {
+    padding: calc(var(--spacing) * 1.4);
 
-    .entry {
+    img {
+      height: 26px;
+    }
+
+    .text-favorite-checkbox {
       display: flex;
-      gap: 15px;
-      padding: 5px;
+      align-items: center;
+      gap: 15%;
     }
   }
 }
-
-.container-passengers,
-.container-starship,
-.container-looks,
-.favorite {
-  padding: 20px;
-
-  h2 {
-    font-size: calc(var(--font-size-standard) * 1.1);
-  }
-
-  p {
-    margin-top: 25px;
-    margin-bottom: 25px;
-  }
-}
-
-.favorite {
-  display: flex;
-
-  h3 {
-    border: 1px solid red;
-  }
-
-  img {
-    height: 26px;
-  }
-
-  .heartFav {
-    background-size: cover;
-    width: 30px;
-    height: 30px;
-  }
-}
-
 // Partie reponsive mobile
 @media screen and (max-width: 450px) {
   .container-filters {
