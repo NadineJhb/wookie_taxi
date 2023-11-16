@@ -41,6 +41,7 @@ function Filters({ people, setFilteredPeople, setCheckFavorite }) {
               alt="personage-icon"
             />
             <legend>Looks</legend>
+
           </div>
 
           <div className="entry">
@@ -128,6 +129,7 @@ function Filters({ people, setFilteredPeople, setCheckFavorite }) {
           <div className="container-favorite">
             <img
               src="src/public/images/icons/yellow-heart.png"
+
               alt="yellow-heart"
             />
             <div className="text-favorite-checkbox">
