@@ -6,7 +6,6 @@
   width: 55%;
 
   position: relative;
-  position: flex;
 
   .map-icon {
     font-size: calc(var(--spacing) * 3);
@@ -17,7 +16,6 @@
       calc(var(--spacing) * 0.8) calc(var(--spacing) * 0.2);
     font-size: calc(var(--font-size-standard) * 0.85);
     background-color: #ffde06;
-    border: none;
     border-right: 1px solid grey;
     color: #000000;
     display: flex;
@@ -70,7 +68,6 @@
   }
 
   .search-btn {
-    position: relative;
     position: absolute;
     height: 100%;
     width: 14%;
@@ -84,72 +81,30 @@
 }
 
 // Partie reponsive mobile
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 500px) {
   .searchbar-container {
-    margin-top: 80%;
-    border: 1px solid red;
-    padding: calc(var(--spacing) * 1);
-
-    width: 150%;
+    width: 90vw;
 
     .search-from {
-      flex-direction: row;
-      border: 1px solid red;
-      padding: 10px;
-      font-size: calc(var(--font-size-standard) * 0.5);
+      border-right: none;
+      width: 30%;
+      padding: 0;
 
-      width: 20vw;
-    }
-    .map-icon {
-      font-size: calc(var(--spacing) * 3);
+      .map-icon {
+        display: none;
+      }
     }
 
     .search-to {
-      border: 1px solid red;
-      padding: calc(var(--spacing) * 0.8) calc(var(--font-size-standard) * 1.2)
-        calc(var(--spacing) * 0.8) calc(var(--spacing) * 1.2);
-      font-size: calc(var(--font-size-standard) * 0.5);
-      width: 20vw;
+      border-right: none;
     }
 
-    .depart {
-      display: flex;
-      padding: calc(var(--spacing) * 0.2);
+    input[type="text"] {
+      width: 50%;
     }
 
     .search-passenger {
-      border: 1px solid red;
-      width: 15vw;
-
-      background-size: calc(var(--font-size-standard) * 1);
-      font-size: calc(var(--font-size-standard) * 0.6);
-
-      line-height: calc(var(--spacing) * 5);
-      padding-left: calc(var(--spacing) * 5);
-    }
-
-    .displaySearchIcon {
-      border: 1px solid red;
-      font-size: calc(var(--font-size-standard) * 2);
-    }
-
-    .hideSearchIcon {
-      border: 1px solid red;
-      display: none;
-    }
-
-    .search-btn {
-      border: 1px solid red;
-      position: relative;
-      position: absolute;
-      height: 100%;
-      width: 14%;
-      top: 0;
-      right: 0;
-      background-color: #ffde06;
-      // border: none;
-      border-radius: 0px var(--search-border-radius) var(--search-border-radius)
-        0px;
+      width: 20%;
     }
   }
 }
