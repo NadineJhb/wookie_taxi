@@ -57,7 +57,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    z-index:0;
+    z-index: 0;
   }
 
   .x {
@@ -94,5 +94,51 @@ body {
 }
 
 // Partie reponsive mobile
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 375px) {
+  body {
+    background-size: 150vh;
+  }
+  .background {
+    .img-container {
+      .img-background-planet {
+        z-index: 1;
+        width: 80%;
+      }
+    }
+    .background-Dagobah {
+      width: 40%;
+      left: 5%;
+      top: 65%;
+    }
+    .background-Tatooine {
+      width: 130px;
+      left: 65%;
+      bottom: 13%;
+    }
+    .background-Yavin {
+      left: 75%;
+      bottom: 50%;
+      width: 20%;
+    }
+    .background-Mustafar {
+      left: 70%;
+      bottom: 70%;
+      width: 22%;
+    }
+    .background-Alderaan {
+      left: 35%;
+      bottom: 0%;
+      width: 40%;
+    }
+    .background-Naboo {
+      bottom: 70%;
+      left: 6%;
+      width: 25%;
+    }
+  }
+  $size: 100px;
+  .x,
+  .y {
+    visibility: hidden;
+  }
 }
