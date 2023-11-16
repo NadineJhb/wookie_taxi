@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import PlaneteCard from "./PlaneteCard";
+import destroyerImg from "../public/images/starship/destroyer.png";
 
 function Background({ planets, setInputDestination }) {
   const [planet, setPlanet] = useState(null);
@@ -31,18 +32,22 @@ function Background({ planets, setInputDestination }) {
               <PlaneteCard
                 planet={planet}
                 setInputDestination={setInputDestination}
+                handleClick={(planetArg) => handleClick(planetArg)}
               />
             )}
           </div>
         );
       })}
+      <div className="x">
+        <img className="y" src={destroyerImg} alt="starship" />
+      </div>
     </div>
   );
 }
 
 Background.propTypes = {
   setInputDestination: PropTypes.func.isRequired,
-  planets: PropTypes.shape({
+  planets: PropTypes.arrayOf(PropTypes.shape)({
     name: PropTypes.string.isRequired,
     map: PropTypes.string.isRequired,
   }).isRequired,
