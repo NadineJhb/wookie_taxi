@@ -57,7 +57,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    z-index:0;
+    z-index: 0;
   }
 
   .x {
@@ -106,34 +106,39 @@ body {
       }
     }
     .background-Dagobah {
-      width: 200px;
+      width: 40%;
       left: 5%;
-      top: 20%;
+      top: 65%;
     }
     .background-Tatooine {
       width: 130px;
-      left: 60%;
-      bottom: 20%;
+      left: 65%;
+      bottom: 13%;
     }
     .background-Yavin {
-      left: 70%;
+      left: 75%;
       bottom: 50%;
       width: 20%;
     }
     .background-Mustafar {
       left: 70%;
       bottom: 70%;
-      width: 30%;
+      width: 22%;
     }
     .background-Alderaan {
-      left: 40%;
-      bottom: 2%;
-      width: 100px;
+      left: 35%;
+      bottom: 0%;
+      width: 40%;
     }
     .background-Naboo {
-      bottom: 15%;
-      left: 10%;
-      width: 30%;
+      bottom: 70%;
+      left: 6%;
+      width: 25%;
     }
+  }
+  $size: 100px;
+  .x,
+  .y {
+    visibility: hidden;
   }
 }
