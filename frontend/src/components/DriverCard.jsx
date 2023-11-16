@@ -2,9 +2,9 @@ import PropTypes, { arrayOf } from "prop-types";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-function DriverCard({ driver, stateSearchBar, isFavorite }) {
+function DriverCard({ driver, stateSearchBar, checkFavorite }) {
   const navigate = useNavigate();
-  const [favorite, setFavorite] = useState(isFavorite);
+  const [favorite, setFavorite] = useState(false);
 
   const handleClick1 = () => {
     setFavorite(!favorite);
@@ -23,7 +23,8 @@ function DriverCard({ driver, stateSearchBar, isFavorite }) {
 
   return (
     driver.vehicles.length > 0 &&
-    driver.vehicles[0].passengers >= stateSearchBar.passenger.toString() && (
+    driver.vehicles[0].passengers >= stateSearchBar.passenger.toString() &&
+    !(checkFavorite === true && favorite === false) && (
       <div className="driver-card">
         <div className="driverImgDiv">
           <img
@@ -35,7 +36,6 @@ function DriverCard({ driver, stateSearchBar, isFavorite }) {
         <div className="info-container">
           <div className="drivername-favorite">
             <h2>{driver.name}</h2>
-            {/* <div className="isFavorite"> &nbsp;</div> */}
             <button
               type="button"
               className={favorite ? "isFavorite" : "notFavorite"}
@@ -75,7 +75,7 @@ function DriverCard({ driver, stateSearchBar, isFavorite }) {
                 />
               </div>
               <button type="button" className="book" onClick={handleClick}>
-                Book
+                Book your ride
               </button>
             </div>
           </div>
@@ -100,7 +100,7 @@ DriverCard.propTypes = {
     ),
   }).isRequired,
   stateSearchBar: PropTypes.func.isRequired,
-  isFavorite: PropTypes.string.isRequired,
+  checkFavorite: PropTypes.func.isRequired,
 };
 
 export default DriverCard;
