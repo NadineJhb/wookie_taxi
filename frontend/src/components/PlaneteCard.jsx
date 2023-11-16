@@ -8,7 +8,7 @@ function PlaneteCard({ planet, setInputDestination, handleClick }) {
 
   return (
     <div className="planet-card">
-      <div className="card">
+      <div className={`${planet.name}-card`}>
         <button
           data-close-button
           className="close-button"
