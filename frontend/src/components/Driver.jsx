@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { IoFilterCircleOutline } from "react-icons/io5";
 import DriverCard from "./DriverCard";
 import Filters from "./Filters";
 import Logo from "./Logo";
@@ -51,9 +52,15 @@ export default function Driver() {
     state.passenger
   );
 
+  const [float, setFloat] = useState(false);
+  const handleFloat = () => {
+    setFloat(!float);
+  };
+
   return (
     <div className="driver-page">
       <Logo />
+      <IoFilterCircleOutline className="float" onClick={handleFloat} />
       <div className="filter-search-cards">
         <div className="filterBlock">
           <Filters
@@ -61,6 +68,7 @@ export default function Driver() {
             people={people}
             checkFavorite={checkFavorite}
             setCheckFavorite={setCheckFavorite}
+            float={float}
           />
         </div>
 
