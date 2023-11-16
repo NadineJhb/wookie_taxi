@@ -167,7 +167,7 @@ function Filters({ people, setFilteredPeople, setCheckFavorite }) {
           <div className="entry">
             <div className="container-text-checkbox">
               <img
-                src="src/public/images/icons/yellow-heart.256x205.png"
+                src="src/public/images/icons/yellow-heart.png"
                 alt="yellow-heart"
               />
               <label htmlFor="9">Favorite</label>
