@@ -9,10 +9,10 @@ export default function Intro() {
     navigate("/home");
   };
   const audio = new Audio(ringer);
-  const [isMuted, setIsMuted] = useState(false);
   const [isPlay, setIsPlay] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
   const toggleMute = () => {
-    setIsMuted(!isMuted);
+    setIsMuted(isMuted);
   };
   const togglePlay = () => {
     audio.play();
@@ -49,7 +49,7 @@ export default function Intro() {
                   controls
                   autoPlay="false"
                   id="son"
-                  src="/son/son.mp4"
+                  src="/public/son/son.mp4"
                   muted={isMuted}
                 >
                   <a href="son.mp4"> Download audio </a>
@@ -65,13 +65,13 @@ export default function Intro() {
                   mute
                 </button>
               )}
-              {isMuted && isPlay && (
+              {isPlay && (
                 <button
                   className="play-button"
                   type="button"
                   onClick={toggleMute}
                 >
-                  unmute
+                  mute
                 </button>
               )}
               {!isPlay && (
