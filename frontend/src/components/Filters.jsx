@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-function Filters({ people, setFilteredPeople, setCheckFavorite }) {
+function Filters({ people, setFilteredPeople, setCheckFavorite, float }) {
   const [eye, setEye] = useState(false);
   const [big, setBig] = useState(false);
   const [tall, setTall] = useState(false);
@@ -28,7 +28,11 @@ function Filters({ people, setFilteredPeople, setCheckFavorite }) {
 
   return (
     <div>
-      <div className="container-filters">
+      <div
+        className={`container-filters ${
+          float ? "filtersVisible" : "filtersInvisible"
+        }`}
+      >
         <div className="container-filter-title">
           <img src="src/public/images/icons/filters.png" alt="filter-icon" />
           <h1>Filter by</h1>
@@ -152,6 +156,7 @@ Filters.propTypes = {
   people: PropTypes.func.isRequired,
   setFilteredPeople: PropTypes.func.isRequired,
   setCheckFavorite: PropTypes.func.isRequired,
+  float: PropTypes.func.isRequired,
 };
 
 export default Filters;
