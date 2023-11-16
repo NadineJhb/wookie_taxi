@@ -4,7 +4,6 @@
   border-radius: 15px;
   color: var(--secondary-color);
   padding: 30px 14px 30px 14px;
-  margin-left: 50px;
 
   //container for icon and text "Filterby"
   .container-filter-title {
@@ -85,5 +84,8 @@
 }
 
 // Partie reponsive mobile
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 450px) {
+  .container-filters {
+    display: none;
+  }
 }

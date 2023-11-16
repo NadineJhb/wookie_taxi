@@ -90,7 +90,7 @@ export default function Driver() {
             ) : (
               filteredPeople.map((driver) => {
                 return (
-                  <div key={driver.name} className={driver.name}>
+                  <div key={driver.name} className="card">
                     <DriverCard
                       driver={driver}
                       stateSearchBar={state}
