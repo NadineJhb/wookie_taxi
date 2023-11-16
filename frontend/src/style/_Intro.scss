@@ -164,7 +164,6 @@
   cursor: pointer;
 }
 
-
 @keyframes wookie {
   0% {
     opacity: 0;
@@ -178,17 +177,15 @@
 }
 
 .switch_button {
- 
   display: flex;
   justify-content: flex-end;
- padding: 15px;
-
+  padding: 15px;
 }
 
 .mute-button {
   transition:
-  transform 0.5s ease,
-  box-shadow 0.5s ease;
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
 
   z-index: 1;
   border: 2px solid white;
@@ -202,32 +199,29 @@
   background: #ebd61c00;
 }
 
-.displayIcon, .hideIcon {
+.displayIcon,
+.hideIcon {
   width: 50%;
   height: 50%;
 }
-
-
 
 .hideIcon {
   display: none;
 }
 
- .mute-button:hover {
+.mute-button:hover {
   box-shadow:
-  0 0 5px rgb(255, 255, 255),
-  0 0 20px rgb(255, 255, 255),
-  0 0 30px rgb(255, 255, 255),
-  0 0 80px rgb(255, 255, 255);
+    0 0 5px rgb(255, 255, 255),
+    0 0 20px rgb(255, 255, 255),
+    0 0 30px rgb(255, 255, 255),
+    0 0 80px rgb(255, 255, 255);
 
   transform: scale(1.1);
- }
-
+}
 
 .skipIntro {
- 
   display: flex;
-  justify-content: flex-end;  
+  justify-content: flex-end;
   margin-right: 30px;
 }
 
@@ -263,7 +257,17 @@
     0 0 100px rgb(0, 140, 255);
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 800px) {
+  .switch_button {
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px;
+  }
+  .mute-button {
+    width: 35px;
+    height: 35px;
+    margin-right: 60px;
+  }
   .skip {
     padding: 5px 5px;
     font-size: 12px;
