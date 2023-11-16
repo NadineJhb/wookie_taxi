@@ -68,20 +68,26 @@ function Filters({ people, setFilteredPeople, setCheckFavorite }) {
           </div>
 
           <div className="entry">
-            <div className="container-text-checkbox">
-              <label htmlFor="8">Bring the muscles</label>
-              <input
-                type="checkbox"
-                onInput={(e) => setBig(e.target.checked)}
-                id="8"
-                name="looks"
-                value={big}
-                defaultChecked={false}
-              />
-            </div>
+            <input
+              type="checkbox"
+              onInput={(e) => setBig(e.target.checked)}
+              id="8"
+              name="looks"
+              value={big}
+              defaultChecked={false}
+            />
+            <label htmlFor="8">Bring the muscles</label>
           </div>
+        </fieldset>
 
-          <h4>Gender preferences</h4>
+        <fieldset className="container-gender">
+          <div className="container-filter-category">
+            <img
+              src="src/public/images/icons/gender_yellow.png"
+              alt="personage-icon"
+            />
+            <legend>Gender preference</legend>
+          </div>
           <div className="entry">
             <input
               type="radio"
@@ -114,23 +120,17 @@ function Filters({ people, setFilteredPeople, setCheckFavorite }) {
               value="male"
               defaultChecked={false}
             />
-
             <label htmlFor="10">Men</label>
           </div>
         </fieldset>
 
         <fieldset className="favorite">
-          <img
-            src="src/public/images/icons/yellow-heart.256x205.png"
-            alt="yellow-heart"
-          />
-          <div className="entry">
-            <div className="container-text-checkbox">
-              <img
-                src="src/public/images/icons/yellow-heart.256x205.png"
-                alt="yellow-heart"
-              />
-              <label htmlFor="9">Favorite</label>
+          <div className="container-favorite">
+            <img
+              src="src/public/images/icons/yellow-heart.256x205.png"
+              alt="yellow-heart"
+            />
+            <div className="text-favorite-checkbox">
               <input
                 type="checkbox"
                 onInput={(e) => setCheckFavorite(e.target.checked)}
@@ -139,6 +139,7 @@ function Filters({ people, setFilteredPeople, setCheckFavorite }) {
                 value="favorite"
                 defaultChecked={false}
               />
+              <label htmlFor="9">Favorite</label>
             </div>
           </div>
         </fieldset>
