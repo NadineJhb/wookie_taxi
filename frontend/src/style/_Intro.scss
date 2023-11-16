@@ -154,6 +154,7 @@
   background: none;
   background-repeat: no-repeat;
   border: none;
+  background-repeat: no-repeat;
   background-image: url(src/public/images/logo_wookie.png);
   background-size: 100%;
   animation-name: wookie;
@@ -176,16 +177,59 @@
   }
 }
 
+.switch_button {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px;
+}
+
+.mute-button {
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+
+  z-index: 1;
+  border: 2px solid white;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-right: 80px;
+  font-size: 12px;
+  color: #fff;
+  background: #ebd61c00;
+}
+
+.displayIcon,
+.hideIcon {
+  width: 50%;
+  height: 50%;
+}
+
+.hideIcon {
+  display: none;
+}
+
+.mute-button:hover {
+  box-shadow:
+    0 0 5px rgb(255, 255, 255),
+    0 0 20px rgb(255, 255, 255),
+    0 0 30px rgb(255, 255, 255),
+    0 0 80px rgb(255, 255, 255);
+
+  transform: scale(1.1);
+}
+
 .skipIntro {
   display: flex;
   justify-content: flex-end;
-  padding: 40px;
+  margin-right: 30px;
 }
 
 .skip {
   position: relative;
   z-index: 1;
-  padding: 10px 20px;
+  padding: 15px 20px;
   opacity: 0;
   border: none;
   font-size: 17px;
@@ -203,6 +247,7 @@
   animation-timing-function: linear;
   animation-delay: 10s;
   animation-fill-mode: forwards;
+  cursor: pointer;
 }
 
 .skip:hover {
@@ -211,4 +256,28 @@
     0 0 25px rgb(0, 140, 255),
     0 0 50px rgb(0, 140, 255),
     0 0 100px rgb(0, 140, 255);
+}
+
+// Partie reponsive mobile
+@media screen and (max-width: 425px) {
+  .skip {
+    padding: 5px 5px;
+    font-size: 12px;
+  }
+  .mute-button {
+    transition:
+      transform 0.5s ease,
+      box-shadow 0.5s ease;
+
+    z-index: 1;
+    border: 2px solid white;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-right: 80px;
+    font-size: 12px;
+    color: #fff;
+    background: #ebd61c00;
+  }
 }

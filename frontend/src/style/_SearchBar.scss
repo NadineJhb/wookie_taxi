@@ -5,7 +5,6 @@
   border-radius: var(--search-border-radius);
   width: 50vw;
   position: relative;
-  position: flex;
 
   .map-icon {
     font-size: calc(var(--spacing) * 3);
@@ -16,7 +15,6 @@
       calc(var(--spacing) * 0.8) calc(var(--spacing) * 0.2);
     font-size: calc(var(--font-size-standard) * 0.85);
     background-color: #ffde06;
-    border: none;
     border-right: 1px solid grey;
     color: #000000;
     display: flex;
@@ -69,7 +67,6 @@
   }
 
   .search-btn {
-    position: relative;
     position: absolute;
     height: 100%;
     width: 14%;
@@ -83,5 +80,30 @@
 }
 
 // Partie reponsive mobile
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 500px) {
+  .searchbar-container {
+    width: 90vw;
+
+    .search-from {
+      border-right: none;
+      width: 30%;
+      padding: 0;
+
+      .map-icon {
+        display: none;
+      }
+    }
+
+    .search-to {
+      border-right: none;
+    }
+
+    input[type="text"] {
+      width: 50%;
+    }
+
+    .search-passenger {
+      width: 20%;
+    }
+  }
 }

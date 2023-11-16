@@ -1,7 +1,12 @@
 .planet-card {
   position: relative;
 
-  .card {
+  .Yavin,
+  .Tatooine-name,
+  .Mustafar-name,
+  .Naboo-name,
+  .Dagobah-name,
+  .Alderaan-name {
     position: absolute;
     display: flex;
     bottom: 0;
@@ -75,5 +80,20 @@
 }
 
 // Partie reponsive mobile
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 375px) {
+  .planet-card {
+    position: relative;
+    .Alderaan-name {
+      position: absolute;
+      display: flex;
+      left: -150%;
+      width: 350px;
+      height: 210px;
+      color: var(--secondary-color);
+      background-color: var(--background-color);
+      border: 2px solid #ffde06;
+      border-radius: 10px 0 10px 0;
+      z-index: 1;
+    }
+  }
 }

@@ -1,30 +1,46 @@
 import "../style/_Intro.scss";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import ringer from "../public/son/son.mp4";
+import React, { useRef, useState } from "react";
+import { GoMute, GoUnmute } from "react-icons/go";
 
 export default function Intro() {
   const navigate = useNavigate();
+  const audioRef = useRef(null);
+  const [isMuted, setIsMuted] = useState(false);
+
+  const playAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.play();
+      setTimeout(() => {
+        navigate("/home");
+      }, 200000000);
+    }
+  };
   const handleClick = () => {
-    navigate("/home");
+    if (!audioRef.current || audioRef.current.paused) {
+      playAudio();
+    } else {
+      navigate("/home");
+    }
   };
-  const audio = new Audio(ringer);
-  const [isPlay, setIsPlay] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
   const toggleMute = () => {
-    setIsMuted(isMuted);
+    if (audioRef.current) {
+      audioRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
   };
-  const togglePlay = () => {
-    audio.play();
-    setIsPlay(!isPlay);
-  };
+
   return (
     <div>
       <title>Wookie Taxi</title>
 
       <body>
+        <audio ref={audioRef} muted={isMuted}>
+          <source src="src/public/son/Introsw.mp4" type="audio/mp3" />
+          <track kind="captions" />
+        </audio>
         <div className="star-wars-opening">
-          <p className="opening-intro">
+          <p className="opening-intro" onClick={playAudio} aria-hidden>
             A long time ago in a galaxy far, far away....
           </p>
           <div className="opening-stars">
@@ -38,48 +54,22 @@ export default function Intro() {
                 <p> </p>
               </button>
             </div>
+            <div className="switch_button">
+              <button
+                className="mute-button"
+                type="button"
+                onClick={toggleMute}
+              >
+                <GoMute className={isMuted ? "hideIcon" : "displayIcon"} />
+                <GoUnmute className={isMuted ? "displayIcon" : "hideIcon"} />
+              </button>
+            </div>
             <div className="skipIntro">
               <button className="skip" type="button" onClick={handleClick}>
                 <p> Skip intro </p>
               </button>
             </div>
-            <div>
-              <figure>
-                <audio
-                  controls
-                  autoPlay="false"
-                  id="son"
-                  src="/public/son/son.mp4"
-                  muted={isMuted}
-                >
-                  <a href="son.mp4"> Download audio </a>
-                  <track kind="captions" />
-                </audio>
-              </figure>
-              {!isMuted && isPlay && (
-                <button
-                  className="mute-button"
-                  type="button"
-                  onClick={toggleMute}
-                >
-                  mute
-                </button>
-              )}
-              {isPlay && (
-                <button
-                  className="play-button"
-                  type="button"
-                  onClick={toggleMute}
-                >
-                  mute
-                </button>
-              )}
-              {!isPlay && (
-                <button type="button" onClick={togglePlay}>
-                  Play
-                </button>
-              )}
-            </div>
+
             <div className="crawl-text">
               <header className="crawl-header">
                 <span className="crawl-episode">Episode 6.5</span>
@@ -91,6 +81,7 @@ export default function Intro() {
                 Galactic Empire which oppressed the galaxy. The Death Star was
                 destroyed during the clash.
               </p>
+
               <p>
                 Celebrations spread throughout the galaxy as news of the
                 Emperor's death spread. The one on Endor gave rise to three

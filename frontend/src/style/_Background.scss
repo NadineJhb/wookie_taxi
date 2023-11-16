@@ -1,6 +1,5 @@
 body {
   background-image: url("src/public/images/planets/fond1.jpg");
-  overflow-x: hidden;
 }
 .background {
   .img-container {
@@ -48,7 +47,40 @@ body {
     left: 5%;
     width: 15%;
   }
+
+  // DESTROYER ANIMATION
+  $size: 200px;
+  .x,
+  .y {
+    width: $size;
+    height: $size;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+
+  .x {
+    animation: x 13s linear infinite alternate;
+  }
+
+  .y {
+    animation: y 4s linear infinite alternate;
+  }
+
+  @keyframes x {
+    100% {
+      transform: translateX(calc(100vw - #{$size}));
+    }
+  }
+
+  @keyframes y {
+    100% {
+      transform: translateY(calc(100vh - #{$size}));
+    }
+  }
 }
+
 @keyframes slideIn {
   0% {
     transform: scale(1);
@@ -60,6 +92,7 @@ body {
     transform: scale(1);
   }
 }
+
 // Partie reponsive mobile
 @media screen and (max-width: 360px) {
 }

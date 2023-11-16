@@ -7,7 +7,7 @@ function PlaneteCard({ planet, setInputDestination }) {
 
   return (
     <div className="planet-card">
-      <div className="card">
+      <div className={`${planet.name}-name`}>
         <div className="planetImageDiv">
           <img
             src={`src/public/images/planets/${planet.name}.png`}
