@@ -68,61 +68,54 @@ function Filters({ people, setFilteredPeople, setCheckFavorite }) {
           </div>
 
           <div className="entry">
-            <input
-              type="checkbox"
-              onInput={(e) => setBig(e.target.checked)}
-              id="3"
-              name="looks"
-              value={big}
-              defaultChecked={false}
-            />
-            <label htmlFor="3">Bring the muscles</label>
-          </div>
-        </fieldset>
-
-        <fieldset className="container-gender">
-          <div className="container-filter-category">
-            <img
-              src="src/public/images/icons/gender_yellow.png"
-              alt="personage-icon"
-            />
-            <legend>Gender</legend>
+            <div className="container-text-checkbox">
+              <label htmlFor="8">Bring the muscles</label>
+              <input
+                type="checkbox"
+                onInput={(e) => setBig(e.target.checked)}
+                id="8"
+                name="looks"
+                value={big}
+                defaultChecked={false}
+              />
+            </div>
           </div>
 
-          <div className="radiobutton-entry">
+          <h4>Gender preferences</h4>
+          <div className="entry">
             <input
               type="radio"
               onInput={(e) => setGender(e.target.value)}
-              id="4"
+              id="11"
               name="gender"
               value="all"
               defaultChecked
             />
-            <label htmlFor="4">All</label>
+            <label htmlFor="11">All</label>
           </div>
           <div className="entry">
             <input
               type="radio"
               onInput={(e) => setGender(e.target.value)}
-              id="5"
+              id="9"
               name="gender"
               value="female"
               defaultChecked={false}
             />
-            <label htmlFor="5">Women</label>
+            <label htmlFor="9">Women</label>
           </div>
 
           <div className="entry">
             <input
               type="radio"
               onInput={(e) => setGender(e.target.value)}
-              id="6"
+              id="10"
               name="gender"
               value="male"
               defaultChecked={false}
             />
 
-            <label htmlFor="6">Men</label>
+            <label htmlFor="10">Men</label>
           </div>
         </fieldset>
 
@@ -132,15 +125,21 @@ function Filters({ people, setFilteredPeople, setCheckFavorite }) {
             alt="yellow-heart"
           />
           <div className="entry">
-            <input
-              type="checkbox"
-              onInput={(e) => setCheckFavorite(e.target.checked)}
-              id="7"
-              name="favorite"
-              value="favorite"
-              defaultChecked={false}
-            />
-            <label htmlFor="7">Favorite</label>
+            <div className="container-text-checkbox">
+              <img
+                src="src/public/images/icons/yellow-heart.256x205.png"
+                alt="yellow-heart"
+              />
+              <label htmlFor="9">Favorite</label>
+              <input
+                type="checkbox"
+                onInput={(e) => setCheckFavorite(e.target.checked)}
+                id="9"
+                name="favorite"
+                value="favorite"
+                defaultChecked={false}
+              />
+            </div>
           </div>
         </fieldset>
       </div>
