@@ -33,99 +33,61 @@ function Filters({ people, setFilteredPeople, setCheckFavorite }) {
           <img src="src/public/images/icons/filters.png" alt="filter-icon" />
           <h1>Filter by</h1>
         </div>
-        <fieldset className="container-starship">
-          <div className="container-filter-category">
-            <img
-              src="src/public/images/icons/vehicle_yellow.png"
-              alt="vehicle-icon"
-            />
-            <legend>Starship</legend>
-          </div>
-          <div className="entry">
-            <div className="container-text-checkbox">
-              <label htmlFor="3">SnowSpeeder</label>
-              <input
-                type="checkbox"
-                id="3"
-                name="Starship"
-                value="SnowSpeeder"
-                checked
-              />
-            </div>
-          </div>
-
-          <div className="entry">
-            <div className="container-text-checkbox">
-              <label htmlFor="4">Imperial Speeder Bike</label>
-              <input
-                type="checkbox"
-                id="4"
-                name="Starship"
-                value="Imperial Speeder Bike"
-              />
-            </div>
-          </div>
-
-          <div className="entry">
-            <div className="container-text-checkbox">
-              <label htmlFor="5">AT-ST</label>
-              <input type="checkbox" id="5" name="Starship" value="AT-ST" />
-            </div>
-          </div>
-        </fieldset>
 
         <fieldset className="container-looks">
           <div className="container-filter-category">
             <img
-              src="src/public/images/icons/personage_yellow.png"
+              src="src/public/images/icons/r2d2_yellow.png"
               alt="personage-icon"
             />
-            <legend>Options</legend>
+            <legend>Looks</legend>
           </div>
 
           <div className="entry">
-            <div className="container-text-checkbox">
-              <label htmlFor="6">Blue eyes, please</label>
-              <input
-                type="checkbox"
-                onInput={(e) => setEye(e.target.checked)}
-                id="6"
-                name="looks"
-                value={eye}
-                defaultChecked={false}
-              />
-            </div>
+            <input
+              type="checkbox"
+              onInput={(e) => setEye(e.target.checked)}
+              id="1"
+              name="looks"
+              value={eye}
+              defaultChecked={false}
+            />
+            <label htmlFor="1">Blue eyes, please</label>
           </div>
 
           <div className="entry">
-            <div className="container-text-checkbox">
-              <label htmlFor="7">I like them tall</label>
-              <input
-                type="checkbox"
-                onInput={(e) => setTall(e.target.checked)}
-                id="7"
-                name="looks"
-                value={tall}
-                defaultChecked={false}
-              />
-            </div>
+            <input
+              type="checkbox"
+              onInput={(e) => setTall(e.target.checked)}
+              id="2"
+              name="looks"
+              value={tall}
+              defaultChecked={false}
+            />
+            <label htmlFor="2">I like them tall</label>
           </div>
 
           <div className="entry">
-            <div className="container-text-checkbox">
-              <label htmlFor="8">Bring the muscles</label>
-              <input
-                type="checkbox"
-                onInput={(e) => setBig(e.target.checked)}
-                id="8"
-                name="looks"
-                value={big}
-                defaultChecked={false}
-              />
-            </div>
+            <input
+              type="checkbox"
+              onInput={(e) => setBig(e.target.checked)}
+              id="8"
+              name="looks"
+              value={big}
+              defaultChecked={false}
+            />
+            <label htmlFor="8">Bring the muscles</label>
           </div>
+        </fieldset>
 
-          <h4>Gender preferences</h4>
+        <fieldset className="container-gender">
+          <div className="container-filter-category">
+            <img
+              src="src/public/images/icons/gender_yellow.png"
+              alt="personage-icon"
+            />
+            <legend>Gender preference</legend>
+          </div>
           <div className="entry">
             <input
               type="radio"
@@ -158,19 +120,17 @@ function Filters({ people, setFilteredPeople, setCheckFavorite }) {
               value="male"
               defaultChecked={false}
             />
-
             <label htmlFor="10">Men</label>
           </div>
         </fieldset>
 
         <fieldset className="favorite">
-          <div className="entry">
-            <div className="container-text-checkbox">
-              <img
-                src="src/public/images/icons/yellow-heart.png"
-                alt="yellow-heart"
-              />
-              <label htmlFor="9">Favorite</label>
+          <div className="container-favorite">
+            <img
+              src="src/public/images/icons/yellow-heart.png"
+              alt="yellow-heart"
+            />
+            <div className="text-favorite-checkbox">
               <input
                 type="checkbox"
                 onInput={(e) => setCheckFavorite(e.target.checked)}
@@ -179,6 +139,7 @@ function Filters({ people, setFilteredPeople, setCheckFavorite }) {
                 value="favorite"
                 defaultChecked={false}
               />
+              <label htmlFor="9">Favorite</label>
             </div>
           </div>
         </fieldset>
