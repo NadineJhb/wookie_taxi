@@ -31,6 +31,7 @@ function Background({ planets, setInputDestination }) {
               <PlaneteCard
                 planet={planet}
                 setInputDestination={setInputDestination}
+                handleClick={(planetArg) => handleClick(planetArg)}
               />
             )}
           </div>

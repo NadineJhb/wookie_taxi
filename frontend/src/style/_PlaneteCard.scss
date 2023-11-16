@@ -13,16 +13,19 @@
     border: 2px solid #ffde06;
     border-radius: 10px 0 10px 0;
     z-index: 1;
-  }
-  .planetImageDiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    overflow: hidden;
-  }
-  .img-planet {
-    width: 100%;
+    .close-button {
+      visibility: hidden;
+    }
+    .planetImageDiv {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      overflow: hidden;
+    }
+    .img-planet {
+      width: 100%;
+    }
   }
 }
 
@@ -76,16 +79,38 @@
 
 @media screen and (max-width: 375px) {
   .planet-card {
-    position: absolute;
     .card {
       display: flex;
+      border: 2px solid #ffde06;
+      border-radius: 10px 0 10px 0;
+      z-index: 1;
       flex-direction: column;
-      width: 200px; /* Adjust the width as needed */
-      height: 300px; /* Adjust the height as needed */
-      flex-direction: column;
-    }
-    .img-planet {
-      width: 60%;
+      width: 200px;
+      height: 300px;
+
+      .close-button {
+        visibility: visible;
+        text-align: end;
+        align-items: flex-end;
+        transition: all 200ms;
+        transform: 0.5s ease;
+        color: #ffff;
+        margin-right: 9px;
+        font-size: 30px;
+        font-weight: bolder;
+        border: none;
+        background: none;
+        cursor: pointer;
+      }
+      .close-button:hover {
+        transform: scale(1.1);
+        color: var(--primary-color);
+        transform: rotate(90deg);
+      }
+
+      .img-planet {
+        width: 60%;
+      }
     }
   }
 
