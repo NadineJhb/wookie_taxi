@@ -88,8 +88,17 @@
   }
 }
 // Partie reponsive mobile
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 800px) {
   .container-filters {
-    display: none;
+    width: 80vw;
+    height: 100vh;
+    border-radius: 0 15px 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background: #010101;
+    z-index: 1;
+    transition: 0.5s;
   }
 }

@@ -176,6 +176,19 @@
     align-self: flex-end;
     cursor: pointer;
   }
+
+  .float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 50px;
+    right: 50px;
+    color: black;
+    background-color: #f0da37;
+    border-radius: 50px;
+    z-index: 2;
+    box-shadow: 5px 5px 18px -3px #010101;
+  }
 }
 
 .loader {
@@ -203,7 +216,15 @@
 }
 
 // Partie reponsive mobile
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
+  .filtersInvisible {
+    transform: translateX(-100%);
+  }
+
+  .filtersVisible {
+    transform: translateX(0%);
+  }
+
   .driver-page {
     .searchbar-container {
       width: 90vw;
@@ -219,10 +240,6 @@
       display: flex;
       width: 90%;
       gap: 0;
-    }
-
-    .filterBlock {
-      display: none;
     }
 
     .cards {
@@ -262,5 +279,11 @@
       flex-direction: column-reverse;
       align-items: start;
     }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .float {
+    display: none;
   }
 }
