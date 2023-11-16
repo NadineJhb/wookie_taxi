@@ -75,7 +75,7 @@ function DriverCard({ driver, stateSearchBar, checkFavorite }) {
                 />
               </div>
               <button type="button" className="book" onClick={handleClick}>
-                Book
+                Book your ride
               </button>
             </div>
           </div>
