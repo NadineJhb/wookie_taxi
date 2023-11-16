@@ -10,6 +10,7 @@ export default function Driver() {
   const { state } = useLocation();
   const [people, setPeople] = useState([]);
   const [filteredPeople, setFilteredPeople] = useState(people);
+  const [checkFavorite, setCheckFavorite] = useState(false);
 
   const navigate = useNavigate();
 
@@ -55,7 +56,12 @@ export default function Driver() {
       <Logo />
       <div className="filter-search-cards">
         <div className="filterBlock">
-          <Filters setFilteredPeople={setFilteredPeople} people={people} />
+          <Filters
+            setFilteredPeople={setFilteredPeople}
+            people={people}
+            checkFavorite={checkFavorite}
+            setCheckFavorite={setCheckFavorite}
+          />
         </div>
 
         <div className="search-cards">
@@ -65,8 +71,10 @@ export default function Driver() {
               setInputDestination={setDestinationDriverpage}
               inputPassenger={passengerDriverpage}
               setInputPassenger={setPassengerDriverpage}
-            />
+              searchIcon="hideSearchIcon"
+            />{" "}
           </div>
+
           <div className="cards">
             {people.length === 0 ? (
               <div className="loader">
@@ -82,11 +90,14 @@ export default function Driver() {
             ) : (
               filteredPeople.map((driver) => {
                 return (
-                  <DriverCard
-                    driver={driver}
-                    driverVehicleUrl={driver.vehicles[0]}
-                    stateSearchBar={state}
-                  />
+                  <div key={driver.name} className={driver.name}>
+                    <DriverCard
+                      driver={driver}
+                      stateSearchBar={state}
+                      checkFavorite={checkFavorite}
+                      setCheckFavorite={setCheckFavorite}
+                    />
+                  </div>
                 );
               })
             )}

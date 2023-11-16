@@ -23,67 +23,57 @@
     margin-bottom: 20px;
   }
 
+  //category name
+  legend {
+    font-size: calc(var(--font-size-standard) * 1);
+    font-weight: var(--font-weight-text-bold);
+  }
+
+  //checkbox, radiobutton text
+  label {
+    font-size: calc(var(--font-size-standard) * 0.9);
+    font-weight: var(--font-weight-text);
+  }
+
+  .container-looks,
+  .container-gender,
+  .favorite {
+    padding-right: calc(var(--spacing) * 4);
+    padding-bottom: calc(var(--spacing) * 4);
+
+    h2 {
+      font-size: calc(var(--font-size-standard) * 1.1);
+    }
+
+    p {
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+  }
+
   //container for icon and text for category
   .container-filter-category {
     display: flex;
     justify-content: start;
+    align-items: center;
     gap: calc(var(--spacing) * 1.6);
+    padding: calc(var(--spacing) * 1.4);
   }
 
   .container-filter-category img {
     height: 30px;
   }
 
-  //checkbox + text il faut adjouter flex + space-between
-  .container-text-checkbox {
-    display: flex;
-  }
-
   fieldset {
     border: 0;
+  }
 
-    .entry {
-      display: flex;
-      gap: 15px;
-      padding: 5px;
+  .favorite {
+    img {
+      height: 26px;
     }
   }
 }
-
-.container-passengers,
-.container-starship,
-.container-looks,
-.favorite {
-  padding: 20px;
-
-  h2 {
-    font-size: calc(var(--font-size-standard) * 1.1);
-  }
-
-  p {
-    margin-top: 25px;
-    margin-bottom: 25px;
-  }
-}
-
-.favorite {
-  display: flex;
-
-  h3 {
-    border: 1px solid red;
-  }
-
-  img {
-    height: 26px;
-  }
-
-  .heartFav {
-    background-size: cover;
-    width: 30px;
-    height: 30px;
-  }
-}
-
 // Partie reponsive mobile
 @media screen and (max-width: 360px) {
 }
