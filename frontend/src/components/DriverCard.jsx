@@ -89,7 +89,7 @@ DriverCard.propTypes = {
   driver: PropTypes.shape({
     name: PropTypes.string.isRequired,
     eye_color: PropTypes.string.isRequired,
-    height: PropTypes.number.isRequired,
+    height: PropTypes.string.isRequired,
     homeworld: PropTypes.string.isRequired,
     vehicles: arrayOf(
       PropTypes.shape({
@@ -99,7 +99,7 @@ DriverCard.propTypes = {
       })
     ),
   }).isRequired,
-  stateSearchBar: PropTypes.func.isRequired,
+  stateSearchBar: PropTypes.bool.isRequired,
   checkFavorite: PropTypes.func.isRequired,
 };
 
