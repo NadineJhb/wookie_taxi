@@ -5,8 +5,6 @@ import Logo from "./components/Logo";
 import "./App.css";
 import Footer from "./components/Footer";
 
-// import Filters from "./components/Filters";
-
 function App() {
   const [inputDestination, setInputDestination] = useState("");
   const [inputPassenger, setInputPassenger] = useState(1);
@@ -173,16 +171,8 @@ function App() {
         />
       </div>
       <Footer />
-      {/* <Filters />
- <Driver /> */}
     </div>
   );
 }
 
 export default App;
-
-// export async loaderPeople() {
-//   axios.all ...=> data
-
-//   return data
-// }

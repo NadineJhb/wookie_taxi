@@ -9,26 +9,22 @@
   }
 }
 .driver-page {
-  //< Filters />
   .filterBlock {
     display: flex;
     justify-content: center;
   }
 
-  //all the elements except logo on top
   .filter-search-cards {
     margin: auto;
     display: flex;
     justify-content: center;
     gap: 25px;
-    // grid-template-columns: (1fr 2fr);
   }
 
   .cards {
     padding-top: calc(var(--spacing) * 4);
   }
 
-  //style for driver card
   @keyframes scaleIn {
     from {
       transform: scale(0.8);
@@ -72,7 +68,6 @@
     .drivername-favorite {
       display: flex;
       justify-content: space-between;
-      //align-items: flex-start;
     }
 
     .driverImgDiv {
@@ -202,7 +197,6 @@
   }
 }
 
-// Partie reponsive mobile
 @media screen and (max-width: 600px) {
   .driver-page {
     .searchbar-container {

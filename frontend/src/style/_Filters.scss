@@ -5,7 +5,6 @@
   color: var(--secondary-color);
   padding: 30px 14px 30px 14px;
 
-  //container for icon and text "Filterby"
   .container-filter-title {
     display: flex;
     justify-content: center;
@@ -33,19 +32,16 @@
     border: 0;
   }
 
-  //category name
   legend {
     font-size: calc(var(--font-size-standard) * 1);
     font-weight: var(--font-weight-text-bold);
   }
 
-  //checkbox, radiobutton text
   label {
     font-size: calc(var(--font-size-standard) * 0.9);
     font-weight: var(--font-weight-text);
   }
 
-  //container for input
   .entry {
     display: flex;
     gap: 8%;
@@ -56,7 +52,6 @@
     accent-color: var(--primary-color);
   }
 
-  //container for icon and text for category
   .container-filter-category {
     display: flex;
     align-items: center;
@@ -87,7 +82,6 @@
     }
   }
 }
-// Partie reponsive mobile
 @media screen and (max-width: 450px) {
   .container-filters {
     display: none;

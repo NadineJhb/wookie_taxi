@@ -25,7 +25,6 @@
     font-size: calc(var(--font-size-standard) * 1);
   }
 
-  //first block with title and driver name
   .booking-title {
     display: flex;
     justify-content: center;
@@ -42,7 +41,6 @@
     color: var(--primary-color);
   }
 
-  //second block with images and informations
   .booking-images-infos {
     display: flex;
     justify-content: space-around;
@@ -71,7 +69,6 @@
     object-fit: cover;
   }
 
-  //second block : right side of block
   .booking-infos {
     display: flex;
     justify-content: space-between;
@@ -79,7 +76,6 @@
     padding-left: calc(var(--spacing) * 2.6);
   }
 
-  //second block : first part with départ, destination and vehicle image
   .booking-planet-vehiclephoto {
     display: flex;
     align-items: center;
@@ -91,7 +87,6 @@
     object-fit: cover;
   }
 
-  //second block : second part with icons and passagers, snowspeeder
   .booking-passenger-vehicle {
     display: flex;
     flex-direction: column;
@@ -115,7 +110,6 @@
     padding-right: calc(var(--spacing) * 2.2);
   }
 
-  //third block : button
   button {
     transition:
       transform 0.5s ease,
@@ -152,7 +146,6 @@ a {
   color: var(--tertiary-color);
 }
 
-// Partie reponsive mobile
 @media screen and (max-width: 500px) {
   .booking-container {
     h2 {
