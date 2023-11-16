@@ -23,7 +23,6 @@ function Filters({ people, setFilteredPeople, setCheckFavorite, float }) {
       gender === "all" ? true : person.gender === gender
     );
     setFilteredPeople(filtered4);
-    console.warn(filtered4);
   }, [eye, big, tall, gender, people]);
 
   return (
@@ -156,7 +155,7 @@ Filters.propTypes = {
   people: PropTypes.func.isRequired,
   setFilteredPeople: PropTypes.func.isRequired,
   setCheckFavorite: PropTypes.func.isRequired,
-  float: PropTypes.func.isRequired,
+  float: PropTypes.bool.isRequired,
 };
 
 export default Filters;
