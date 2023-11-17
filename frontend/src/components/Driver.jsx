@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { IoFilterCircleOutline } from "react-icons/io5";
 import DriverCard from "./DriverCard";
 import Filters from "./Filters";
 import Logo from "./Logo";
@@ -10,6 +11,7 @@ export default function Driver() {
   const { state } = useLocation();
   const [people, setPeople] = useState([]);
   const [filteredPeople, setFilteredPeople] = useState(people);
+  const [checkFavorite, setCheckFavorite] = useState(false);
 
   const navigate = useNavigate();
 
@@ -36,7 +38,6 @@ export default function Driver() {
           } else {
             j -= 1;
           }
-          console.warn("random: ", randomCharacters);
         }
         setPeople(randomCharacters);
       })
@@ -50,12 +51,24 @@ export default function Driver() {
     state.passenger
   );
 
+  const [float, setFloat] = useState(false);
+  const handleFloat = () => {
+    setFloat(!float);
+  };
+
   return (
     <div className="driver-page">
       <Logo />
+      <IoFilterCircleOutline className="float" onClick={handleFloat} />
       <div className="filter-search-cards">
         <div className="filterBlock">
-          <Filters setFilteredPeople={setFilteredPeople} people={people} />
+          <Filters
+            setFilteredPeople={setFilteredPeople}
+            people={people}
+            checkFavorite={checkFavorite}
+            setCheckFavorite={setCheckFavorite}
+            float={float}
+          />
         </div>
 
         <div className="search-cards">
@@ -84,8 +97,13 @@ export default function Driver() {
             ) : (
               filteredPeople.map((driver) => {
                 return (
-                  <div key={driver.name} className={driver.name}>
-                    <DriverCard driver={driver} stateSearchBar={state} />
+                  <div key={driver.name} className="card">
+                    <DriverCard
+                      driver={driver}
+                      stateSearchBar={state}
+                      checkFavorite={checkFavorite}
+                      setCheckFavorite={setCheckFavorite}
+                    />
                   </div>
                 );
               })

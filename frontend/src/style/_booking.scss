@@ -4,9 +4,11 @@
   border-radius: var(--search-border-radius);
   width: 50vw;
   color: var(--secondary-color);
-  padding: calc(var(--spacing) * 7.5) calc(var(--spacing) * 3)
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 3)
     calc(var(--spacing) * 4) calc(var(--spacing) * 3);
-  margin-bottom: calc(var(--spacing) * 5);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 
   h2 {
     font-weight: var(--font-weight-text--bold);
@@ -27,11 +29,11 @@
   //first block with title and driver name
   .booking-title {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .booking-driver-text {
-    padding-top: calc(var(--spacing) * 1.2);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -45,7 +47,7 @@
   .booking-images-infos {
     display: flex;
     justify-content: space-around;
-    padding: calc(var(--spacing) * 6) 3% calc(var(--spacing) * 4) 3%;
+    gap: 15px;
   }
 
   .booking-driver-photo {
@@ -75,7 +77,6 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    padding-left: calc(var(--spacing) * 2.6);
   }
 
   //second block : first part with départ, destination and vehicle image
@@ -94,7 +95,7 @@
   .booking-passenger-vehicle {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 10px;
   }
 
   .booking-passenger {
@@ -143,7 +144,6 @@
   .button-home {
     display: flex;
     justify-content: center;
-    padding-top: calc(var(--spacing) * 3);
   }
 }
 a {
@@ -152,59 +152,57 @@ a {
 }
 
 // Partie reponsive mobile
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 500px) {
   .booking-container {
-    width: 80vw;
-    height: 73vh;
-    padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 0)
-      calc(var(--spacing) * 4);
+    display: flex;
+    flex-direction: column;
 
     h2 {
-      font-size: calc(var(--font-size-standard) * 0.8);
+      font-size: calc(var(--font-size-standard) * 1);
       text-align: center;
     }
     h3 {
-      font-size: calc(var(--font-size-standard) * 0.6);
+      font-size: calc(var(--font-size-standard) * 0.9);
     }
     .booking-driver-photo {
-      margin-left: 25%;
       width: 100px;
       height: 150px;
     }
+
     .booking-images-infos {
       flex-direction: column;
-      padding: calc(var(--spacing) * 1.5);
+      align-items: center;
     }
     p {
       padding-bottom: calc(var(--spacing) * 1);
-      font-size: calc(var(--font-size-standard) * 0.7);
+      font-size: calc(var(--font-size-standard) * 0.9);
     }
-    .booking-infos {
-      display: flex;
-      justify-content: center;
-      padding: calc(var(--spacing) * 2) 0 calc(var(--spacing) * 1);
-    }
+
     .booking-planet-vehiclephoto {
       flex-direction: column;
       gap: calc(var(--spacing) * 0);
     }
     .booking-vehicle-photo {
-      width: 25vw;
-    }
-    .booking-passenger,
-    .booking-vehicle {
-      margin-left: 60px;
+      width: 50px;
     }
     .icon-passenger,
     .icon-vehicle {
-      height: 20px;
+      height: 15px;
     }
-    .button-home {
-      padding-top: calc(var(--spacing) * 0);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .booking-container {
+    width: 90vw;
+    padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 0)
+      calc(var(--spacing) * 4);
+    in h2 {
+      text-align: center;
     }
-    button {
-      padding: calc(var(--spacing) * 1) calc(var(--spacing) * 1);
-      font-size: calc(var(--font-size-standard) * 0.6);
+
+    .booking-images-infos {
+      padding: 0 calc(var(--spacing) * 4);
     }
   }
 }

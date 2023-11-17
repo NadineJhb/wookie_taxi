@@ -18,8 +18,10 @@
   //all the elements except logo on top
   .filter-search-cards {
     margin: auto;
-    display: grid;
-    grid-template-columns: (1fr 2fr);
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    // grid-template-columns: (1fr 2fr);
   }
 
   .cards {
@@ -103,6 +105,7 @@
     .info-vehicleImage-button {
       padding-top: calc(var(--spacing) * 2);
       display: flex;
+      justify-content: space-between;
     }
 
     .vehicleImage-button {
@@ -110,7 +113,7 @@
       flex-direction: column;
       justify-content: space-between;
     }
-    npm .card-information {
+    .card-information {
       width: 100%;
     }
 
@@ -155,7 +158,7 @@
     height: 40px;
     background: none;
     border-style: none;
-    background-image: url(src/public/images/icons/yellow-heart.256x205.png);
+    background-image: url(src/public/images/icons/yellow-heart.png);
     background-repeat: no-repeat;
     background-size: 100%;
     align-self: flex-end;
@@ -167,11 +170,24 @@
     height: 40px;
     background: none;
     border-style: none;
-    background-image: url(src/public/images/icons/yellow-heart.256x213.png);
+    background-image: url(src/public/images/icons/white-heart.png);
     background-repeat: no-repeat;
     background-size: 100%;
     align-self: flex-end;
     cursor: pointer;
+  }
+
+  .float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 50px;
+    right: 50px;
+    color: black;
+    background-color: #f0da37;
+    border-radius: 50px;
+    z-index: 2;
+    box-shadow: 5px 5px 18px -3px #010101;
   }
 }
 
@@ -200,5 +216,74 @@
 }
 
 // Partie reponsive mobile
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 800px) {
+  .filtersInvisible {
+    transform: translateX(-100%);
+  }
+
+  .filtersVisible {
+    transform: translateX(0%);
+  }
+
+  .driver-page {
+    .searchbar-container {
+      width: 90vw;
+      justify-content: space-around;
+    }
+
+    form {
+      display: flex;
+      align-items: center;
+    }
+
+    .filter-search-cards {
+      display: flex;
+      width: 90%;
+      gap: 0;
+    }
+
+    .cards {
+      width: 90vw;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    .driver-card {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+
+      .driverImgDiv {
+        width: 200px;
+      }
+
+      .book {
+        width: 100%;
+        font-size: 1.3rem;
+      }
+    }
+
+    .info-vehicleImage-button {
+      font-size: 1rem;
+      display: flex;
+      flex-direction: column;
+
+      .vehicleImage-button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    .drivername-favorite {
+      flex-direction: column-reverse;
+      align-items: start;
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .float {
+    display: none;
+  }
 }

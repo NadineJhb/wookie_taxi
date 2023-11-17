@@ -1,11 +1,10 @@
 import { useLocation, NavLink } from "react-router-dom";
-import PropTypes from "prop-types";
 import "../style/_booking.scss";
 import Logo from "./Logo";
 
 function Booking() {
   const { state } = useLocation();
-  console.warn(state.name);
+
   return (
     <>
       <Logo />
@@ -13,11 +12,11 @@ function Booking() {
         <div className="booking-title">
           <h2>Thank you for your booking !</h2>
         </div>
-        <h3 className="booking-driver-text">
+        <div className="booking-driver-text">
           Your Wookie Taxi with &nbsp;
           <h3 className="booking-drivername">{state.name}</h3>
           &nbsp; is confirmed.
-        </h3>
+        </div>
         <div className="booking-images-infos">
           <img
             className="booking-driver-photo"
@@ -73,14 +72,5 @@ function Booking() {
     </>
   );
 }
-
-Booking.propTypes = {
-  state: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    destination: PropTypes.string.isRequired,
-    driverVehicleUrl: PropTypes.string.isRequired,
-    passenger: PropTypes.number.isRequired,
-  }).isRequired,
-};
 
 export default Booking;

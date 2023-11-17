@@ -4,8 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 import { BiSolidMap } from "react-icons/bi";
 
-/* recuperer depart, destination passangers + search bar */
-
 function SearchBar({
   inputDestination,
   setInputDestination,
@@ -59,9 +57,6 @@ SearchBar.propTypes = {
   inputPassenger: PropTypes.string.isRequired,
   setInputPassenger: PropTypes.func.isRequired,
   searchIcon: PropTypes.string.isRequired,
-  planet: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-  }).isRequired,
 };
 
 export default SearchBar;

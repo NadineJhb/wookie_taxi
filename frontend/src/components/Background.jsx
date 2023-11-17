@@ -32,6 +32,7 @@ function Background({ planets, setInputDestination }) {
               <PlaneteCard
                 planet={planet}
                 setInputDestination={setInputDestination}
+                handleClick={(planetArg) => handleClick(planetArg)}
               />
             )}
           </div>
@@ -45,10 +46,11 @@ function Background({ planets, setInputDestination }) {
 }
 
 Background.propTypes = {
+  planets: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+    })
+  ).isRequired,
   setInputDestination: PropTypes.func.isRequired,
-  planets: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    map: PropTypes.string.isRequired,
-  }).isRequired,
 };
 export default Background;
