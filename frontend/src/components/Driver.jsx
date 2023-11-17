@@ -88,7 +88,7 @@ export default function Driver() {
                 <p className="loaderText">Checking for avalable drivers...</p>
                 <div className="sabreLoader">
                   <img
-                    src="src/public/images/wookie.gif"
+                    src="/images/wookie.gif"
                     alt="Loader"
                     className="loaderImg"
                   />

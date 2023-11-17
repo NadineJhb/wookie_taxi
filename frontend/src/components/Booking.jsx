@@ -20,7 +20,7 @@ function Booking() {
         <div className="booking-images-infos">
           <img
             className="booking-driver-photo"
-            src={`src/public/images/characters/${state.name}.jpg`}
+            src={`/images/characters/${state.name}.jpg`}
             alt="booking-driver"
           />
           <div className="booking-infos">
@@ -35,7 +35,7 @@ function Booking() {
               </div>
               <img
                 className="booking-vehicle-photo"
-                src={`src/public/images/starship/${state.driverVehicleUrl}.png`}
+                src={`/images/starship/${state.driverVehicleUrl}.png`}
                 alt="booking-vehicle"
               />
             </div>
@@ -43,7 +43,7 @@ function Booking() {
               <div className="booking-passenger">
                 <img
                   className="icon-passenger"
-                  src="src/public/images/icons/stormtrooper_white.png"
+                  src="/images/icons/stormtrooper_white.png"
                   alt="icon"
                 />
                 <p>
@@ -53,7 +53,7 @@ function Booking() {
               <div className="booking-vehicle">
                 <img
                   className="icon-vehicle"
-                  src="./src/public/images/icons/vehicle.png"
+                  src="/images/icons/vehicle.png"
                   alt="icon"
                 />
                 <p>
