@@ -152,7 +152,14 @@ function Filters({ people, setFilteredPeople, setCheckFavorite, float }) {
 }
 
 Filters.propTypes = {
-  people: PropTypes.func.isRequired,
+  people: PropTypes.arrayOf(
+    PropTypes.shape({
+      mass: PropTypes.string,
+      height: PropTypes.string,
+      gender: PropTypes.string,
+      eye_color: PropTypes.string,
+    })
+  ).isRequired,
   setFilteredPeople: PropTypes.func.isRequired,
   setCheckFavorite: PropTypes.func.isRequired,
   float: PropTypes.bool.isRequired,

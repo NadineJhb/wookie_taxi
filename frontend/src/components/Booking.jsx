@@ -1,5 +1,4 @@
 import { useLocation, NavLink } from "react-router-dom";
-import PropTypes from "prop-types";
 import "../style/_booking.scss";
 import Logo from "./Logo";
 
@@ -73,14 +72,5 @@ function Booking() {
     </>
   );
 }
-
-Booking.propTypes = {
-  state: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    destination: PropTypes.string.isRequired,
-    driverVehicleUrl: PropTypes.string.isRequired,
-    passenger: PropTypes.number.isRequired,
-  }).isRequired,
-};
 
 export default Booking;
