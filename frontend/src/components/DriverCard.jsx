@@ -29,7 +29,7 @@ function DriverCard({ driver, stateSearchBar, checkFavorite }) {
       <div className="driver-card">
         <div className="driverImgDiv">
           <img
-            src={`src/public/images/characters/${driver.name}.jpg`}
+            src={`/images/characters/${driver.name}.jpg`}
             alt="Avatar"
             className="driverImg"
           />
@@ -70,7 +70,7 @@ function DriverCard({ driver, stateSearchBar, checkFavorite }) {
             <div className="vehicleImage-button">
               <div className="vehicleImage-container">
                 <img
-                  src={`src/public/images/starship/${driver.vehicles[0].name}.png`}
+                  src={`/images/starship/${driver.vehicles[0].name}.png`}
                   alt="kana"
                   className="starshipImg"
                 />

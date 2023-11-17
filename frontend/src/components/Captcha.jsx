@@ -52,7 +52,7 @@ function Captcha() {
               type="button"
               onClick={handleClick}
             >
-              <img src="src/public/images/captcha/Ewok.png" alt="ewok" />
+              <img src="/images/captcha/Ewok.png" alt="ewok" />
             </button>
             <button
               className={
@@ -63,10 +63,7 @@ function Captcha() {
               type="button"
               onClick={handleClick}
             >
-              <img
-                src="src/public/images/captcha/chewbacca.png"
-                alt="chewbacca"
-              />
+              <img src="/images/captcha/chewbacca.png" alt="chewbacca" />
             </button>
             <button
               className={
@@ -77,10 +74,7 @@ function Captcha() {
               type="button"
               onClick={handleClick}
             >
-              <img
-                src="src/public/images/captcha/darkvador.png"
-                alt="darkvador"
-              />
+              <img src="/images/captcha/darkvador.png" alt="darkvador" />
             </button>
             <button
               className={
@@ -91,7 +85,7 @@ function Captcha() {
               type="button"
               onClick={handleClick}
             >
-              <img src="src/public/images/captcha/grogu.png" alt="grogu" />
+              <img src="/images/captcha/grogu.png" alt="grogu" />
             </button>
             <button
               className={
@@ -102,7 +96,7 @@ function Captcha() {
               type="button"
               onClick={handleClick}
             >
-              <img src="src/public/images/captcha/lego.png" alt="lego" />
+              <img src="/images/captcha/lego.png" alt="lego" />
             </button>
             <button
               className={
@@ -113,7 +107,7 @@ function Captcha() {
               type="button"
               onClick={handleClick}
             >
-              <img src="src/public/images/captcha/trooper.png" alt="trooper" />
+              <img src="/images/captcha/trooper.png" alt="trooper" />
             </button>
             <button
               className={
@@ -124,7 +118,7 @@ function Captcha() {
               type="button"
               onClick={handleClick}
             >
-              <img src="src/public/images/captcha/yoda.png" alt="yoda" />
+              <img src="/images/captcha/yoda.png" alt="yoda" />
             </button>
           </div>
 

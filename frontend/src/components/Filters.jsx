@@ -33,16 +33,13 @@ function Filters({ people, setFilteredPeople, setCheckFavorite, float }) {
         }`}
       >
         <div className="container-filter-title">
-          <img src="src/public/images/icons/filters.png" alt="filter-icon" />
+          <img src="/images/icons/filters.png" alt="filter-icon" />
           <h1>Filter by</h1>
         </div>
 
         <fieldset className="container-looks">
           <div className="container-filter-category">
-            <img
-              src="src/public/images/icons/r2d2_yellow.png"
-              alt="personage-icon"
-            />
+            <img src="/images/icons/r2d2_yellow.png" alt="personage-icon" />
             <legend>Looks</legend>
           </div>
 
@@ -85,10 +82,7 @@ function Filters({ people, setFilteredPeople, setCheckFavorite, float }) {
 
         <fieldset className="container-gender">
           <div className="container-filter-category">
-            <img
-              src="src/public/images/icons/gender_yellow.png"
-              alt="personage-icon"
-            />
+            <img src="/images/icons/gender_yellow.png" alt="personage-icon" />
             <legend>Gender preference</legend>
           </div>
           <div className="entry">
@@ -129,10 +123,7 @@ function Filters({ people, setFilteredPeople, setCheckFavorite, float }) {
 
         <fieldset className="favorite">
           <div className="container-favorite">
-            <img
-              src="src/public/images/icons/yellow-heart.png"
-              alt="yellow-heart"
-            />
+            <img src="/images/icons/yellow-heart.png" alt="yellow-heart" />
             <div className="text-favorite-checkbox">
               <input
                 type="checkbox"

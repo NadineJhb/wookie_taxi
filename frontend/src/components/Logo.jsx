@@ -4,7 +4,7 @@ function Logo() {
   return (
     <div className="logo">
       <NavLink to="/home">
-        <img src="src/public/images/logo_wookie.png" alt="logo_wookie" />
+        <img src="/images/logo_wookie.png" alt="logo_wookie" />
       </NavLink>
     </div>
   );

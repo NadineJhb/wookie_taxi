@@ -35,7 +35,7 @@ export default function Intro() {
       <title>Wookie Taxi</title>
 
       <audio ref={audioRef} muted={isMuted}>
-        <source src="src/public/son/Introsw.mp4" type="audio/mp3" />
+        <source src="/son/Introsw.mp4" type="audio/mp3" />
         <track kind="captions" />
       </audio>
       <div className="star-wars-opening">
@@ -45,7 +45,7 @@ export default function Intro() {
         <div className="opening-stars">
           <img
             className="opening-logo"
-            src="src/public/images/Star_Wars_Logo.svg"
+            src="/images/Star_Wars_Logo.svg"
             alt="Star Wars Logo"
           />
           <div className="wookie_taxi">

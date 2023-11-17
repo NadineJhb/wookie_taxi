@@ -18,7 +18,7 @@ function PlaneteCard({ planet, setInputDestination, handleClick }) {
         </button>
         <div className="planetImageDiv">
           <img
-            src={`src/public/images/planets/${planet.name}.png`}
+            src={`/images/planets/${planet.name}.png`}
             alt={planet.name}
             className="img-planet"
           />

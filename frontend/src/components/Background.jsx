@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import PlaneteCard from "./PlaneteCard";
-import destroyerImg from "../public/images/starship/destroyer.png";
+// import destroyerImg from "/images/starship/destroyer.png";
 
 function Background({ planets, setInputDestination }) {
   const [planet, setPlanet] = useState(null);
@@ -23,7 +23,7 @@ function Background({ planets, setInputDestination }) {
           >
             <img
               className="img-background-planet"
-              src={`src/public/images/planets/${planetItem.name}.png`}
+              src={`/images/planets/${planetItem.name}.png`}
               onClick={() => handleClick(planetItem)}
               alt={planetItem.name}
               aria-hidden
@@ -39,7 +39,11 @@ function Background({ planets, setInputDestination }) {
         );
       })}
       <div className="x">
-        <img className="y" src={destroyerImg} alt="starship" />
+        <img
+          className="y"
+          src="/images/starship/destroyer.png"
+          alt="starship"
+        />
       </div>
     </div>
   );
