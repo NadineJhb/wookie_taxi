@@ -38,7 +38,7 @@ function SearchBar({
         />
         <input
           type="number"
-          placeholder="1"
+          placeholder=""
           className="search-passenger"
           value={inputPassenger}
           onChange={(e) => setInputPassenger(e.target.value)}
@@ -56,7 +56,7 @@ function SearchBar({
 SearchBar.propTypes = {
   setInputDestination: PropTypes.func.isRequired,
   inputDestination: PropTypes.string.isRequired,
-  inputPassenger: PropTypes.number.isRequired,
+  inputPassenger: PropTypes.string.isRequired,
   setInputPassenger: PropTypes.func.isRequired,
   searchIcon: PropTypes.string.isRequired,
 };

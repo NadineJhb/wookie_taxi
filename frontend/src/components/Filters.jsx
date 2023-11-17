@@ -23,7 +23,6 @@ function Filters({ people, setFilteredPeople, setCheckFavorite, float }) {
       gender === "all" ? true : person.gender === gender
     );
     setFilteredPeople(filtered4);
-    console.warn(filtered4);
   }, [eye, big, tall, gender, people]);
 
   return (
@@ -56,6 +55,7 @@ function Filters({ people, setFilteredPeople, setCheckFavorite, float }) {
               value={eye}
               defaultChecked={false}
             />
+            console.warn
             <label htmlFor="1">Blue eyes, please</label>
           </div>
 

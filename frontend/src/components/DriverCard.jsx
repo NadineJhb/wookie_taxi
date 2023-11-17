@@ -23,7 +23,8 @@ function DriverCard({ driver, stateSearchBar, checkFavorite }) {
 
   return (
     driver.vehicles.length > 0 &&
-    driver.vehicles[0].passengers >= stateSearchBar.passenger.toString() &&
+    parseInt(driver.vehicles[0].passengers, 10) >=
+      parseInt(stateSearchBar.passenger, 10) &&
     !(checkFavorite === true && favorite === false) && (
       <div className="driver-card">
         <div className="driverImgDiv">
@@ -95,11 +96,11 @@ DriverCard.propTypes = {
       PropTypes.shape({
         crew: PropTypes.string.isRequired,
         max_atmosphering_speed: PropTypes.string.isRequired,
-        passenger: PropTypes.string.isRequired,
+        passenger: PropTypes.string,
       })
     ),
   }).isRequired,
-  stateSearchBar: PropTypes.func.isRequired,
+  stateSearchBar: PropTypes.string.isRequired,
   checkFavorite: PropTypes.bool.isRequired,
 };
 
