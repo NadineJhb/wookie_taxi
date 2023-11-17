@@ -155,7 +155,7 @@ Filters.propTypes = {
   people: PropTypes.func.isRequired,
   setFilteredPeople: PropTypes.func.isRequired,
   setCheckFavorite: PropTypes.func.isRequired,
-  float: PropTypes.func.isRequired,
+  float: PropTypes.bool.isRequired,
 };
 
 export default Filters;
