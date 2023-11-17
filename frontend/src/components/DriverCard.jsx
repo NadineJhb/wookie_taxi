@@ -93,14 +93,14 @@ DriverCard.propTypes = {
     homeworld: PropTypes.string.isRequired,
     vehicles: arrayOf(
       PropTypes.shape({
-        crew: PropTypes.number.isRequired,
-        max_atmosphering_speed: PropTypes.number.isRequired,
+        crew: PropTypes.string.isRequired,
+        max_atmosphering_speed: PropTypes.string.isRequired,
         passenger: PropTypes.string.isRequired,
       })
     ),
   }).isRequired,
-  stateSearchBar: PropTypes.bool.isRequired,
-  checkFavorite: PropTypes.func.isRequired,
+  stateSearchBar: PropTypes.func.isRequired,
+  checkFavorite: PropTypes.bool.isRequired,
 };
 
 export default DriverCard;
