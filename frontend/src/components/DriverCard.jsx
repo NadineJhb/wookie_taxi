@@ -23,7 +23,8 @@ function DriverCard({ driver, stateSearchBar, checkFavorite }) {
 
   return (
     driver.vehicles.length > 0 &&
-    driver.vehicles[0].passengers >= stateSearchBar.passenger.toString() &&
+    parseInt(driver.vehicles[0].passengers, 10) >=
+      parseInt(stateSearchBar.passenger, 10) &&
     !(checkFavorite === true && favorite === false) && (
       <div className="driver-card">
         <div className="driverImgDiv">
