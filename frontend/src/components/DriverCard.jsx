@@ -89,18 +89,18 @@ DriverCard.propTypes = {
   driver: PropTypes.shape({
     name: PropTypes.string.isRequired,
     eye_color: PropTypes.string.isRequired,
-    height: PropTypes.number.isRequired,
+    height: PropTypes.string.isRequired,
     homeworld: PropTypes.string.isRequired,
     vehicles: arrayOf(
       PropTypes.shape({
-        crew: PropTypes.number.isRequired,
-        max_atmosphering_speed: PropTypes.number.isRequired,
+        crew: PropTypes.string.isRequired,
+        max_atmosphering_speed: PropTypes.string.isRequired,
         passenger: PropTypes.string.isRequired,
       })
     ),
   }).isRequired,
   stateSearchBar: PropTypes.func.isRequired,
-  checkFavorite: PropTypes.func.isRequired,
+  checkFavorite: PropTypes.bool.isRequired,
 };
 
 export default DriverCard;

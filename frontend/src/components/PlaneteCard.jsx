@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 function PlaneteCard({ planet, setInputDestination, handleClick }) {
   const handleClickSelect = (event) => {
     setInputDestination(event.target.value);
-    PlaneteCard.style.display = "none";
   };
 
   return (
