@@ -56,7 +56,7 @@ function SearchBar({
 SearchBar.propTypes = {
   setInputDestination: PropTypes.func.isRequired,
   inputDestination: PropTypes.string.isRequired,
-  inputPassenger: PropTypes.string.isRequired,
+  inputPassenger: PropTypes.number.isRequired,
   setInputPassenger: PropTypes.func.isRequired,
   searchIcon: PropTypes.string.isRequired,
 };

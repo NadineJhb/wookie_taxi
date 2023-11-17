@@ -173,16 +173,8 @@ function App() {
         />
       </div>
       <Footer />
-      {/* <Filters />
- <Driver /> */}
     </div>
   );
 }
 
 export default App;
-
-// export async loaderPeople() {
-//   axios.all ...=> data
-
-//   return data
-// }

@@ -46,11 +46,11 @@ function Background({ planets, setInputDestination }) {
 }
 
 Background.propTypes = {
-  setInputDestination: PropTypes.func.isRequired,
   planets: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
     })
   ).isRequired,
+  setInputDestination: PropTypes.func.isRequired,
 };
 export default Background;

@@ -96,11 +96,12 @@ DriverCard.propTypes = {
       PropTypes.shape({
         crew: PropTypes.string.isRequired,
         max_atmosphering_speed: PropTypes.string.isRequired,
+        passenger: PropTypes.string.isRequired,
       })
     ),
   }).isRequired,
   stateSearchBar: PropTypes.func.isRequired,
-  checkFavorite: PropTypes.func.isRequired,
+  checkFavorite: PropTypes.bool.isRequired,
 };
 
 export default DriverCard;

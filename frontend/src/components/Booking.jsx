@@ -12,11 +12,11 @@ function Booking() {
       <div className="booking-container">
         <div className="booking-title">
           <h2>Thank you for your booking !</h2>
-          <h3 className="booking-driver-text">
-            Your Wookie Taxi with &nbsp;
-            <h3 className="booking-drivername">{state.name}</h3>
-            &nbsp; is confirmed.
-          </h3>
+        </div>
+        <div className="booking-driver-text">
+          Your Wookie Taxi with &nbsp;
+          <h3 className="booking-drivername">{state.name}</h3>
+          &nbsp; is confirmed.
         </div>
         <div className="booking-images-infos">
           <img
