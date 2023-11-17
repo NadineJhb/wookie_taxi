@@ -23,7 +23,6 @@ function Filters({ people, setFilteredPeople, setCheckFavorite, float }) {
       gender === "all" ? true : person.gender === gender
     );
     setFilteredPeople(filtered4);
-    console.warn(filtered4);
   }, [eye, big, tall, gender, people]);
 
   return (
